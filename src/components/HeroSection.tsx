@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.webp";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef } from "react";
+import OrbitAnimation from "./OrbitAnimation";
 
 const AnimatedCounter = ({
   value,
@@ -35,17 +36,19 @@ const AnimatedCounter = ({
 
 const HeroSection = () => {
   return (
-    <section className="max-w-[2000px] mx-auto bg-[#EDEDED]">
-      <div className="container">
-        <div className="grid md:grid-cols-2 gap-1 items-start">
+    <section className="max-w-[1600px] mx-auto bg-[#EDEDED] md:h-screen">
+      {/* <div className="container"> */}
+      <div className="px-6 h-full">
+        {/* <div className="md:flex gap-1 items-start justify-between"> */}
+        <div className="md:h-full grid sm:grid-cols-2 lg:flex 2xl:grid-cols-2 gap-1 items-start justify-between">
           <motion.div
-            className=""
+            className="md:flex md:flex-col md:justify-between w-full lg:w-[630px] 2xl:w-full md:h-full"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
             <motion.h1
-              className="mb-1 px-12 py-12 bg-[#F4F4F4]"
+              className="mb-1 px-12 py-12 bg-[#F4F4F4] md:h-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -58,13 +61,12 @@ const HeroSection = () => {
                 textAlign: "left",
               }}
             >
-              An AI Venture Studio Launching the Future of AI One 10x Product at
-              a Time
+              AI Venture Studio Powering 10x Innovation
             </motion.h1>
 
             {/* Statistics Section */}
             <motion.div
-              className="grid grid-col-5 gap-12 items-start bg-[#F4F4F4] px-12 py-[50px]"
+              className="md:h-full grid grid-col-5 gap-12 items-start bg-[#F4F4F4] px-12 py-[50px]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -82,7 +84,7 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
                 >
-                  <div className="text-5xl font-bold mb-2">
+                  <div className="text-4xl font-bold mb-2">
                     <AnimatedCounter value={100} suffix="K+" />
                   </div>
                   <p className="text-muted-foreground">Subscribers</p>
@@ -93,7 +95,7 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                 >
-                  <div className="text-5xl font-bold mb-2">
+                  <div className="text-4xl font-bold mb-2">
                     <AnimatedCounter value={20} suffix="+" />
                   </div>
                   <p className="text-muted-foreground">AI Products</p>
@@ -104,7 +106,7 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.7 }}
                 >
-                  <div className="text-5xl font-bold mb-2">
+                  <div className="text-4xl font-bold mb-2">
                     <AnimatedCounter value={10} suffix="x" />
                   </div>
                   <p className="text-muted-foreground">Growth Mindset</p>
@@ -115,7 +117,7 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                 >
-                  <div className="text-5xl font-bold mb-2">
+                  <div className="text-4xl font-bold mb-2">
                     $<AnimatedCounter value={100} suffix="M+" />
                   </div>
                   <p className="text-muted-foreground">
@@ -130,12 +132,14 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.3 }}
+            className="w-full lg:w-[342px] xl:min-w-[598px] xl:max-w-full 2xl:w-full md:h-full h-screen"
           >
-            <img
+            {/* <img
               src={heroImage}
               alt="Modern workspace with professional working"
               className="w-full h-auto object-cover"
-            />
+            /> */}
+            <OrbitAnimation />
           </motion.div>
         </div>
       </div>

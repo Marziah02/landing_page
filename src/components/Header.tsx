@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -14,17 +15,14 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
           <div className="flex items-center gap-12 ">
-            <Link
-              to="/"
-              className="text-2xl font-bold border-r-0 border bg-amber-700"
-            >
+            <Link to="/" className="text-2xl font-bold">
               <img
-                src="/src/assets/logo.jpg"
+                src="src/assets/10x_logo.svg"
                 alt="10x Logo"
                 className="h-8 w-auto"
               />
             </Link>
-            <div className="w-1 h-8 bg-amber-700 mr-2"></div>
+            {/* <div className="w-1 h-8 bg-amber-700 mr-2"></div> */}
             <ul className="hidden md:flex items-center gap-8">
               <li>
                 <a

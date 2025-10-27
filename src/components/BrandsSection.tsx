@@ -5,44 +5,45 @@ import { motion } from "framer-motion";
 const brands = [
   {
     id: 1,
-    name: "PerfectCode.ai",
-    description:
-      "PerfectCode.ai is an AI-powered coding assistant built to help developers write, review, and optimize code with precision.",
-    logo: "P",
-  },
-  {
-    id: 2,
     name: "StoryMaster.ai",
     description:
       "StoryMaster.ai is an AI-driven platform designed to help users create, edit, and publish high-quality stories effortlessly.",
-    logo: "S",
+    logo: "src/assets/storymaster_1.svg",
   },
   {
-    id: 3,
+    id: 2,
     name: "Photo360.ai",
     description:
       "Photo360.ai is an AI-powered platform that transforms images into immersive 360-degree experiences.",
-    logo: "P",
+    logo: "src/assets/photo360_1.svg",
   },
+  {
+    id: 3,
+    name: "PerfectCode.ai",
+    description:
+      "PerfectCode.ai is an AI-powered coding assistant built to help developers write, review, and optimize code with precision.",
+    logo: "src/assets/perfectcode_1.svg",
+  },
+
   {
     id: 4,
     name: "MeetingPilot.ai",
     description:
       "MeetingPilot.ai is an AI-powered meeting assistant that helps users schedule, manage, and optimize their meetings.",
-    logo: "M",
+    logo: "src/assets/meetingpilot.svg",
   },
   {
     id: 5,
-    name: "ExtensionLab.ai",
+    name: "Dialogsy.ai",
     description:
-      "ExtensionLab.ai is an AI-powered platform that helps developers create, manage, and optimize browser extensions effortlessly.",
-    logo: "E",
+      "Dialogsy.ai is an AI-powered platform that helps developers create, manage, and optimize browser extensions effortlessly.",
+    logo: "src/assets/dialogsy_1.svg",
   },
   {
     id: "6",
     name: "More",
     description: "",
-    //logo: "M",
+    logo: "Join AI Revolution",
   },
 ];
 
@@ -63,9 +64,9 @@ const BrandsSection = () => {
   };
 
   return (
-    <section className="max-w-[2000px] mx-auto bg-background">
+    <section className="max-w-[1600px] mx-auto bg-background">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-2 gap-1 py-12">
+        <div className="grid md:grid-cols-2 gap-1 pb-12 md:pt-[100px]">
           <motion.div
             className=""
             initial={{ opacity: 0, x: -30 }}
@@ -119,28 +120,47 @@ const BrandsSection = () => {
         >
           {brands.map((brand, index) => (
             <motion.div key={brand.id} variants={item}>
-              <div className="p-12 hover:shadow-lg transition-shadow bg-[#F2F2F2] rounded-none flex flex-col">
+              <div
+                className={`px-12 py-6 hover:shadow-lg transition-shadow ${
+                  brand.name === "More" ? "bg-[#ebfafc] " : "bg-[#F2F2F2] "
+                } rounded-none flex flex-col`}
+              >
                 <div
-                  className="mb-6"
+                  className="mb-4"
                   style={{
                     fontFamily: "Inter",
                     fontSize: "14px",
                     fontWeight: "400",
-                    lineHeight: "64px",
+                    // lineHeight: "64px",
                     textAlign: "left",
                     color: "#1B1921",
                   }}
                 >
                   {String(index + 1).padStart(2, "0")}
                 </div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-foreground text-background flex items-center justify-center text-sm font-bold">
-                    {brand.logo}
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="h-10 w-auto  text-black flex items-center justify-center text-sm font-bold">
+                    {/* {brand.logo} */}
+                    {brand.name === "More" ? (
+                      <>
+                        <h3 className="font-sans text-2xl font-semibold">
+                          {brand.logo}
+                        </h3>
+                      </>
+                    ) : (
+                      <>
+                        <img
+                          className="h-10 w-auto"
+                          src={brand.logo}
+                          alt="icon"
+                        />
+                      </>
+                    )}
                   </div>
-                  <h3 className="text-xl font-bold">{brand.name}</h3>
+                  {/* <h3 className="text-xl font-bold">{brand.name}</h3> */}
                 </div>
                 <p
-                  className="h-24 mb-8 flex-grow"
+                  className="md:h-28 2xl:h-24 mb-2 flex-grow"
                   style={{
                     fontFamily: "Inter",
                     fontSize: "18px",

@@ -4,18 +4,25 @@ import { Package, Code, Smartphone, Zap } from "lucide-react";
 const OrbitAnimation = () => {
   const icons = [
     { Icon: Package, radius: 100, duration: 10, color: "hsl(var(--accent))" },
-    { Icon: Code, radius: 150, duration: 15, color: "hsl(var(--primary))" },
+    { Icon: Code, radius: 150, duration: 15, color: "hsl(var(--accent))" },
     {
       Icon: Smartphone,
       radius: 200,
       duration: 20,
       color: "hsl(var(--accent))",
     },
-    { Icon: Zap, radius: 250, duration: 25, color: "hsl(var(--primary))" },
+    { Icon: Zap, radius: 250, duration: 25, color: "hsl(var(--accent))" },
   ];
 
   return (
-    <div className="w-full relative h-full flex items-center justify-center bg-[#0a0a0a] overflow-hidden">
+    <div
+      style={{
+        backgroundImage: "url('src/assets/herobg.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      className="w-full relative h-full flex items-center justify-center bg-[#0a0a0a] overflow-hidden"
+    >
       {/* Milky way background effect */}
       <div className="absolute inset-0 opacity-30">
         {[...Array(100)].map((_, i) => (

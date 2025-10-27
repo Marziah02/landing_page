@@ -36,37 +36,58 @@ const AnimatedCounter = ({
 
 const HeroSection = () => {
   return (
-    <section className="max-w-[1600px] mx-auto bg-[#EDEDED] md:h-screen">
+    <section className="max-w-[1600px] mx-auto bg-[#EDEDED] overflow-hidden ">
       {/* <div className="container"> */}
       <div className="px-6 h-full">
         {/* <div className="md:flex gap-1 items-start justify-between"> */}
-        <div className="md:h-full grid sm:grid-cols-2 lg:flex 2xl:grid-cols-2 gap-1 items-start justify-between">
+        <div className="h-full grid md:grid-cols-2 gap-1 items-start justify-between">
           <motion.div
-            className="md:flex md:flex-col md:justify-between w-full lg:w-[630px] 2xl:w-full md:h-full"
+            className="h-full md:flex md:flex-col md:justify-between"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <motion.h1
-              className="mb-1 px-12 py-12 bg-[#F4F4F4] md:h-full"
-              initial={{ opacity: 0, y: 20 }}
+            <motion.div className="mb-1 bg-[#F4F4F4]  md:h-[408px] 2xl:h-[495px] p-12 md:p-0">
+              <motion.h1
+                className="md:ml-12 md:mr-9 2xl:mr-14 md:my-12 "
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                style={{
+                  fontFamily: "Inter",
+                  fontSize: "48px",
+                  fontWeight: "600",
+                  letterSpacing: "-1.68px",
+                  lineHeight: "64px",
+                  textAlign: "left",
+                }}
+              >
+                {/* Creating The Future of Software Technology */}
+                AI Venture Studio Powering 10x Innovation
+              </motion.h1>
+            </motion.div>
+
+            {/* Statistics Section h1*/}
+            <motion.div
+              className="bg-[#F4F4F4] px-12 py-2 mb-1"
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               style={{
                 fontFamily: "Inter",
-                fontSize: "48px",
-                fontWeight: "600",
-                letterSpacing: "-1.68px",
-                lineHeight: "64px",
+                fontSize: "30px",
+                fontWeight: "400",
+                lineHeight: "72px",
                 textAlign: "left",
               }}
             >
-              AI Venture Studio Powering 10x Innovation
-            </motion.h1>
-
-            {/* Statistics Section */}
+              <div>
+                <h2>Numbers</h2>
+              </div>
+            </motion.div>
+            {/* Statistics Section number*/}
             <motion.div
-              className="md:h-full grid grid-col-5 gap-12 items-start bg-[#F4F4F4] px-12 py-[50px]"
+              className="break-words"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -74,56 +95,63 @@ const HeroSection = () => {
                 fontFamily: "Inter",
               }}
             >
-              <div>
+              {/* <div>
                 <h2 className="text-3xl font-bold">Numbers</h2>
-              </div>
+              </div> */}
 
-              <div className="md:col-span-4 grid grid-cols-2 gap-8">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                >
-                  <div className="text-4xl font-bold mb-2">
-                    <AnimatedCounter value={100} suffix="K+" />
-                  </div>
-                  <p className="text-muted-foreground">Subscribers</p>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                >
-                  <div className="text-4xl font-bold mb-2">
-                    <AnimatedCounter value={20} suffix="+" />
-                  </div>
-                  <p className="text-muted-foreground">AI Products</p>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.7 }}
-                >
-                  <div className="text-4xl font-bold mb-2">
-                    <AnimatedCounter value={10} suffix="x" />
-                  </div>
-                  <p className="text-muted-foreground">Growth Mindset</p>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                >
-                  <div className="text-4xl font-bold mb-2">
-                    $<AnimatedCounter value={100} suffix="M+" />
-                  </div>
-                  <p className="text-muted-foreground">
-                    Portfolio Valuation Target
-                  </p>
-                </motion.div>
+              <div className="grid grid-cols-2 gap-1  ">
+                <div className="bg-[#F4F4F4] px-12 pt-6 pb-12">
+                  {" "}
+                  <motion.div
+                    className="mb-6 font-sans"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                  >
+                    <div className="text-2xl sm:text-3xl font-bold mb-2">
+                      <AnimatedCounter value={100} suffix="K+" />
+                    </div>
+                    <p className="text-muted-foreground">Subscribers</p>
+                  </motion.div>
+                  <motion.div
+                    className="font-sans"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                  >
+                    <div className="text-2xl sm:text-3xl font-bold mb-2">
+                      <AnimatedCounter value={20} suffix="+" />
+                    </div>
+                    <p className="text-muted-foreground">AI Products</p>
+                  </motion.div>
+                </div>
+                <div className="bg-[#F4F4F4] px-12 pt-6 pb-12">
+                  {" "}
+                  <motion.div
+                    className="mb-6 font-sans"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.7 }}
+                  >
+                    <div className="text-2xl sm:text-3xl font-bold mb-2">
+                      <AnimatedCounter value={10} suffix="x" />
+                    </div>
+                    <p className="text-muted-foreground">Growth Mindset</p>
+                  </motion.div>
+                  <motion.div
+                    className="font-sans"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.8 }}
+                  >
+                    <div className="text-2xl sm:text-3xl font-bold mb-2">
+                      $<AnimatedCounter value={100} suffix="M+" />
+                    </div>
+                    <p className="text-muted-foreground">
+                      Portfolio Valuation Target
+                    </p>
+                  </motion.div>
+                </div>
               </div>
             </motion.div>
           </motion.div>
@@ -132,7 +160,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="w-full lg:w-[342px] xl:min-w-[598px] xl:max-w-full 2xl:w-full md:h-full h-screen"
+            className="w-full md:h-full h-screen"
           >
             {/* <img
               src={heroImage}

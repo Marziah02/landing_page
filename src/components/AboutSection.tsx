@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 const AboutSection = () => {
   return (
-    <section className="max-w-[2000px] mx-auto bg-background">
+    <section className="max-w-[1600px] mx-auto bg-background">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-2 gap-1 py-12">
+        <div className="grid md:grid-cols-2 gap-1 pb-12 md:pt-[100px]">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}

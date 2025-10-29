@@ -56,7 +56,7 @@ const HeroSection = () => {
 						transition={{ duration: 0.6 }}>
 						<motion.div className="mb-1 bg-[#F4F4F4]  md:h-[408px] 2xl:h-[495px] p-12 md:p-0">
 							<motion.h1
-								className="md:ml-12 md:mr-9 2xl:mr-14 md:my-12 "
+								className="md:ml-12 md:mr-4 xl:mr-9 2xl:mr-14 md:my-12 "
 								initial={{ opacity: 0, y: 20 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.6, delay: 0.2 }}

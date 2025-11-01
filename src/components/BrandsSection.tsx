@@ -1,37 +1,38 @@
 import { ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import storyMaster from "@/assets/storymaster_1.svg";
-import photo360 from "@/assets/photo360_1.svg";
-import perfectcode from "@/assets/perfectcode_1.svg";
-import meetingpilot from "@/assets/meetingpilot.svg";
-import dialogsy from "@/assets/dialogsy_1.svg";
+import storyMaster from "@/assets/StoryMaster_black.svg";
+import photo360 from "@/assets/Photo360_black.svg";
+import perfectcode from "@/assets/PerfectCode_black.svg";
+import meetingpilot from "@/assets/MeetingPilot_black.svg";
+import dialogsy from "@/assets/Dialogsy_icon_black.svg";
+import { Link } from "react-router-dom";
 
 const brands = [
   {
     id: 1,
-    name: "StoryMaster.ai",
+    name: "StoryMaster AI",
     description:
       "StoryMaster.ai is an AI-driven platform designed to help users create, edit, and publish high-quality stories effortlessly.",
     logo: storyMaster,
   },
   {
     id: 2,
-    name: "PerfectCode.ai",
+    name: "PerfectCode AI",
     description:
       "PerfectCode.ai is an AI-powered coding assistant built to help developers write, review, and optimize code with precision.",
     logo: perfectcode,
   },
   {
     id: 3,
-    name: "Dialogsy.ai",
+    name: "Dialogsy AI",
     description:
       "Dialogsy.ai is an AI-powered platform that helps developers create, manage, and optimize browser extensions effortlessly.",
     logo: dialogsy,
   },
   {
     id: 4,
-    name: "Photo360.ai",
+    name: "Photo360 AI",
     description:
       "Photo360.ai is an AI-powered platform that transforms images into immersive 360-degree experiences.",
     logo: photo360,
@@ -39,7 +40,7 @@ const brands = [
 
   {
     id: 5,
-    name: "MeetingPilot.ai",
+    name: "MeetingPilot AI",
     description:
       "MeetingPilot.ai is an AI-powered meeting assistant that helps users schedule, manage, and optimize their meetings.",
     logo: meetingpilot,
@@ -128,7 +129,9 @@ const BrandsSection = () => {
             <motion.div key={brand.id} variants={item}>
               <div
                 className={`px-12 py-6 hover:shadow-lg transition-shadow ${
-                  brand.name === "More" ? "bg-[#F2F2F2] " : "bg-[#F2F2F2] "
+                  brand.name === "More"
+                    ? "bg-[#F2F2F2] h-[277px] flex items-center justify-center"
+                    : "bg-[#F2F2F2] "
                 } rounded-none flex flex-col`}
               >
                 <div
@@ -142,15 +145,23 @@ const BrandsSection = () => {
                     color: "#1B1921",
                   }}
                 >
-                  {String(index + 1).padStart(2, "0")}
+                  {brand.name !== "More" && String(index + 1).padStart(2, "0")}
                 </div>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="h-10 w-auto  text-black flex items-center justify-center text-sm font-bold">
+                <div
+                  className={`flex items-center  gap-3 mb-3 ${
+                    brand.name === "More" && "justify-center"
+                  }`}
+                >
+                  <div
+                    className={`${
+                      brand.name !== "More" && "h-10"
+                    } w-auto  text-black flex items-center justify-center text-sm font-bold`}
+                  >
                     {/* {brand.logo} */}
                     {brand.name === "More" ? (
                       <>
-                        <h3 className="font-sans text-2xl font-semibold text-center">
-                          {brand.logo}
+                        <h3 className="font-[Poppins] text-2xl font-semibold text-center cursor-pointer">
+                          <Link to="/products"> {brand.logo}</Link>
                         </h3>
                       </>
                     ) : (
@@ -160,33 +171,41 @@ const BrandsSection = () => {
                           src={brand.logo}
                           alt="icon"
                         />
+                        <h1 className="font-[Poppins] ml-3 text-2xl">
+                          {brand.name}
+                        </h1>
                       </>
                     )}
                   </div>
                   {/* <h3 className="text-xl font-bold">{brand.name}</h3> */}
                 </div>
-                <p
-                  className="md:h-28 2xl:h-24 mb-2 flex-grow"
-                  style={{
-                    fontFamily: "Inter",
-                    fontSize: "18px",
-                    fontWeight: "400",
-                    lineHeight: "32px",
-                    textAlign: "left",
-                    color: "#1b1921",
-                  }}
-                >
-                  {brand.description}
-                </p>
-                <motion.a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-sm font-medium hover:text-muted-foreground transition-colors"
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  Learn more
-                  <ArrowRight className="w-4 h-4" />
-                </motion.a>
+                {brand.name !== "More" && (
+                  <p
+                    className="md:h-28 2xl:h-24 mb-2 flex-grow"
+                    style={{
+                      fontFamily: "Inter",
+                      fontSize: "18px",
+                      fontWeight: "400",
+                      lineHeight: "32px",
+                      textAlign: "left",
+                      color: "#1b1921",
+                    }}
+                  >
+                    {brand.description}
+                  </p>
+                )}
+
+                {brand.name !== "More" && (
+                  <motion.a
+                    href="#"
+                    className="inline-flex items-center gap-2 text-sm font-medium hover:text-muted-foreground transition-colors"
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    Learn more
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.a>
+                )}
               </div>
             </motion.div>
           ))}

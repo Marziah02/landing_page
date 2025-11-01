@@ -18,59 +18,68 @@ import {
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import MissionCommander from "@/assets/MissionCommander.svg";
+import TechCaptain from "@/assets/TechCaptain.svg";
+import LaunchNavigator from "@/assets/LaunchNavigator.svg";
+import SignalStrategist from "@/assets/SignalStrategist.svg";
+import NeuralArchitect from "@/assets/NeuralArchitect.svg";
+import ContentOracle from "@/assets/ContentOracle.svg";
+import InnovationAlchemist from "@/assets/InnovationAlchemist.svg";
+import ProtocolSentinel from "@/assets/ProtocolSentinel.svg";
 
 const teams = [
   {
     id: 1,
-    icon: Rocket,
-    title: "Mission Commander",
+    icon: MissionCommander,
+    title: "Chief Executive Officer (CEO)",
     description:
-      "Leading the crew with vision and precision to achieve every mission goal.",
+      "Leads company vision, growth strategy, and strategic partnerships.",
   },
   {
     id: 2,
-    icon: Shield,
-    title: "Tech Captain",
+    icon: TechCaptain,
+    title: "Chief Technology Officer (CTO)",
     description:
-      "Guiding the engineering fleet through complex technical challenges.",
+      "Oversees technology strategy, architecture, and technical innovation.",
   },
   {
     id: 3,
-    icon: Compass,
-    title: "Launch Navigator",
-    description: "Charting the path from concept to successful deployment.",
+    icon: LaunchNavigator,
+    title: "Head of Product & Innovation",
+    description:
+      "Drives product strategy, user experience, and roadmap execution.",
   },
   {
     id: 4,
-    icon: Wifi,
-    title: "Signal Strategist",
-    description:
-      "Optimizing communication and data intelligence across systems.",
+    icon: SignalStrategist,
+    title: "Head of Growth & Marketing",
+    description: "Owns distribution, brand visibility, and GTM strategy.",
   },
   {
     id: 5,
-    icon: Cpu,
-    title: "Neural Architect",
-    description: "Designing intelligent frameworks where logic meets learning.",
+    icon: NeuralArchitect,
+    title: "AI & ML Architect",
+    description:
+      "Leads core AI research, model development, and intelligent system design.",
   },
   {
     id: 6,
-    icon: BookOpen,
-    title: "Content Oracle",
-    description: "Crafting clear, compelling narratives that power engagement.",
+    icon: ContentOracle,
+    title: "Content & Brand Strategist",
+    description: "Crafts storytelling, brand voice, and creative direction.",
   },
   {
     id: 7,
-    icon: FlaskConical,
-    title: "Innovation Alchemist",
-    description: "Transforming bold ideas into breakthrough realities.",
+    icon: InnovationAlchemist,
+    title: "R&D & Emerging Tech Lead",
+    description:
+      "Experiments with frontier technologies and rapid prototyping.",
   },
   {
     id: 8,
-    icon: Lock,
-    title: "Protocol Sentinel",
-    description:
-      "Guarding the integrity, security, and compliance of every digital interaction.",
+    icon: ProtocolSentinel,
+    title: "Head of Security",
+    description: "Ensures data security, privacy, and trust at scale.",
   },
 ];
 
@@ -149,7 +158,11 @@ const TeamsSection = () => {
             return (
               <motion.div key={team.id} variants={item}>
                 <div className="px-8 py-12 hover:shadow-lg transition-shadow  border border-[#d3d3d3]">
-                  <Icon className="w-8 h-8 mb-9 text-foreground" />
+                  <img
+                    src={Icon}
+                    alt="icon"
+                    className="w-8 h-8 mb-9 text-foreground"
+                  />
                   <h3 className="font-sans text-lg font-semibold mb-4">
                     {team.title}
                   </h3>

@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
-import teamImage from "@/assets/team-collaboration.jpg";
+// import teamImage from "@/assets/team-collaboration.jpg";
+import office from "@/assets/breedge.png";
 import { motion } from "framer-motion";
 
 const AboutSection = () => {
@@ -56,7 +57,7 @@ const AboutSection = () => {
           className="relative w-full h-[764px] overflow-hidden"
         >
           <img
-            src={teamImage}
+            src={office}
             alt="Ollyo Team"
             className="w-full h-full object-cover"
           />

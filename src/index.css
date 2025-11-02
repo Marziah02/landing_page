@@ -7,50 +7,49 @@ All colors MUST be HSL.
 */
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 0 0% 10%;
 
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 10%;
+		--card: 0 0% 98%;
+		--card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 0 0% 10%;
 
-    --primary: 0 0% 10%;
-    --primary-foreground: 0 0% 100%;
+		--primary: 0 0% 10%;
+		--primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 10%;
+		--secondary: 0 0% 96%;
+		--secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+		--muted: 0 0% 96%;
+		--muted-foreground: 0 0% 45%;
 
-    --accent: 45 95% 55%;
-    --accent-foreground: 0 0% 10%;
+		--accent: 182, 75%, 52%;
+		--accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 10%;
+		--border: 0 0% 90%;
+		--input: 0 0% 90%;
+		--ring: 0 0% 10%;
 
-    --radius: 0.5rem;
+		--radius: 0.5rem;
 
-/* Cosmic theme colors */
+		/* Cosmic theme colors */
 
-  --stellar-glow: 280 80% 70%;
-
-  }
+		--stellar-glow: 280 80% 70%;
+	}
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+	* {
+		@apply border-border;
+	}
 
-  body {
-    @apply bg-background text-foreground;
-  }
+	body {
+		@apply bg-background text-foreground;
+	}
 }

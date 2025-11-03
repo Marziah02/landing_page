@@ -56,6 +56,13 @@ const Header = () => {
 									<DropdownMenuContent className="bg-background">
 										<DropdownMenuItem asChild>
 											<Link
+												to="https://palegreen-badger-420606.hostingersite.com/coming-soon/"
+												className="cursor-pointer">
+												StoryMaster.ai
+											</Link>
+										</DropdownMenuItem>
+										<DropdownMenuItem asChild>
+											<Link
 												to="https://perfectcode.ai/dashboard"
 												className="cursor-pointer hover:text-white">
 												PerfectCode.ai
@@ -65,9 +72,10 @@ const Header = () => {
 											<Link
 												to="https://palegreen-badger-420606.hostingersite.com/coming-soon/"
 												className="cursor-pointer">
-												StoryMaster.ai
+												Dialogsy.ai
 											</Link>
 										</DropdownMenuItem>
+
 										<DropdownMenuItem asChild>
 											<Link
 												to="https://palegreen-badger-420606.hostingersite.com/coming-soon/"

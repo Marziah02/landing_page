@@ -153,7 +153,7 @@ const BrandsSection = () => {
 										{/* {brand.logo} */}
 										{brand.name === "More" ? (
 											<>
-												<h3 className="font-[Poppins] text-2xl font-semibold text-center cursor-pointer hover:text-[#22D2E0]">
+												<h3 className="font-sans text-2xl font-semibold text-center cursor-pointer hover:text-[#22D2E0]">
 													<Link to="/products"> {brand.logo}</Link>
 												</h3>
 											</>

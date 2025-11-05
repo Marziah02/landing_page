@@ -10,8 +10,27 @@ import {
 import { ChevronDown } from "lucide-react";
 // import logo from "@/assets/10x_logo.svg";
 import logo from "@/assets/10X_Logo_color.svg";
+import { useRef, useState } from "react";
 
 const Header = () => {
+	// place this at the top of your component:
+	const [openAI, setOpenAI] = useState(false);
+	const [openCompany, setOpenCompany] = useState(false);
+	const aiTimeout = useRef<NodeJS.Timeout | null>(null);
+	const companyTimeout = useRef<NodeJS.Timeout | null>(null);
+	const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+	const handleEnter = (name: string) => setOpenDropdown(name);
+	const handleLeave = () => setOpenDropdown(null);
+	// Helper functions
+	const openMenu = (setter: any, ref: any) => {
+		if (ref.current) clearTimeout(ref.current);
+		setter(true);
+	};
+	const closeMenu = (setter: any, ref: any) => {
+		ref.current = setTimeout(() => setter(false), 150);
+	};
+
 	return (
 		<header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-[#DCDCDC] h-[60px]">
 			<div className="container mx-auto px-6">
@@ -48,59 +67,129 @@ const Header = () => {
 									Home
 								</Link>
 							</li>
-							<li className="px-[19px] py-4">
-								<DropdownMenu>
-									<DropdownMenuTrigger className="flex items-center gap-1 hover:text-[#22D2E0] transition-colors">
-										AI Products
-									</DropdownMenuTrigger>
-									<DropdownMenuContent className="bg-background">
-										<DropdownMenuItem asChild>
-											<Link
-												to="https://palegreen-badger-420606.hostingersite.com/coming-soon/"
-												className="cursor-pointer">
-												StoryMaster.ai
-											</Link>
-										</DropdownMenuItem>
-										<DropdownMenuItem asChild>
-											<Link
-												to="https://perfectcode.ai/dashboard"
-												className="cursor-pointer hover:text-white">
-												PerfectCode.ai
-											</Link>
-										</DropdownMenuItem>
-										<DropdownMenuItem asChild>
-											<Link
-												to="https://palegreen-badger-420606.hostingersite.com/coming-soon/"
-												className="cursor-pointer">
-												Dialogsy.ai
-											</Link>
-										</DropdownMenuItem>
+							{/* <li className="px-[19px] py-4">
+								<DropdownMenu
+									open={openAI}
+									onOpenChange={setOpenAI}>
+									<div className="relative inline-block">
+										<DropdownMenuTrigger
+											asChild
+											className="flex items-center gap-1 hover:text-[#22D2E0] transition-colors cursor-pointer select-none">
+											<span
+												onMouseEnter={() => openMenu(setOpenAI, aiTimeout)}
+												onMouseLeave={() => closeMenu(setOpenAI, aiTimeout)}>
+												AI Products
+											</span>
+										</DropdownMenuTrigger>
 
-										<DropdownMenuItem asChild>
-											<Link
-												to="https://palegreen-badger-420606.hostingersite.com/coming-soon/"
-												className="cursor-pointer">
-												Photo360.ai
-											</Link>
-										</DropdownMenuItem>
-										<DropdownMenuItem asChild>
-											<Link
-												to="https://palegreen-badger-420606.hostingersite.com/coming-soon/"
-												className="cursor-pointer">
-												MeetingPilot.ai
-											</Link>
-										</DropdownMenuItem>
-										<DropdownMenuItem asChild>
-											<Link
-												to="https://palegreen-badger-420606.hostingersite.com/coming-soon/"
-												className="cursor-pointer">
-												ExtensionLab.ai
-											</Link>
-										</DropdownMenuItem>
-									</DropdownMenuContent>
+										<DropdownMenuContent
+											align="start"
+											sideOffset={4}
+											className="bg-background"
+											onMouseEnter={() => openMenu(setOpenAI, aiTimeout)}
+											onMouseLeave={() => closeMenu(setOpenAI, aiTimeout)}>
+											<DropdownMenuItem asChild>
+												<Link
+													to="https://palegreen-badger-420606.hostingersite.com/coming-soon/"
+													target="_blank"
+													rel="noopener noreferrer">
+													StoryMaster.ai
+												</Link>
+											</DropdownMenuItem>
+											<DropdownMenuItem asChild>
+												<Link
+													to="https://perfectcode.ai/dashboard"
+													target="_blank"
+													rel="noopener noreferrer">
+													PerfectCode.ai
+												</Link>
+											</DropdownMenuItem>
+											<DropdownMenuItem asChild>
+												<Link
+													to="https://palegreen-badger-420606.hostingersite.com/coming-soon/"
+													target="_blank"
+													rel="noopener noreferrer">
+													Dialogsy.ai
+												</Link>
+											</DropdownMenuItem>
+											<DropdownMenuItem asChild>
+												<Link
+													to="https://palegreen-badger-420606.hostingersite.com/coming-soon/"
+													target="_blank"
+													rel="noopener noreferrer">
+													Photo360.ai
+												</Link>
+											</DropdownMenuItem>
+											<DropdownMenuItem asChild>
+												<Link
+													to="https://palegreen-badger-420606.hostingersite.com/coming-soon/"
+													target="_blank"
+													rel="noopener noreferrer">
+													MeetingPilot.ai
+												</Link>
+											</DropdownMenuItem>
+											<DropdownMenuItem asChild>
+												<Link
+													to="https://palegreen-badger-420606.hostingersite.com/coming-soon/"
+													target="_blank"
+													rel="noopener noreferrer">
+													ExtensionLab.ai
+												</Link>
+											</DropdownMenuItem>
+										</DropdownMenuContent>
+									</div>
 								</DropdownMenu>
+							</li> */}
+							<li
+								className="relative group px-[19px] py-4"
+								onMouseEnter={() => handleEnter("ai")}
+								onMouseLeave={handleLeave}>
+								<button className="flex items-center gap-1 hover:text-[#22D2E0] transition-colors">
+									AI Products
+								</button>
+
+								{/* Dropdown Menu */}
+								{openDropdown === "ai" && (
+									<div className="absolute left-0 top-full w-52 bg-white shadow-lg rounded-lg border border-gray-100 py-2 z-50 animate-fadeIn">
+										{[
+											{
+												name: "StoryMaster.ai",
+												url: "https://palegreen-badger-420606.hostingersite.com/coming-soon/",
+											},
+											{
+												name: "PerfectCode.ai",
+												url: "https://perfectcode.ai/dashboard",
+											},
+											{
+												name: "Dialogsy.ai",
+												url: "https://palegreen-badger-420606.hostingersite.com/coming-soon/",
+											},
+											{
+												name: "Photo360.ai",
+												url: "https://palegreen-badger-420606.hostingersite.com/coming-soon/",
+											},
+											{
+												name: "MeetingPilot.ai",
+												url: "https://palegreen-badger-420606.hostingersite.com/coming-soon/",
+											},
+											{
+												name: "ExtensionLab.ai",
+												url: "https://palegreen-badger-420606.hostingersite.com/coming-soon/",
+											},
+										].map((item) => (
+											<Link
+												key={item.name}
+												to={item.url}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#22D2E0]/10 hover:text-[#22D2E0] transition-colors">
+												{item.name}
+											</Link>
+										))}
+									</div>
+								)}
 							</li>
-							<li className="px-[19px] py-4">
+							{/* <li className="px-[19px] py-4">
 								<DropdownMenu>
 									<DropdownMenuTrigger className="flex items-center gap-1 hover:text-[#22D2E0] transition-colors">
 										Company
@@ -136,6 +225,33 @@ const Header = () => {
 										</DropdownMenuItem>
 									</DropdownMenuContent>
 								</DropdownMenu>
+							</li> */}
+							<li
+								className="relative group px-[19px] py-4"
+								onMouseEnter={() => handleEnter("company")}
+								onMouseLeave={handleLeave}>
+								<button className="flex items-center gap-1 hover:text-[#22D2E0] transition-colors">
+									Company
+								</button>
+
+								{/* Dropdown Menu */}
+								{openDropdown === "company" && (
+									<div className="absolute left-0 top-full w-40 bg-white shadow-lg rounded-lg border border-gray-100 py-2 z-50 animate-fadeIn">
+										{[
+											{ name: "About", url: "/about" },
+											{ name: "Careers", url: "/careers" },
+											{ name: "Contact", url: "/contact" },
+											{ name: "Products", url: "/products" },
+										].map((item) => (
+											<Link
+												key={item.name}
+												to={item.url}
+												className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#22D2E0]/10 hover:text-[#22D2E0] transition-colors">
+												{item.name}
+											</Link>
+										))}
+									</div>
+								)}
 							</li>
 							<li className="px-[19px] py-4">
 								<a

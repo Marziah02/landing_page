@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa6";
 // import footerlogo from "@/assets/10x_footer_text.svg";
 import footerlogo from "@/assets/10X_galaxy_line_footer.svg";
+import footerlogoblack from "@/assets/10xlogoblack.svg";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -26,8 +27,8 @@ const Footer = () => {
 					<div>
 						{/* <h3 className="text-2xl font-bold mb-6">10x Galaxy Ltd.</h3> */}
 						<img
-							className="h-7 w-auto"
-							src={footerlogo}
+							className="h-10 w-auto"
+							src={footerlogoblack}
 							alt="10x Galaxy Ltd."
 						/>
 					</div>

@@ -61,7 +61,7 @@ const HeroSection = () => {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen w-full bg-black flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen w-full bg-black flex justify-center overflow-hidden"
     >
       {/* Optional: subtle blurred fill behind to avoid empty sides */}
       {/* <div className="absolute inset-0 -z-10">
@@ -72,9 +72,26 @@ const HeroSection = () => {
       <motion.img
         src={herosection}
         alt=""
-        className="w-full h-full object-cover"
+        className="absolute w-full h-full object-cover"
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, 60]) }}
       />
+      <motion.h1
+        className="relative z-10 text-white mt-16 mx-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        style={{
+          fontFamily: "Inter",
+          fontSize: "48px",
+          fontWeight: "600",
+          letterSpacing: "-1.68px",
+          lineHeight: "64px",
+          textAlign: "left",
+        }}
+      >
+        {/* Creating The Future of Software Technology */}
+        AI Venture Studio Powering 10x Innovation
+      </motion.h1>
     </section>
   );
 };

@@ -80,7 +80,7 @@ const HeroSection = () => {
         className="absolute w-full h-full object-cover"
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, 60]) }}
       />
-      <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
+      {/* <div className="absolute inset-0 bg-black opacity-50"></div>{" "} */}
       {/* Overlay */}
       <motion.div className="relative mb-1 md:h-[408px] 2xl:h-[495px]  md:p-0">
         <motion.h1

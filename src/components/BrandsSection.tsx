@@ -133,7 +133,7 @@ const BrandsSection = () => {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.5 }}>
-						<TrendingUp className="w-7 h-7 mb-1 text-[#22D2E0]" />
+						<TrendingUp className="w-7 h-7 mb-1 text-[#85249F]" />
 						<div className="text-2xl sm:text-3xl font-bold mb-2">
 							<AnimatedCounter
 								value={100}
@@ -147,7 +147,7 @@ const BrandsSection = () => {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.6 }}>
-						<Package className="w-7 h-7 mb-1 text-[#22D2E0]" />
+						<Package className="w-7 h-7 mb-1 text-[#85249F]" />
 						<div className="text-2xl sm:text-3xl font-bold mb-2">
 							<AnimatedCounter
 								value={20}
@@ -162,7 +162,7 @@ const BrandsSection = () => {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.7 }}>
-						<Shell className="w-7 h-7 mb-1 text-[#22D2E0]" />
+						<Shell className="w-7 h-7 mb-1 text-[#85249F]" />
 
 						<div className="text-2xl sm:text-3xl font-bold mb-2">
 							<AnimatedCounter
@@ -177,7 +177,7 @@ const BrandsSection = () => {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.8 }}>
-						<DollarSign className="w-7 h-7 mb-1 text-[#22D2E0]" />
+						<DollarSign className="w-7 h-7 mb-1 text-[#85249F]" />
 						<div className="text-2xl sm:text-3xl font-bold mb-2">
 							$
 							<AnimatedCounter

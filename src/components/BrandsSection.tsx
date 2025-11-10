@@ -141,7 +141,12 @@ const BrandsSection = () => {
 						/> */}
 						<svg className="w-7 h-7 mb-1">
 							<defs>
-								<linearGradient id="grad">
+								<linearGradient
+									id="grad"
+									x1="0%"
+									y1="0%"
+									x2="100%"
+									y2="100%">
 									<stop
 										offset="0%"
 										stopColor="#22D2E0"
@@ -152,7 +157,7 @@ const BrandsSection = () => {
 									/>
 								</linearGradient>
 							</defs>
-							<TrendingUp color="url(#grad)" />
+							<TrendingUp stroke="url(#grad)" />
 						</svg>
 
 						<div className="text-2xl sm:text-3xl font-bold mb-2">
@@ -170,7 +175,12 @@ const BrandsSection = () => {
 						transition={{ duration: 0.6, delay: 0.6 }}>
 						<svg className="w-7 h-7 mb-1">
 							<defs>
-								<linearGradient id="grad">
+								<linearGradient
+									id="grad"
+									x1="0%"
+									y1="0%"
+									x2="100%"
+									y2="100%">
 									<stop
 										offset="0%"
 										stopColor="#22D2E0"
@@ -181,7 +191,7 @@ const BrandsSection = () => {
 									/>
 								</linearGradient>
 							</defs>
-							<Package color="url(#grad)" />
+							<Package stroke="url(#grad)" />
 						</svg>
 						{/* <Package className="w-7 h-7 mb-1 bg-gradient-to-r from-[#22D2E0] to-[#85249F] text-transparent bg-clip-text" /> */}
 						<div className="text-2xl sm:text-3xl font-bold mb-2">
@@ -201,7 +211,12 @@ const BrandsSection = () => {
 						{/* <Shell className="w-7 h-7 mb-1 bg-gradient-to-r from-[#22D2E0] to-[#85249F] text-transparent bg-clip-text" /> */}
 						<svg className="w-7 h-7 mb-1">
 							<defs>
-								<linearGradient id="grad">
+								<linearGradient
+									id="grad"
+									x1="0%"
+									y1="0%"
+									x2="100%"
+									y2="100%">
 									<stop
 										offset="0%"
 										stopColor="#22D2E0"
@@ -212,7 +227,8 @@ const BrandsSection = () => {
 									/>
 								</linearGradient>
 							</defs>
-							<Shell color="url(#grad)" />
+
+							<Shell stroke="url(#grad)" />
 						</svg>
 						<div className="text-2xl sm:text-3xl font-bold mb-2">
 							<AnimatedCounter
@@ -229,7 +245,12 @@ const BrandsSection = () => {
 						transition={{ duration: 0.6, delay: 0.8 }}>
 						<svg className="w-7 h-7 mb-1 ">
 							<defs>
-								<linearGradient id="grad">
+								<linearGradient
+									id="grad"
+									x1="0%"
+									y1="0%"
+									x2="100%"
+									y2="100%">
 									<stop
 										offset="0%"
 										stopColor="#22D2E0"
@@ -240,7 +261,7 @@ const BrandsSection = () => {
 									/>
 								</linearGradient>
 							</defs>
-							<DollarSign color="url(#grad)" />
+							<DollarSign stroke="url(#grad)" />
 						</svg>
 						{/* <DollarSign className="w-7 h-7 mb-1 bg-gradient-to-r from-[#22D2E0] to-[#85249F] text-transparent bg-clip-text" /> */}
 						<div className="text-2xl sm:text-3xl font-bold mb-2 text-white ">
@@ -335,8 +356,9 @@ const BrandsSection = () => {
 										{/* {brand.logo} */}
 										{brand.name === "More" ? (
 											<>
-												<h3 className="font-sans text-2xl font-semibold text-center cursor-pointer hover:text-[#22D2E0]">
-													<Link to="/products"> {brand.logo}</Link>
+												<h3 className="font-sans text-2xl font-semibold text-center cursor-pointer bg-gradient-to-br from-[#22D2E0] to-[#85249F] text-transparent bg-clip-text hover:scale-105 transition-transform">
+													{/* <Link to="/products"> {brand.logo}</Link> */}
+													<Link to="#"> {brand.logo}</Link>
 												</h3>
 											</>
 										) : (

@@ -12,6 +12,7 @@ import photo360 from "@/assets/Photo360_black.svg";
 import perfectcode from "@/assets/PerfectCode_black.svg";
 import meetingpilot from "@/assets/MeetingPilot_black.svg";
 import dialogsy from "@/assets/Dialogsy_icon_black.svg";
+import sky from "@/assets/sky.png";
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
 
@@ -113,7 +114,7 @@ const BrandsSection = () => {
 		return (
 			<span
 				ref={ref}
-				className="font-bold text-2xl sm:text-3xl">
+				className="font-bold text-2xl sm:text-3xl text-white">
 				{Math.floor(springValue.get()).toLocaleString()}
 				{suffix}
 			</span>
@@ -123,38 +124,73 @@ const BrandsSection = () => {
 	return (
 		<section className="max-w-[1600px] mx-auto bg-background">
 			<motion.div
-				className="w-full h-[130px] bg-white/90 
+				className="w-full h-[130px] 
              
              [border-image:linear-gradient(to_right,#22D2E0,#85249F)_1] 
-             border-b border-transparent">
+             border-b border-transparent"
+				style={{ backgroundImage: `url(${sky})`, backgroundSize: "cover" }}>
 				<div className="flex justify-between items-center gap-1 h-full text-black mx-2 md:mx-12">
 					<motion.div
 						className="font-sans flex flex-col items-center justify-center"
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.5 }}>
-						<TrendingUp className="w-7 h-7 mb-1 text-[#85249F]" />
+						{/* <TrendingUp
+							className="w-7 h-7 mb-1"
+							color="#22D2E0"
+						/> */}
+						<svg className="w-7 h-7 mb-1">
+							<defs>
+								<linearGradient id="grad">
+									<stop
+										offset="0%"
+										stopColor="#22D2E0"
+									/>
+									<stop
+										offset="100%"
+										stopColor="#85249F"
+									/>
+								</linearGradient>
+							</defs>
+							<TrendingUp color="url(#grad)" />
+						</svg>
+
 						<div className="text-2xl sm:text-3xl font-bold mb-2">
 							<AnimatedCounter
 								value={100}
 								suffix="K+"
 							/>
 						</div>
-						<p className="text-muted-foreground">Subscribers</p>
+						<p className="text-gray-300">Subscribers</p>
 					</motion.div>
 					<motion.div
 						className="font-sans flex flex-col items-center justify-center"
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.6 }}>
-						<Package className="w-7 h-7 mb-1 text-[#85249F]" />
+						<svg className="w-7 h-7 mb-1">
+							<defs>
+								<linearGradient id="grad">
+									<stop
+										offset="0%"
+										stopColor="#22D2E0"
+									/>
+									<stop
+										offset="100%"
+										stopColor="#85249F"
+									/>
+								</linearGradient>
+							</defs>
+							<Package color="url(#grad)" />
+						</svg>
+						{/* <Package className="w-7 h-7 mb-1 bg-gradient-to-r from-[#22D2E0] to-[#85249F] text-transparent bg-clip-text" /> */}
 						<div className="text-2xl sm:text-3xl font-bold mb-2">
 							<AnimatedCounter
 								value={20}
 								suffix="+"
 							/>
 						</div>
-						<p className="text-muted-foreground">AI Products</p>
+						<p className="text-gray-300">AI Products</p>
 					</motion.div>
 
 					<motion.div
@@ -162,30 +198,59 @@ const BrandsSection = () => {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.7 }}>
-						<Shell className="w-7 h-7 mb-1 text-[#85249F]" />
-
+						{/* <Shell className="w-7 h-7 mb-1 bg-gradient-to-r from-[#22D2E0] to-[#85249F] text-transparent bg-clip-text" /> */}
+						<svg className="w-7 h-7 mb-1">
+							<defs>
+								<linearGradient id="grad">
+									<stop
+										offset="0%"
+										stopColor="#22D2E0"
+									/>
+									<stop
+										offset="100%"
+										stopColor="#85249F"
+									/>
+								</linearGradient>
+							</defs>
+							<Shell color="url(#grad)" />
+						</svg>
 						<div className="text-2xl sm:text-3xl font-bold mb-2">
 							<AnimatedCounter
 								value={10}
 								suffix="x"
 							/>
 						</div>
-						<p className="text-muted-foreground">Growth Mindset</p>
+						<p className="text-gray-300">Growth Mindset</p>
 					</motion.div>
 					<motion.div
-						className="font-sans flex flex-col items-center justify-center"
+						className="font-sans flex flex-col items-center justify-center "
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.8 }}>
-						<DollarSign className="w-7 h-7 mb-1 text-[#85249F]" />
-						<div className="text-2xl sm:text-3xl font-bold mb-2">
+						<svg className="w-7 h-7 mb-1 ">
+							<defs>
+								<linearGradient id="grad">
+									<stop
+										offset="0%"
+										stopColor="#22D2E0"
+									/>
+									<stop
+										offset="100%"
+										stopColor="#85249F"
+									/>
+								</linearGradient>
+							</defs>
+							<DollarSign color="url(#grad)" />
+						</svg>
+						{/* <DollarSign className="w-7 h-7 mb-1 bg-gradient-to-r from-[#22D2E0] to-[#85249F] text-transparent bg-clip-text" /> */}
+						<div className="text-2xl sm:text-3xl font-bold mb-2 text-white ">
 							$
 							<AnimatedCounter
 								value={100}
 								suffix="M+"
 							/>
 						</div>
-						<p className="text-muted-foreground">Portfolio Valuation Target</p>
+						<p className="text-gray-300">Portfolio Valuation Target</p>
 					</motion.div>
 				</div>
 			</motion.div>

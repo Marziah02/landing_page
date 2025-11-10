@@ -68,3 +68,8 @@ All colors MUST be HSL.
 .animate-fadeIn {
 	animation: fadeIn 0.15s ease-out forwards;
 }
+.gradient-icon {
+	background: linear-gradient(90deg, #22d2e0, #85249f);
+	-webkit-background-clip: text;
+	color: transparent;
+}

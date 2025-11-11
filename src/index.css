@@ -1,3 +1,13 @@
+/* 👇 Custom OTF font */
+
+@font-face {
+	font-family: 'MyCustomFont';
+	src: url('@/assets/Robuck Regular.otf') format('opentype');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -73,3 +83,4 @@ All colors MUST be HSL.
 	-webkit-background-clip: text;
 	color: transparent;
 }
+

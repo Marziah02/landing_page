@@ -86,17 +86,20 @@ const HeroSection = () => {
       {/* bg-gradient-to-r from-[#22D2E0] to-[#85249F] bg-clip-text text-transparent */}
       <motion.div className="relative mb-1 md:h-screen  md:p-0 w-full flex justify-center ">
         <motion.h1
+          //   className="m-2 md:mx-12 md:pt-12  font-myfont text-white "
           className="m-2 md:mx-12 md:pt-12  font-myfont text-white "
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           style={{
-            // fontFamily: "MyCustomFont",
+            fontFamily: "Inter",
             fontSize: "100px",
             fontWeight: "900",
             letterSpacing: "-1.68px",
             lineHeight: "74px",
             textAlign: "left",
+            textShadow:
+              "0 0 10px rgba(168, 105, 70, 0.8), 0 0 20px rgba(168, 105, 70, 0.6), 0 0 40px rgba(168, 105, 70, 0.4)", // glowing shadow effect
           }}
         >
           AI Venture Studio

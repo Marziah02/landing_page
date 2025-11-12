@@ -257,7 +257,7 @@ const Header = () => {
 											{ name: "Careers", url: "/careers" },
 											{ name: "Contact", url: "/contact" },
 											// { name: "Products", url: "/products" },
-											{ name: "Products", url: "#" },
+											{ name: "Products", url: "/products" },
 										].map((item) => (
 											<Link
 												key={item.name}

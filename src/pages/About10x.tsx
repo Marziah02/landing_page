@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import herosection from "@/assets/sharedimage.jpeg";
 
 // --- Icon Components (using SVG for single-file compatibility) ---
 
@@ -121,9 +122,10 @@ const HeroSection = () => (
 		<div
 			className="absolute inset-0 bg-cover bg-center"
 			style={{
-				backgroundImage:
-					"url(https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%D&auto=format&fit=crop&w=1974&q=80)", // Blurred office image
-				filter: "blur(4px)",
+				// backgroundImage:
+				// 	"url(https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%D&auto=format&fit=crop&w=1974&q=80)", // Blurred office image
+				backgroundImage: `url(${herosection})`,
+				// filter: "blur(2px)",
 				transform: "scale(1.05)", // Slightly scale to hide blur edges
 			}}></div>
 		<div className="absolute inset-0 bg-black opacity-60"></div> {/* Overlay */}
@@ -148,7 +150,7 @@ const HeroSection = () => (
 // --- 3. Intro Section (Moved content) ---
 const IntroSection = () => (
 	<motion.section
-		className=" text-black md:mt-[100px] pb-12"
+		className=" text-black py-12"
 		initial="hidden"
 		whileInView="visible"
 		viewport={{ once: true, amount: 0.3 }}
@@ -157,7 +159,7 @@ const IntroSection = () => (
 			<motion.h2
 				style={{
 					fontFamily: "Inter",
-					fontSize: "48px",
+					fontSize: "38px",
 					fontWeight: "600",
 					letterSpacing: "-1.68px",
 					lineHeight: "64px",
@@ -165,7 +167,7 @@ const IntroSection = () => (
 				}}
 				// className="text-3xl md:text-5xl font-bold tracking-tighter"
 				variants={itemVariants}>
-				10x Galaxy Ltd | AI Venture Studio
+				10x Galaxy Ltd - AI Venture Studio
 			</motion.h2>
 			<motion.p
 				style={{
@@ -173,7 +175,7 @@ const IntroSection = () => (
 					fontSize: "18px",
 					fontWeight: "400",
 					lineHeight: "38.4px",
-					textAlign: "center",
+					textAlign: "left",
 				}}
 				className="mt-4  text-gray-800 container mx-auto"
 				variants={itemVariants}>
@@ -189,36 +191,72 @@ const IntroSection = () => (
 );
 
 // --- 4. Stats Section ---
+// const stats = [
+// 	{
+// 		value: "10",
+// 		label: "AI Products in development & launch cycle",
+// 	},
+// 	{
+// 		value: "10X",
+// 		label: "ROI Vision embedded in every product",
+// 	},
+// 	{
+// 		value: "5,000+",
+// 		label: "early users and counting",
+// 	},
+// ];
+
 const stats = [
 	{
-		value: "10",
-		label: "AI Products in development & launch cycle",
+		value: "AI SaaS",
+		label:
+			"Designing scalable intelligence platforms that transform how businesses operate and grow.",
 	},
 	{
-		value: "10X",
-		label: "ROI Vision embedded in every product",
+		value: "AGI Systems",
+		label:
+			"Advancing cognitive architectures that explore the next frontier of human–machine intelligence.",
 	},
 	{
-		value: "5,000+",
-		label: "early users and counting",
+		value: "Creative AI",
+		label:
+			"Turning imagination into innovation through expressive, generative technologies.",
+	},
+	{
+		value: "Cognitive Automation",
+		label:
+			"Empowering enterprises with adaptive, self-learning systems that think, act, and evolve autonomously.",
 	},
 ];
 
 const StatsSection = () => (
 	<motion.section
-		className="bg-[#F2F2F2] text-black py-16 sm:py-24"
+		className="bg-[#F2F2F2] text-black py-12 "
 		initial="hidden"
 		whileInView="visible"
 		viewport={{ once: true, amount: 0.3 }}
 		variants={containerVariants}>
 		<div className="max-w-[1600px] mx-auto container">
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-1">
+			<motion.h2
+				style={{
+					fontFamily: "Inter",
+					fontSize: "38px",
+					fontWeight: "600",
+					// letterSpacing: "-1.68px",
+					// lineHeight: "64px",
+					textAlign: "center",
+				}}
+				// className="text-3xl md:text-5xl font-bold tracking-tighter"
+				variants={itemVariants}>
+				The Future We’re Building
+			</motion.h2>
+			<div className="grid grid-cols-1 md:grid-cols-4 gap-1 mt-10">
 				{stats.map((stat) => (
 					<motion.div
 						key={stat.label}
 						variants={itemVariants}
 						className="bg-white p-8 text-center">
-						<span
+						{/* <span
 							className=" text-black"
 							style={{
 								fontFamily: "Inter",
@@ -229,7 +267,10 @@ const StatsSection = () => (
 								textAlign: "center",
 							}}>
 							{stat.value}
-						</span>
+						</span> */}
+						<h3 className="font-sans text-xl font-semibold mb-4">
+							{stat.value}
+						</h3>
 						<p className="mt-2 text-lg text-gray-700 font-sans">{stat.label}</p>
 					</motion.div>
 				))}

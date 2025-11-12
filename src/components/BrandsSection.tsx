@@ -4,6 +4,7 @@ import {
 	Package,
 	Shell,
 	TrendingUp,
+	Earth,
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
@@ -166,7 +167,7 @@ const BrandsSection = () => {
 								suffix="K+"
 							/>
 						</div>
-						<p className="text-gray-300">Subscribers</p>
+						<p className="text-gray-300">Global Users</p>
 					</motion.div>
 					<motion.div
 						className="font-sans flex flex-col items-center justify-center"
@@ -200,7 +201,7 @@ const BrandsSection = () => {
 								suffix="+"
 							/>
 						</div>
-						<p className="text-gray-300">AI Products</p>
+						<p className="text-gray-300">AI & AGI Products</p>
 					</motion.div>
 
 					<motion.div
@@ -261,17 +262,18 @@ const BrandsSection = () => {
 									/>
 								</linearGradient>
 							</defs>
-							<DollarSign stroke="url(#grad)" />
+							<Earth stroke="url(#grad)" />
 						</svg>
 						{/* <DollarSign className="w-7 h-7 mb-1 bg-gradient-to-r from-[#22D2E0] to-[#85249F] text-transparent bg-clip-text" /> */}
 						<div className="text-2xl sm:text-3xl font-bold mb-2 text-white ">
-							$
+							{/* $ */}
 							<AnimatedCounter
-								value={100}
-								suffix="M+"
+								value={50}
+								// suffix="M+"
+								suffix="+"
 							/>
 						</div>
-						<p className="text-gray-300">Portfolio Valuation Target</p>
+						<p className="text-gray-300">Builders in Orbit</p>
 					</motion.div>
 				</div>
 			</motion.div>

@@ -13,6 +13,7 @@ import {
 	TrendingUp,
 	Shell,
 	DollarSign,
+	Earth,
 } from "lucide-react";
 import { useRef, useEffect } from "react";
 import herosection from "@/assets/HeroPage.png";
@@ -87,7 +88,7 @@ const HeroSection = () => {
 			{/* bg-gradient-to-r from-[#22D2E0] to-[#85249F] bg-clip-text text-transparent */}
 			<motion.div className="relative mb-1 md:h-screen  md:p-0 ">
 				<motion.h1
-					className="container mx-auto md:mr-4 xl:mr-9 2xl:mr-14 md:my-12 text-white uppercase"
+					className="container mx-auto md:my-12 text-white uppercase"
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.2 }}

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const OfficeSection = () => {
 	return (
-		<section className="pb-12 md:pt-[100px] max-w-[1600px]  mx-auto bg-background">
+		<section className="pb-12 md:pt-[100px] max-w-[1600px] mx-auto bg-background">
 			<div className="container mx-auto">
 				<motion.img
 					src={officeImage}

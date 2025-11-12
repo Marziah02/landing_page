@@ -129,7 +129,7 @@ const BrandsSection = () => {
              [border-image:linear-gradient(to_right,#22D2E0,#85249F)_1] 
              border-b border-transparent"
 				style={{ backgroundImage: `url(${sky})`, backgroundSize: "cover" }}>
-				<div className="flex justify-between items-center gap-1 h-full text-black mx-2 md:mx-12">
+				<div className="flex justify-between items-center gap-1 h-full text-black  container mx-auto">
 					<motion.div
 						className="font-sans flex flex-col items-center justify-center"
 						initial={{ opacity: 0, y: 20 }}

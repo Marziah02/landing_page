@@ -153,7 +153,7 @@ const IntroSection = () => (
 		whileInView="visible"
 		viewport={{ once: true, amount: 0.3 }}
 		variants={containerVariants}>
-		<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+		<div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
 			<motion.h2
 				style={{
 					fontFamily: "Inter",
@@ -165,7 +165,7 @@ const IntroSection = () => (
 				}}
 				// className="text-3xl md:text-5xl font-bold tracking-tighter"
 				variants={itemVariants}>
-				10x Galaxy Ltd — An AI Venture Studio
+				10x Galaxy Ltd | AI Venture Studio
 			</motion.h2>
 			<motion.p
 				style={{
@@ -175,10 +175,14 @@ const IntroSection = () => (
 					lineHeight: "38.4px",
 					textAlign: "center",
 				}}
-				className="mt-4  text-gray-800 max-w-2xl mx-auto"
+				className="mt-4  text-gray-800 container mx-auto"
 				variants={itemVariants}>
-				We build, launch, and scale AI products that create 10x impact and
-				growth for people and businesses
+				10x Galaxy Ltd is a UK-based AI Venture Studio shaping the evolution of
+				intelligence itself. We build and scale AI and AGI technologies designed
+				to accelerate human progress and unlock exponential potential across
+				industries. Our vision goes beyond automation. We are engineering a
+				future where human creativity and artificial intelligence grow together
+				to power the next great leap in innovation.
 			</motion.p>
 		</div>
 	</motion.section>

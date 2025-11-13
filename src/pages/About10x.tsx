@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import herosection from "@/assets/sharedimage.jpeg";
 
@@ -175,7 +175,7 @@ const IntroSection = () => (
 					fontSize: "18px",
 					fontWeight: "400",
 					lineHeight: "38.4px",
-					textAlign: "left",
+					textAlign: "justify",
 				}}
 				className="mt-4  text-gray-800 container mx-auto"
 				variants={itemVariants}>
@@ -229,14 +229,14 @@ const stats = [
 	},
 ];
 
-const StatsSection = () => (
+const StatsSection = ({ hovered, setHovered }) => (
 	<motion.section
-		className="bg-[#F2F2F2] text-black py-12 "
+		className="bg-[#F2F2F2] text-black "
 		initial="hidden"
 		whileInView="visible"
 		viewport={{ once: true, amount: 0.3 }}
 		variants={containerVariants}>
-		<div className="max-w-[1600px] mx-auto container">
+		<div className="max-w-[1600px] mx-auto container py-12">
 			<motion.h2
 				style={{
 					fontFamily: "Inter",
@@ -250,12 +250,17 @@ const StatsSection = () => (
 				variants={itemVariants}>
 				The Future We’re Building
 			</motion.h2>
-			<div className="grid grid-cols-1 md:grid-cols-4 gap-1 mt-10">
-				{stats.map((stat) => (
+			<div className="grid grid-cols-1 md:grid-cols-4 gap-1 mt-12">
+				{stats.map((stat, index) => (
 					<motion.div
+						onMouseEnter={() => setHovered(index)}
+						onMouseLeave={() => setHovered(-1)}
 						key={stat.label}
 						variants={itemVariants}
-						className="bg-white p-8 text-center">
+						// className="bg-white p-8 text-center"
+						className={`p-8 h-[200px] text-center flex items-center justify-center transition-colors duration-700 ease-in-out cursor-pointer ${
+							hovered === index ? "bg-black" : "bg-white"
+						}`}>
 						{/* <span
 							className=" text-black"
 							style={{
@@ -268,10 +273,16 @@ const StatsSection = () => (
 							}}>
 							{stat.value}
 						</span> */}
-						<h3 className="font-sans text-xl font-semibold mb-4">
-							{stat.value}
-						</h3>
-						<p className="mt-2 text-lg text-gray-700 font-sans">{stat.label}</p>
+						<h2
+							className={`font-sans text-xl font-semibold transition-all duration-700 ease-in-out transform ${
+								hovered === index
+									? "text-white scale-100"
+									: "text-black scale-125"
+							}`}>
+							{hovered === index ? stat.label : stat.value}
+						</h2>
+						{/* <h3 className="font-sans text-xl font-semibold mb-4"></h3>
+						<p className="mt-2 text-lg text-gray-700 font-sans">{stat.label}</p> */}
 					</motion.div>
 				))}
 			</div>
@@ -617,12 +628,16 @@ const CTASection = () => (
 
 // --- Main App Component ---
 export default function About10x() {
+	const [hovered, setHovered] = useState(-1);
 	return (
 		<div className="bg-white font-inter">
 			<main>
 				<HeroSection />
 				<IntroSection /> {/* New section for the main intro text */}
-				<StatsSection />
+				<StatsSection
+					hovered={hovered}
+					setHovered={setHovered}
+				/>
 				<MissionSection />
 				<VisionSection />
 				<ValuesSection />

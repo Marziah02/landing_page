@@ -261,10 +261,22 @@ const StatsSection = ({ hovered, setHovered }) => (
             key={stat.label}
             variants={itemVariants}
             // className="bg-white p-8 text-center"
-            className={`p-8 h-[200px] text-center flex items-center justify-center transition-colors duration-700 ease-in-out cursor-pointer ${
-              hovered === index ? "bg-black" : "bg-white"
+            className={`relative p-8 h-[304px] text-center flex items-center justify-center transition-colors duration-700 ease-in-out cursor-pointer ${
+              hovered === index ? "" : "bg-white"
             }`}
           >
+            {/* {hovered === index && (
+              
+            )} */}
+            <div
+              className={`
+          absolute inset-0 bg-black/80
+          transition-opacity duration-1000 ease-in-out
+          ${hovered === index ? "opacity-100" : "opacity-0"}
+        `}
+            ></div>
+            {/* <div className="absolute inset-0 bg-black opacity-60"></div>{" "} */}
+            {/* Overlay */}
             {/* <span
 							className=" text-black"
 							style={{
@@ -277,7 +289,7 @@ const StatsSection = ({ hovered, setHovered }) => (
 							}}>
 							{stat.value}
 						</span> */}
-            <h2
+            {/* <h2
               className={`font-sans text-xl font-semibold transition-all duration-700 ease-in-out transform ${
                 hovered === index
                   ? "text-white scale-100"
@@ -285,9 +297,20 @@ const StatsSection = ({ hovered, setHovered }) => (
               }`}
             >
               {hovered === index ? stat.label : stat.value}
-            </h2>
+            </h2> */}
+            {hovered === index ? (
+              <p className="font-sans text-lg font-normal transition-all duration-700 ease-in-out transform text-white">
+                {stat.label}
+              </p>
+            ) : (
+              <h2 className="font-sans text-xl font-semibold transition-all duration-700 ease-in-out transform text-black scale-125">
+                {stat.value}
+              </h2>
+            )}
+
             {/* <h3 className="font-sans text-xl font-semibold mb-4"></h3>
 						<p className="mt-2 text-lg text-gray-700 font-sans">{stat.label}</p> */}
+            {/* Overlay */}
           </motion.div>
         ))}
       </div>
@@ -303,12 +326,26 @@ const TargetSection = () => (
     viewport={{ once: true, amount: 0.3 }}
     variants={containerVariants}
   >
-    <section className="pb-12 md:pt-[100px] max-w-[1600px] mx-auto bg-background">
+    <section className=" py-12 max-w-[1600px] mx-auto bg-background">
       <div className="container mx-auto">
+        <motion.h2
+          style={{
+            fontFamily: "Inter",
+            fontSize: "38px",
+            fontWeight: "600",
+            // letterSpacing: "-1.68px",
+            // lineHeight: "64px",
+            textAlign: "center",
+          }}
+          // className="text-3xl md:text-5xl font-bold tracking-tighter"
+          variants={itemVariants}
+        >
+          10x Studio Model- Idea to Interstellar.
+        </motion.h2>
         <motion.img
           src={file1}
           alt="office reception"
-          className="w-full h-auto  object-cover"
+          className="w-full h-auto  object-cover pt-7"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -537,7 +574,7 @@ const ValuesSection = () => (
         {values.map((item, index) => (
           <motion.div
             key={index}
-            className="bg-white p-8"
+            className="bg-white p-8 max-h-[304px]"
             variants={itemVariants}
           >
             <div className="mb-4">{item.icon}</div>
@@ -714,7 +751,7 @@ export default function About10x() {
         <IntroSection /> {/* New section for the main intro text */}
         <StatsSection hovered={hovered} setHovered={setHovered} />
         <TargetSection />
-        <TargetSection2 />
+        {/* <TargetSection2 /> */}
         <MissionSection />
         <VisionSection />
         <ValuesSection />

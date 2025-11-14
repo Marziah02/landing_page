@@ -130,8 +130,8 @@ const Products = () => {
                   textAlign: "left",
                 }}
               >
-                Discover our suite of powerful tools and solutions designed to
-                help you build, grow, and scale your digital presence.
+                Discover the AI platforms we are building to help creators,
+                teams, and businesses grow smarter, faster, and at 10× scale.
               </p>
             </motion.div>
           </div>

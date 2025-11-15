@@ -3,6 +3,10 @@ import { motion } from "framer-motion";
 import herosection from "@/assets/sharedimage.jpeg";
 import file1 from "@/assets/L_Line_1.jpg";
 import file2 from "@/assets/P_Color_1.jpg";
+import about1 from "@/assets/about1.png";
+import about2 from "@/assets/about2.png";
+import about3 from "@/assets/about3.png";
+import about4 from "@/assets/about4.png";
 
 // --- Icon Components (using SVG for single-file compatibility) ---
 
@@ -209,21 +213,25 @@ const IntroSection = () => (
 
 const stats = [
   {
+    icon: about1,
     value: "AI SaaS",
     label:
       "Designing scalable intelligence platforms that transform how businesses operate and grow.",
   },
   {
+    icon: about2,
     value: "AGI Systems",
     label:
       "Advancing cognitive architectures that explore the next frontier of human–machine intelligence.",
   },
   {
+    icon: about3,
     value: "Creative AI",
     label:
       "Turning imagination into innovation through expressive, generative technologies.",
   },
   {
+    icon: about4,
     value: "Cognitive Automation",
     label:
       "Empowering enterprises with adaptive, self-learning systems that think, act, and evolve autonomously.",
@@ -261,7 +269,7 @@ const StatsSection = ({ hovered, setHovered }) => (
             key={stat.label}
             variants={itemVariants}
             // className="bg-white p-8 text-center"
-            className={`relative p-8 h-[304px] text-center flex items-center justify-center transition-colors duration-700 ease-in-out cursor-pointer ${
+            className={`relative p-8 h-[304px] text-center flex flex-col items-center justify-center transition-colors duration-700 ease-in-out cursor-pointer ${
               hovered === index ? "" : "bg-white"
             }`}
           >
@@ -303,9 +311,16 @@ const StatsSection = ({ hovered, setHovered }) => (
                 {stat.label}
               </p>
             ) : (
-              <h2 className="font-sans text-xl font-semibold transition-all duration-700 ease-in-out transform text-black scale-125">
-                {stat.value}
-              </h2>
+              <>
+                <img
+                  src={stat.icon}
+                  alt={stat.value}
+                  className="w-auto h-16 mb-4"
+                />
+                <h2 className="font-sans text-xl font-semibold transition-all duration-700 ease-in-out transform text-black scale-125">
+                  {stat.value}
+                </h2>
+              </>
             )}
 
             {/* <h3 className="font-sans text-xl font-semibold mb-4"></h3>

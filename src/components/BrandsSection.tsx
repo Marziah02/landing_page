@@ -289,10 +289,10 @@ const BrandsSection = () => {
                     : "bg-[#F2F2F2] "
                 } rounded-none flex flex-col`}
               >
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-blue-500/30 opacity-0 group-hover:opacity-40 transition-all duration-1000 animate-spin [animation-duration:8000ms]"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-cyan-500/30 opacity-0 group-hover:opacity-50 transition-all duration-1000 delay-100 animate-spin [animation-duration:6000ms] [animation-direction:reverse]"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-sky-500/30 opacity-0 group-hover:opacity-60 transition-all duration-1000 delay-200 animate-spin [animation-duration:4000ms]"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-indigo-500/30 opacity-0 group-hover:opacity-70 transition-all duration-1000 delay-300 animate-spin [animation-duration:2000ms] [animation-direction:reverse]"></div>
+                <div className="z-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-blue-500/30 opacity-0 group-hover:opacity-40 transition-all duration-1000 animate-spin [animation-duration:8000ms]"></div>
+                <div className="z-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-cyan-500/30 opacity-0 group-hover:opacity-50 transition-all duration-1000 delay-100 animate-spin [animation-duration:6000ms] [animation-direction:reverse]"></div>
+                <div className="z-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-sky-500/30 opacity-0 group-hover:opacity-60 transition-all duration-1000 delay-200 animate-spin [animation-duration:4000ms]"></div>
+                <div className="z-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-indigo-500/30 opacity-0 group-hover:opacity-70 transition-all duration-1000 delay-300 animate-spin [animation-duration:2000ms] [animation-direction:reverse]"></div>
 
                 <div
                   className="mb-4"
@@ -320,10 +320,13 @@ const BrandsSection = () => {
                     {/* {brand.logo} */}
                     {brand.name === "More" ? (
                       <>
-                        <h3 className="font-sans text-2xl font-semibold text-center cursor-pointer bg-gradient-to-br from-[#22D2E0] to-[#85249F] text-transparent bg-clip-text hover:scale-105 transition-transform">
-                          <Link to="/products"> {brand.logo}</Link>
+                        <Link
+                          to="/products"
+                          className="z-10 font-sans text-2xl font-semibold text-center cursor-pointer bg-gradient-to-br from-[#22D2E0] to-[#85249F] text-transparent bg-clip-text hover:scale-105 transition-all "
+                        >
+                          {brand.logo}
                           {/* <Link to="#"> {brand.logo}</Link> */}
-                        </h3>
+                        </Link>
                       </>
                     ) : (
                       <>

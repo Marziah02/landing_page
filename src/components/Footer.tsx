@@ -10,6 +10,7 @@ import {
 import footerlogo from "@/assets/10X_galaxy_line_footer.svg";
 import footerlogoblack from "@/assets/10xlogoblack.svg";
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const Footer = () => {
   const links = [
@@ -74,6 +75,16 @@ const Footer = () => {
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     Photo360.ai
+                  </a>
+                </li>
+                <li>
+                  <a
+                    // target="_blank"
+                    // rel="noopener noreferrer"
+                    href="/products"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+                  >
+                    More <ArrowRight className="w-4 h-4" />
                   </a>
                 </li>
               </ul>
@@ -153,7 +164,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border">
           <p className="text-sm text-muted-foreground">
-            © 2025 10x. All rights reserved.
+            © 2025 10x Galaxy Ltd. All rights reserved.
           </p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link

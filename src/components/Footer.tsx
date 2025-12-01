@@ -78,14 +78,14 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a
+                  <Link
                     // target="_blank"
                     // rel="noopener noreferrer"
-                    href="/products"
+                    to="/products"
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
                   >
                     More <ArrowRight className="w-4 h-4" />
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -94,28 +94,28 @@ const Footer = () => {
               <h4 className="font-semibold mb-4">Company</h4>
               <ul className="space-y-3">
                 <li>
-                  <a
-                    href="/about"
+                  <Link
+                    to="/about"
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/careers"
+                  <Link
+                    to="/careers"
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     Career
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/contact"
+                  <Link
+                    to="/contact"
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -132,12 +132,12 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     Press
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

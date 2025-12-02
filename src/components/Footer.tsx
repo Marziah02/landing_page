@@ -1,10 +1,10 @@
 import {
-  FaXTwitter,
-  FaLinkedinIn,
-  FaYoutube,
-  FaWhatsapp,
-  FaInstagram,
-  FaFacebook,
+	FaXTwitter,
+	FaLinkedinIn,
+	FaYoutube,
+	FaWhatsapp,
+	FaInstagram,
+	FaFacebook,
 } from "react-icons/fa6";
 // import footerlogo from "@/assets/10x_footer_text.svg";
 import footerlogo from "@/assets/10X_galaxy_line_footer.svg";
@@ -13,178 +13,165 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 const Footer = () => {
-  const links = [
-    { icon: <FaXTwitter />, url: "https://twitter.com" },
-    { icon: <FaLinkedinIn />, url: "https://linkedin.com" },
-    { icon: <FaYoutube />, url: "https://youtube.com" },
-    // { icon: <FaWhatsapp />, url: "https://wa.me/880" },
-    { icon: <FaFacebook />, url: "https://www.facebook.com/" },
-    { icon: <FaInstagram />, url: "https://instagram.com" },
-  ];
-  return (
-    <footer className="max-w-[2000px] mx-auto bg-background py-12">
-      <div className="container mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 mb-2">
-          <div>
-            {/* <h3 className="text-2xl font-bold mb-6">10x Galaxy Ltd.</h3> */}
-            <img
-              className="h-10 w-auto"
-              src={footerlogoblack}
-              alt="10x Galaxy Ltd."
-            />
-          </div>
-          <div className="md:flex justify-between gap-12">
-            <div className="mb-6 md:mb-0">
-              <h4 className="font-semibold mb-4">Product</h4>
-              <ul className="space-y-3">
-                <li>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://perfectcode.ai/dashboard"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    PerfectCode.ai
-                  </a>
-                </li>
-                <li>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://dialogsy.ai/"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Dialogsy.ai
-                  </a>
-                </li>
-                <li>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://monalisax.ai/"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    MonaLisaX.Ai
-                  </a>
-                </li>
-                <li>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://photo360.ai/"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Photo360.ai
-                  </a>
-                </li>
-                <li>
-                  <Link
-                    // target="_blank"
-                    // rel="noopener noreferrer"
-                    to="/products"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
-                  >
-                    More <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </li>
-              </ul>
-            </div>
+	const links = [
+		{ icon: <FaXTwitter />, url: "https://twitter.com" },
+		{ icon: <FaLinkedinIn />, url: "https://linkedin.com" },
+		{ icon: <FaYoutube />, url: "https://youtube.com" },
+		// { icon: <FaWhatsapp />, url: "https://wa.me/880" },
+		{ icon: <FaFacebook />, url: "https://www.facebook.com/" },
+		{ icon: <FaInstagram />, url: "https://instagram.com" },
+	];
+	return (
+		<footer className="max-w-[2000px] mx-auto bg-background py-12">
+			<div className="container mx-auto">
+				<div className="grid md:grid-cols-2 gap-12 mb-2">
+					<div>
+						{/* <h3 className="text-2xl font-bold mb-6">10x Galaxy Ltd.</h3> */}
+						<img
+							className="h-10 w-auto"
+							src={footerlogoblack}
+							alt="10x Galaxy Ltd."
+						/>
+					</div>
+					<div className="md:flex justify-between gap-12">
+						<div className="mb-6 md:mb-0">
+							<h4 className="font-semibold mb-4">Product</h4>
+							<ul className="space-y-3">
+								<li>
+									<a
+										target="_blank"
+										rel="noopener noreferrer"
+										href="https://perfectcode.ai/dashboard"
+										className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+										PerfectCode.ai
+									</a>
+								</li>
+								<li>
+									<a
+										target="_blank"
+										rel="noopener noreferrer"
+										href="https://dialogsy.ai/"
+										className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+										Dialogsy.ai
+									</a>
+								</li>
+								<li>
+									<a
+										target="_blank"
+										rel="noopener noreferrer"
+										href="https://monalisax.ai/"
+										className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+										MonaLisaX.Ai
+									</a>
+								</li>
+								<li>
+									<a
+										target="_blank"
+										rel="noopener noreferrer"
+										href="https://photo360.ai/"
+										className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+										Photo360.ai
+									</a>
+								</li>
+								<li>
+									<Link
+										// target="_blank"
+										// rel="noopener noreferrer"
+										to="/products"
+										className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
+										More <ArrowRight className="w-4 h-4" />
+									</Link>
+								</li>
+							</ul>
+						</div>
 
-            <div className="mb-6 md:mb-0">
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    to="/about"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/careers"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Career
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/contact"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
+						<div className="mb-6 md:mb-0">
+							<h4 className="font-semibold mb-4">Company</h4>
+							<ul className="space-y-3">
+								<li>
+									<Link
+										to="/about"
+										className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+										About
+									</Link>
+								</li>
+								<li>
+									<Link
+										to="/careers"
+										className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+										Career
+									</Link>
+								</li>
+								<li>
+									<Link
+										to="/contact"
+										className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+										Contact
+									</Link>
+								</li>
+							</ul>
+						</div>
 
-            <div className="mb-6 md:mb-0">
-              <h4 className="font-semibold mb-4">Resources</h4>
-              <ul className="space-y-3">
-                <li>
-                  <Link
-                    to="/blog"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="#"
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Press
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-end items-end mb-12">
-          <div className="flex flex-col items-start gap-2 text-black">
-            <p className="text-sm font-semibold">Find us on</p>
-            <div className="flex gap-1">
-              {links.map((item, i) => (
-                <a
-                  key={i}
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-neutral-900 hover:bg-neutral-800 w-10 h-10 flex items-center justify-center rounded-md transition-all border border-neutral-700 hover:border-neutral-500 text-2xl text-white"
-                >
-                  {item.icon}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
+						<div className="mb-6 md:mb-0">
+							<h4 className="font-semibold mb-4">Resources</h4>
+							<ul className="space-y-3">
+								<li>
+									<Link
+										to="/blog"
+										className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+										Galaxy Notes
+									</Link>
+								</li>
+								<li>
+									<Link
+										to="#"
+										className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+										Press
+									</Link>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div className="flex justify-end items-end mb-12">
+					<div className="flex flex-col items-start gap-2 text-black">
+						<p className="text-sm font-semibold">Find us on</p>
+						<div className="flex gap-1">
+							{links.map((item, i) => (
+								<a
+									key={i}
+									href={item.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="bg-neutral-900 hover:bg-neutral-800 w-10 h-10 flex items-center justify-center rounded-md transition-all border border-neutral-700 hover:border-neutral-500 text-2xl text-white">
+									{item.icon}
+								</a>
+							))}
+						</div>
+					</div>
+				</div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border">
-          <p className="text-sm text-muted-foreground">
-            © 2025 10x Galaxy Ltd. All rights reserved.
-          </p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <Link
-              to="/privacy-policy"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              to="/terms-and-conditions"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Terms of Service
-            </Link>
-          </div>
-        </div>
-        {/* Large GALAXY Text */}
-        <div className="text-center bg-white py-10 w-full">
-          <section className="text-center w-full">
-            {/* <h1
+				<div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border">
+					<p className="text-sm text-muted-foreground">
+						© 2025 10x Galaxy Ltd. All rights reserved.
+					</p>
+					<div className="flex gap-6 mt-4 md:mt-0">
+						<Link
+							to="/privacy-policy"
+							className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+							Privacy Policy
+						</Link>
+						<Link
+							to="/terms-and-conditions"
+							className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+							Terms of Service
+						</Link>
+					</div>
+				</div>
+				{/* Large GALAXY Text */}
+				<div className="text-center bg-white py-10 w-full">
+					<section className="text-center w-full">
+						{/* <h1
 							className="font-sans text-6xl sm:text-8xl md:text-[10rem] lg:text-[12rem] leading-none tracking-[-0.04em] font-bold text-transparent select-none bg-white"
 							// Responsive font-size: scales nicely across viewports
 							style={{
@@ -197,16 +184,16 @@ const Footer = () => {
 							}}>
 							10x GALAXY
 						</h1> */}
-            <img
-              className="h-full w-auto"
-              src={footerlogo}
-              alt="10x Galaxy Ltd."
-            />
-          </section>
-        </div>
-      </div>
-    </footer>
-  );
+						<img
+							className="h-full w-auto"
+							src={footerlogo}
+							alt="10x Galaxy Ltd."
+						/>
+					</section>
+				</div>
+			</div>
+		</footer>
+	);
 };
 
 export default Footer;

@@ -9,84 +9,93 @@ import blog6 from "@/assets/Blog_6.jpg";
 import blog7 from "@/assets/Blog_7.jpg";
 import blog8 from "@/assets/Blog_8.jpg";
 import blogshero from "@/assets/blogshero.jpg";
+import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 
 // --- Icon Components ---
 const ArrowRight = ({ className }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <line x1="5" y1="12" x2="19" y2="12" />
-    <polyline points="12 5 19 12 12 19" />
-  </svg>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth="2"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		className={className}>
+		<line
+			x1="5"
+			y1="12"
+			x2="19"
+			y2="12"
+		/>
+		<polyline points="12 5 19 12 12 19" />
+	</svg>
 );
 
 const ArrowLeft = ({ className }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <line x1="19" y1="12" x2="5" y2="12" />
-    <polyline points="12 19 5 12 12 5" />
-  </svg>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth="2"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		className={className}>
+		<line
+			x1="19"
+			y1="12"
+			x2="5"
+			y2="12"
+		/>
+		<polyline points="12 19 5 12 12 5" />
+	</svg>
 );
 
 // --- Animation Variants ---
 const containerVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-      delayChildren: 0.2,
-      staggerChildren: 0.1,
-    },
-  },
+	hidden: { opacity: 0, y: 20 },
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			duration: 0.8,
+			ease: "easeOut",
+			delayChildren: 0.2,
+			staggerChildren: 0.1,
+		},
+	},
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
+	hidden: { opacity: 0, y: 20 },
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			duration: 0.8,
+			ease: "easeOut",
+		},
+	},
 };
 
 // --- Blog Post Data (Full Content from Galaxy Note 1-8) ---
 const mockPosts = [
-  {
-    id: 1,
-    title: "AI Will Create More Millionaires Than Any Technology Before It",
-    slug: "galaxy-note-1-ai-millionaires",
-    category: "Wealth Creation",
-    excerpt:
-      "For the first time in human history, wealth creation is no longer controlled by capital or connections. AI gives ordinary people extraordinary leverage.",
-    author: "10x Galaxy Team",
-    date: "Nov 12, 2025",
-    imageUrl: blog1,
-    content: `
+	{
+		id: 1,
+		title: "AI Will Create More Millionaires Than Any Technology Before It",
+		slug: "galaxy-note-1-ai-millionaires",
+		category: "Wealth Creation",
+		excerpt:
+			"For the first time in human history, wealth creation is no longer controlled by capital or connections. AI gives ordinary people extraordinary leverage.",
+		author: "10x Galaxy Team",
+		date: "Oct 12, 2025",
+		imageUrl: blog1,
+		content: `
       <p class="text-xl leading-relaxed font-light text-gray-600 mb-8">For the first time in human history, wealth creation is no longer controlled by capital, connections, or geography. AI has become the first technology that gives ordinary people extraordinary leverage — and this shift will create more millionaires in the next 10 years than the last 50 combined.</p>
       
       <p class="mb-8">AI doesn’t just speed up work — it removes barriers.</p>
@@ -167,18 +176,18 @@ const mockPosts = [
       </ul>
       <p>We are living in the greatest opportunity window of modern history.</p>
     `,
-  },
-  {
-    id: 2,
-    title: "How Tiny Teams Are Building Billion-Dollar AI Products",
-    slug: "galaxy-note-2-tiny-teams",
-    category: "Startups",
-    excerpt:
-      "The question is no longer: 'How big is your team?' It is now: 'How intelligently does your team use AI?'",
-    author: "10x Galaxy Team",
-    date: "Nov 10, 2025",
-    imageUrl: blog2,
-    content: `
+	},
+	{
+		id: 2,
+		title: "How Tiny Teams Are Building Billion-Dollar AI Products",
+		slug: "galaxy-note-2-tiny-teams",
+		category: "Startups",
+		excerpt:
+			"The question is no longer: 'How big is your team?' It is now: 'How intelligently does your team use AI?'",
+		author: "10x Galaxy Team",
+		date: "Feb 10, 2025",
+		imageUrl: blog2,
+		content: `
       <p class="text-xl leading-relaxed font-light text-gray-600 mb-8">For the first time in history, a team of just <strong>2–5 people</strong> can build a global company that competes with giants — not because they work harder, but because they work with <strong>AI as a force multiplier</strong>.</p>
       <p class="mb-8">The world has shifted. The question is no longer: "How big is your team?" It is now: "How intelligently does your team use AI?"</p>
 
@@ -249,18 +258,18 @@ const mockPosts = [
       <p class="mb-4">Size no longer wins. Speed wins. AI wins.</p>
       <p>Tiny AI-powered teams are building the future — and the next billion-dollar products will come from <strong>unstoppable micro-teams</strong> that move at the speed of AI.</p>
     `,
-  },
-  {
-    id: 3,
-    title: "Why Every Business Will Use an AI Agent Soon",
-    slug: "galaxy-note-3-ai-agents",
-    category: "Automation",
-    excerpt:
-      "An AI agent is not a tool. It is a digital employee — working 24/7, never getting tired, never forgetting anything.",
-    author: "10x Galaxy Team",
-    date: "Nov 08, 2025",
-    imageUrl: blog3,
-    content: `
+	},
+	{
+		id: 3,
+		title: "Why Every Business Will Use an AI Agent Soon",
+		slug: "galaxy-note-3-ai-agents",
+		category: "Automation",
+		excerpt:
+			"An AI agent is not a tool. It is a digital employee — working 24/7, never getting tired, never forgetting anything.",
+		author: "10x Galaxy Team",
+		date: "Nov 08, 2024",
+		imageUrl: blog3,
+		content: `
       <p class="text-xl leading-relaxed font-light text-gray-600 mb-8">Ten years ago, every business needed a website. Five years ago, every business needed social media. Today, every business — no matter the size — will need an <strong>AI agent</strong>.</p>
       <p class="mb-4">Not because it’s trendy, but because it will be impossible to compete without one. An AI agent is not a tool. It is <strong>a digital employee</strong> — working 24/7, never getting tired, never forgetting anything.</p>
       <p class="mb-8">Businesses that adopt AI agents will scale. Businesses that don’t… will fall behind.</p>
@@ -306,18 +315,18 @@ const mockPosts = [
       <p class="mb-4">The era of manual operations is ending. The future belongs to businesses that use AI agents as teammates — always available, always improving, always working.</p>
       <p>Every business will use an AI agent. The only question is: when?</p>
     `,
-  },
-  {
-    id: 4,
-    title: "The Rise of AI Product Builders",
-    slug: "galaxy-note-4-product-builders",
-    category: "Development",
-    excerpt:
-      "A decade ago, building software demanded developers. Today, AI Product Builders turn ideas directly into working software.",
-    author: "10x Galaxy Team",
-    date: "Nov 05, 2025",
-    imageUrl: blog4,
-    content: `
+	},
+	{
+		id: 4,
+		title: "The Rise of AI Product Builders",
+		slug: "galaxy-note-4-product-builders",
+		category: "Development",
+		excerpt:
+			"A decade ago, building software demanded developers. Today, AI Product Builders turn ideas directly into working software.",
+		author: "10x Galaxy Team",
+		date: "Sep 05, 2024",
+		imageUrl: blog4,
+		content: `
       <p class="text-xl leading-relaxed font-light text-gray-600 mb-8">A decade ago, building software demanded developers, designers, testers, funding, and months of planning. Today, <strong>AI Product Builders</strong> have collapsed that entire process — turning ideas directly into working software.</p>
       <p class="mb-8">AI Product Builders don’t just write code. They <strong>design</strong>, <strong>structure</strong>, <strong>assemble</strong>, and often <strong>deploy</strong> entire products automatically. This is one of the biggest shifts in technology and entrepreneurship.</p>
 
@@ -376,18 +385,18 @@ const mockPosts = [
       <p class="mb-4">The next global startups will be built by solo founders, small squads, and AI-first companies.</p>
       <p>We are entering an era of instant creation, powered by AI Product Builders.</p>
     `,
-  },
-  {
-    id: 5,
-    title: "Synthetic AI: How Machines Think Differently Than Humans",
-    slug: "galaxy-note-5-synthetic-ai",
-    category: "Intelligence",
-    excerpt:
-      "Synthetic AI is not just faster than humans. It thinks differently. Humans think biologically; AI thinks computationally.",
-    author: "10x Galaxy Team",
-    date: "Nov 01, 2025",
-    imageUrl: blog5,
-    content: `
+	},
+	{
+		id: 5,
+		title: "Synthetic AI: How Machines Think Differently Than Humans",
+		slug: "galaxy-note-5-synthetic-ai",
+		category: "Intelligence",
+		excerpt:
+			"Synthetic AI is not just faster than humans. It thinks differently. Humans think biologically; AI thinks computationally.",
+		author: "10x Galaxy Team",
+		date: "Jul 01, 2024",
+		imageUrl: blog5,
+		content: `
       <p class="text-xl leading-relaxed font-light text-gray-600 mb-8">Synthetic AI is not just faster than humans. It doesn’t simply automate tasks. It <strong>thinks differently</strong>.</p>
       <p class="mb-4">Humans think biologically. AI thinks computationally. This difference is creating a new class of intelligence — one that does not replace humans but operates in a completely different dimension of <strong>reasoning, speed, and creativity</strong>.</p>
 
@@ -445,18 +454,18 @@ const mockPosts = [
       <p class="mb-4">Human intuition + Synthetic reasoning = The future of innovation.</p>
       <p class="mb-4">Businesses, creators, and founders who understand this partnership will lead the next decade. The world now belongs to those who know how to <strong>think with AI</strong>, not against it.</p>
     `,
-  },
-  {
-    id: 6,
-    title: "The Story Behind 10x Galaxy",
-    slug: "galaxy-note-6-story",
-    category: "Company Vision",
-    excerpt:
-      "10x Galaxy did not begin as a company. It began as a realization that the world was shifting.",
-    author: "10x Galaxy Team",
-    date: "Oct 28, 2025",
-    imageUrl: blog6,
-    content: `
+	},
+	{
+		id: 6,
+		title: "The Story Behind 10x Galaxy",
+		slug: "galaxy-note-6-story",
+		category: "Company Vision",
+		excerpt:
+			"10x Galaxy did not begin as a company. It began as a realization that the world was shifting.",
+		author: "10x Galaxy Team",
+		date: "Jun 28, 2024",
+		imageUrl: blog6,
+		content: `
       <h3 class="text-2xl font-bold mt-8 mb-4">1. The Real Beginning</h3>
       <p class="mb-4">10x Galaxy did not begin as a company. It began as a realization.</p>
       <p class="mb-4">The world was shifting:</p>
@@ -528,18 +537,18 @@ const mockPosts = [
       <p class="mb-4">10x Galaxy is evolving into a <strong>global AI Venture Studio</strong>, creating the next generation of intelligent platforms.</p>
       <p class="mb-4">The coming era will include AGI tools, autonomous agents, micro-SaaS systems, and auto-building AI platforms. 10x Galaxy is positioned not just to participate in this new age — but to <strong>lead it</strong>.</p>
     `,
-  },
-  {
-    id: 7,
-    title: "Why AI Will Never Fully Replace Human Creativity",
-    slug: "galaxy-note-7-human-creativity",
-    category: "Philosophy",
-    excerpt:
-      "AI can generate music and paintings, but it cannot replicate the full depth of the human soul expressed through ideas.",
-    author: "10x Galaxy Team",
-    date: "Oct 25, 2025",
-    imageUrl: blog7,
-    content: `
+	},
+	{
+		id: 7,
+		title: "Why AI Will Never Fully Replace Human Creativity",
+		slug: "galaxy-note-7-human-creativity",
+		category: "Philosophy",
+		excerpt:
+			"AI can generate music and paintings, but it cannot replicate the full depth of the human soul expressed through ideas.",
+		author: "10x Galaxy Team",
+		date: "May 25, 2024",
+		imageUrl: blog7,
+		content: `
       <p class="text-xl leading-relaxed font-light text-gray-600 mb-8">AI can generate music, paintings, stories, designs — even entire products. But no matter how advanced it becomes, AI will never <strong>fully replace</strong> human creativity.</p>
       <p class="mb-4">Why? Because creativity is not just the process of producing something new. Creativity is <strong>emotion, intention, context, memory, experience, intuition, and the human soul</strong> expressed through ideas.</p>
       <p class="mb-8">AI can assist. AI can amplify. AI can accelerate. But AI cannot replicate the full depth of the human creative engine.</p>
@@ -583,18 +592,18 @@ const mockPosts = [
       <p class="mb-4">The future of creativity is not competition. It is <strong>collaboration</strong>.</p>
       <p>Humans will imagine. AI will accelerate. Together, they will build the next era of innovation.</p>
     `,
-  },
-  {
-    id: 8,
-    title: "How AI Can Make Solo Entrepreneurs Billionaires",
-    slug: "galaxy-note-8-solo-billionaires",
-    category: "Wealth Creation",
-    excerpt:
-      "The billionaire equation has changed. A single person can now build what once required factories, offices, and supply chains.",
-    author: "10x Galaxy Team",
-    date: "Oct 20, 2025",
-    imageUrl: blog8,
-    content: `
+	},
+	{
+		id: 8,
+		title: "How AI Can Make Solo Entrepreneurs Billionaires",
+		slug: "galaxy-note-8-solo-billionaires",
+		category: "Wealth Creation",
+		excerpt:
+			"The billionaire equation has changed. A single person can now build what once required factories, offices, and supply chains.",
+		author: "10x Galaxy Team",
+		date: "Apr 20, 2024",
+		imageUrl: blog8,
+		content: `
       <p class="text-xl leading-relaxed font-light text-gray-600 mb-8">For the first time in history, a <strong>single person</strong> can build what once required a full development team, a marketing department, a customer support center, and a finance and operations unit.</p>
       <p class="mb-4">AI transforms solo entrepreneurs into <strong>full-scale companies</strong>, operating with the power of 20–50 employees — without hiring anyone.</p>
       <p class="mb-8">This shift doesn’t just increase income. It makes it possible for individuals to reach <strong>massive wealth</strong>, even billionaire-level outcomes.</p>
@@ -668,304 +677,291 @@ const mockPosts = [
       <p class="mb-4">Solo entrepreneurs who learn to use AI, launch fast, automate, and scale globally will create the next generation of <strong>self-made millionaires and billionaires</strong>.</p>
       <p>The future belongs to the individuals who build at <strong>10× speed</strong> in the AI era.</p>
     `,
-  },
+	},
 ];
 
 const POSTS_PER_PAGE = 6;
 
 // --- 2. Blog Hero Section ---
 const BlogHeroSection = () => (
-  <motion.section
-    className="relative bg-black text-white py-24 sm:py-32 lg:py-40 flex items-center justify-center overflow-hidden"
-    initial="hidden"
-    animate="visible"
-    variants={containerVariants}
-  >
-    <div
-      className="absolute inset-0 bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${blogshero})`, // filter: "blur(6px) brightness(0.7)",
-        filter: "brightness(0.7)",
-        transform: "scale(1.05)",
-      }}
-    ></div>
-    <div className="absolute inset-0 bg-black opacity-50"></div> {/* Overlay */}
-    <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <motion.h1
-        className="text-5xl md:text-7xl font-bold tracking-tighter"
-        variants={itemVariants}
-      >
-        Galaxy Notes
-      </motion.h1>
-      {/* <motion.p
+	<motion.section
+		className="relative bg-black text-white py-24 sm:py-32 lg:py-40 flex items-center justify-center overflow-hidden"
+		initial="hidden"
+		animate="visible"
+		variants={containerVariants}>
+		<div
+			className="absolute inset-0 bg-cover bg-center"
+			style={{
+				backgroundImage: `url(${blogshero})`, // filter: "blur(6px) brightness(0.7)",
+				filter: "brightness(0.7)",
+				transform: "scale(1.05)",
+			}}></div>
+		<div className="absolute inset-0 bg-black opacity-50"></div> {/* Overlay */}
+		<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<motion.h1
+				className="text-5xl md:text-7xl font-bold tracking-tighter"
+				variants={itemVariants}>
+				Galaxy Notes
+			</motion.h1>
+			{/* <motion.p
         className="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto"
         variants={itemVariants}
       >
         Our thoughts on AI, product, and building 10x ventures.
       </motion.p> */}
-    </div>
-  </motion.section>
+		</div>
+	</motion.section>
 );
 
 // --- 3. Blog List Section ---
 const BlogListSection = ({ onPostClick }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(mockPosts.length / POSTS_PER_PAGE);
+	const [currentPage, setCurrentPage] = useState(1);
+	const totalPages = Math.ceil(mockPosts.length / POSTS_PER_PAGE);
 
-  // Get posts for the current page
-  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
-  const currentPosts = mockPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
+	// Get posts for the current page
+	const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+	const currentPosts = mockPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
-  const handlePageChange = (page) => {
-    if (page < 1 || page > totalPages) return; // Boundary check
-    setCurrentPage(page);
-    window.scrollTo(0, 0); // Scroll to top on page change
-  };
+	const handlePageChange = (page) => {
+		if (page < 1 || page > totalPages) return; // Boundary check
+		setCurrentPage(page);
+		window.scrollTo(0, 0); // Scroll to top on page change
+	};
 
-  return (
-    <motion.section
-      className="bg-[#F2F2F2] text-black py-16 sm:py-24"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
-      variants={containerVariants}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          key={currentPage} // Add key to force re-animation on page change
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {currentPosts.map((post) => (
-            <motion.div
-              key={post.id}
-              variants={itemVariants}
-              className="bg-white rounded-xl shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer group"
-              onClick={() => onPostClick(post)}
-            >
-              <div className="relative overflow-hidden h-48">
-                <img
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  src={post.imageUrl}
-                  alt={`Featured image for ${post.title}`}
-                  onError={(e) => {
-                    e.target.src =
-                      "https://placehold.co/600x400/F2F2F2/000000?text=Image+Error";
-                  }}
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <p className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">
-                  {post.category}
-                </p>
-                <h3 className="text-xl font-bold text-black mb-3 line-clamp-2 group-hover:text-blue-700 transition-colors">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 text-sm flex-grow line-clamp-3 mb-4">
-                  {post.excerpt}
-                </p>
-                <div className="mt-auto flex items-center text-sm font-semibold text-black group-hover:translate-x-1 transition-transform">
-                  Read Article
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </div>
-              </div>
-              <div className="px-6 py-4 border-t border-gray-100 flex justify-between items-center text-xs text-gray-400">
-                <span>{post.author}</span>
-                <span>{post.date}</span>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+	return (
+		<motion.section
+			className="bg-[#F2F2F2] text-black py-16 sm:py-24"
+			initial="hidden"
+			whileInView="visible"
+			viewport={{ once: true, amount: 0.1 }}
+			variants={containerVariants}>
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<motion.div
+					key={currentPage} // Add key to force re-animation on page change
+					className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+					variants={containerVariants}
+					initial="hidden"
+					animate="visible">
+					{currentPosts.map((post) => (
+						<motion.div
+							key={post.id}
+							variants={itemVariants}
+							className="bg-white rounded-xl shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer group"
+							onClick={() => onPostClick(post)}>
+							<div className="relative overflow-hidden h-48">
+								<img
+									className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+									src={post.imageUrl}
+									alt={`Featured image for ${post.title}`}
+									onError={(e) => {
+										e.target.src =
+											"https://placehold.co/600x400/F2F2F2/000000?text=Image+Error";
+									}}
+								/>
+								<div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+							</div>
+							<div className="p-6 flex flex-col flex-grow">
+								<p className="text-xs font-bold bg-gradient-to-br from-[#22D2E0] to-[#85249F] bg-clip-text text-transparent uppercase tracking-wider mb-2">
+									{post.category}
+								</p>
+								<h3
+									className="text-xl font-bold text-black mb-3 line-clamp-2 group-hover:bg-gradient-to-br group-hover:from-[#22D2E0] group-hover:to-[#85249F]
+             group-hover:bg-clip-text group-hover:text-transparent transition-colors">
+									{post.title}
+								</h3>
+								<p className="text-gray-600 text-sm flex-grow line-clamp-3 mb-4">
+									{post.excerpt}
+								</p>
+								<div className="mt-auto flex items-center text-sm font-semibold text-black group-hover:translate-x-1 transition-transform">
+									Read Note
+									<ArrowRight className="w-4 h-4 ml-2" />
+								</div>
+							</div>
+							<div className="px-6 py-4 border-t border-gray-100 flex justify-between items-center text-xs text-gray-400">
+								<span>{post.author}</span>
+								<span>{post.date}</span>
+							</div>
+						</motion.div>
+					))}
+				</motion.div>
 
-        {/* --- Pagination Controls --- */}
-        {totalPages > 1 && (
-          <div className="mt-16 flex justify-center items-center space-x-2">
-            {/* Previous Button */}
-            <button
-              onClick={() => handlePageChange(currentPage - 1)}
-              disabled={currentPage === 1}
-              className="px-4 py-2 rounded-lg bg-white text-black border border-gray-200 hover:bg-gray-100 font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" /> Prev
-            </button>
+				{/* --- Pagination Controls --- */}
+				{totalPages > 1 && (
+					<div className="mt-16 flex justify-center items-center space-x-2">
+						{/* Previous Button */}
+						<button
+							onClick={() => handlePageChange(currentPage - 1)}
+							disabled={currentPage === 1}
+							className="px-4 py-2 rounded-lg bg-white text-black border border-gray-200 hover:bg-gray-100 font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center">
+							<ArrowLeft className="w-4 h-4 mr-2" /> Prev
+						</button>
 
-            {/* Page Number Buttons */}
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <button
-                key={page}
-                onClick={() => handlePageChange(page)}
-                className={`w-10 h-10 rounded-lg flex items-center justify-center font-medium transition-colors ${
-                  currentPage === page
-                    ? "bg-black text-white"
-                    : "bg-white text-black border border-gray-200 hover:bg-gray-100"
-                }`}
-              >
-                {page}
-              </button>
-            ))}
+						{/* Page Number Buttons */}
+						{Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+							<button
+								key={page}
+								onClick={() => handlePageChange(page)}
+								className={`w-10 h-10 rounded-lg flex items-center justify-center font-medium transition-colors ${
+									currentPage === page
+										? "bg-black text-white"
+										: "bg-white text-black border border-gray-200 hover:bg-gray-100"
+								}`}>
+								{page}
+							</button>
+						))}
 
-            {/* Next Button */}
-            <button
-              onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
-              className="px-4 py-2 rounded-lg bg-white text-black border border-gray-200 hover:bg-gray-100 font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
-            >
-              Next <ArrowRight className="w-4 h-4 ml-2" />
-            </button>
-          </div>
-        )}
-      </div>
-    </motion.section>
-  );
+						{/* Next Button */}
+						<button
+							onClick={() => handlePageChange(currentPage + 1)}
+							disabled={currentPage === totalPages}
+							className="px-4 py-2 rounded-lg bg-white text-black border border-gray-200 hover:bg-gray-100 font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center">
+							Next <ArrowRight className="w-4 h-4 ml-2" />
+						</button>
+					</div>
+				)}
+			</div>
+		</motion.section>
+	);
 };
 
 // --- 4. Blog Post Page Component ---
 const BlogPostPage = ({ post, onBackClick }) => (
-  <main className="bg-white min-h-screen">
-    {/* Post Header */}
-    <motion.section
-      className="bg-black text-white pt-32 pb-16 sm:pt-40 sm:pb-24 relative overflow-hidden"
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-    >
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-25"
-        style={{
-          backgroundImage: `url(${post.imageUrl})`,
-          //   filter: "blur(20px)",
-        }}
-      ></div>
-      {/* <div className="absolute inset-0 bg-black opacity-60"></div>{" "} */}
-      {/* Overlay */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div variants={itemVariants}>
-          <button
-            onClick={onBackClick}
-            className="inline-flex items-center text-sm font-medium text-gray-300 hover:text-white mb-8 transition-colors bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to All Posts
-          </button>
-        </motion.div>
+	<main className="bg-white min-h-screen">
+		{/* Post Header */}
+		<motion.section
+			className="bg-black text-white pt-32 pb-16 sm:pt-40 sm:pb-24 relative overflow-hidden"
+			initial="hidden"
+			animate="visible"
+			variants={containerVariants}>
+			<div
+				className="absolute inset-0 bg-cover bg-center opacity-25"
+				style={{
+					backgroundImage: `url(${post.imageUrl})`,
+					//   filter: "blur(20px)",
+				}}></div>
+			{/* <div className="absolute inset-0 bg-black opacity-60"></div>{" "} */}
+			{/* Overlay */}
+			<div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<motion.div variants={itemVariants}>
+					<button
+						onClick={onBackClick}
+						className="inline-flex items-center text-sm font-medium text-gray-300 hover:text-white mb-8 transition-colors bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
+						<ArrowLeft className="w-4 h-4 mr-2" />
+						Back to All Notes
+					</button>
+				</motion.div>
 
-        <motion.span
-          className="inline-block px-3 py-1 rounded text-xs font-bold bg-blue-600 text-white uppercase tracking-wider mb-6"
-          variants={itemVariants}
-        >
-          {post.category}
-        </motion.span>
+				<motion.span
+					className="inline-block px-3 py-1 rounded text-xs font-bold bg-blue-600 text-white uppercase tracking-wider mb-6"
+					variants={itemVariants}>
+					{post.category}
+				</motion.span>
 
-        <motion.h1
-          className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6"
-          variants={itemVariants}
-        >
-          {post.title}
-        </motion.h1>
+				<motion.h1
+					className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6"
+					variants={itemVariants}>
+					{post.title}
+				</motion.h1>
 
-        <motion.div
-          className="flex items-center justify-center space-x-4 text-gray-300 text-sm md:text-base"
-          variants={itemVariants}
-        >
-          <span className="font-medium text-white">{post.author}</span>
-          <span className="w-1 h-1 bg-gray-500 rounded-full"></span>
-          <span>{post.date}</span>
-          <span className="w-1 h-1 bg-gray-500 rounded-full"></span>
-          <span>5 min read</span>
-        </motion.div>
-      </div>
-    </motion.section>
+				<motion.div
+					className="flex items-center justify-center space-x-4 text-gray-300 text-sm md:text-base"
+					variants={itemVariants}>
+					<span className="font-medium text-white">{post.author}</span>
+					<span className="w-1 h-1 bg-gray-500 rounded-full"></span>
+					<span>{post.date}</span>
+					<span className="w-1 h-1 bg-gray-500 rounded-full"></span>
+					<span>5 min read</span>
+				</motion.div>
+			</div>
+		</motion.section>
 
-    {/* Post Content */}
-    <motion.section
-      className="relative -mt-10 z-20 pb-24"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
-      variants={containerVariants}
-    >
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100"
-          variants={itemVariants}
-        >
-          {/* Article Content */}
-          <div
-            className="prose prose-lg prose-headings:font-bold prose-headings:text-black prose-p:text-gray-600 prose-a:text-blue-600 prose-blockquote:border-l-black prose-blockquote:bg-gray-50 prose-blockquote:py-2 prose-blockquote:pr-4 prose-li:text-gray-600 max-w-none"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+		{/* Post Content */}
+		<motion.section
+			className="relative -mt-10 z-20 pb-24"
+			initial="hidden"
+			whileInView="visible"
+			viewport={{ once: true, amount: 0.1 }}
+			variants={containerVariants}>
+			<div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+				<motion.div
+					className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100"
+					variants={itemVariants}>
+					{/* Article Content */}
+					<div
+						className="prose prose-lg prose-headings:font-bold prose-headings:text-black prose-p:text-gray-600 prose-a:text-blue-600 prose-blockquote:border-l-black prose-blockquote:bg-gray-50 prose-blockquote:py-2 prose-blockquote:pr-4 prose-li:text-gray-600 max-w-none"
+						dangerouslySetInnerHTML={{ __html: post.content }}
+					/>
 
-          {/* Footer / Share / Back */}
-          <div className="mt-16 pt-8 border-t border-gray-100 flex justify-between items-center">
-            <button
-              onClick={onBackClick}
-              className="text-gray-500 hover:text-black font-semibold flex items-center transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Blog
-            </button>
-            <div className="flex space-x-4">
-              {/* Social Placeholders */}
-              <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-foreground cursor-pointer transition-colors">
-                <svg
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                </svg>
-              </div>
-              <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-foreground hover:text-white cursor-pointer transition-colors">
-                <svg
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </motion.section>
-  </main>
+					{/* Footer / Share / Back */}
+					<div className="mt-16 pt-8 border-t border-gray-100 flex justify-between items-center">
+						<button
+							onClick={onBackClick}
+							className="text-gray-500 hover:text-black font-semibold flex items-center transition-colors">
+							<ArrowLeft className="w-4 h-4 mr-2" />
+							Back to Note
+						</button>
+						<div className="flex space-x-4">
+							{/* Social Placeholders */}
+							<div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-foreground cursor-pointer transition-colors">
+								{/* <svg
+									width="16"
+									height="16"
+									fill="currentColor"
+									viewBox="0 0 24 24">
+									<path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+								</svg> */}
+								<FaXTwitter />
+							</div>
+							<div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-foreground hover:text-white cursor-pointer transition-colors">
+								{/* <svg
+									width="16"
+									height="16"
+									fill="currentColor"
+									viewBox="0 0 24 24">
+									<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+								</svg> */}
+								<FaLinkedinIn />
+							</div>
+						</div>
+					</div>
+				</motion.div>
+			</div>
+		</motion.section>
+	</main>
 );
 
 // --- Main App Component ---
 export default function Blogs() {
-  const [view, setView] = useState("list"); // 'list' or 'post'
-  const [selectedPost, setSelectedPost] = useState(null);
+	const [view, setView] = useState("list"); // 'list' or 'post'
+	const [selectedPost, setSelectedPost] = useState(null);
 
-  const handlePostClick = (post) => {
-    setSelectedPost(post);
-    setView("post");
-    window.scrollTo(0, 0);
-  };
+	const handlePostClick = (post) => {
+		setSelectedPost(post);
+		setView("post");
+		window.scrollTo(0, 0);
+	};
 
-  const handleBackClick = () => {
-    setSelectedPost(null);
-    setView("list");
-    window.scrollTo(0, 0);
-  };
+	const handleBackClick = () => {
+		setSelectedPost(null);
+		setView("list");
+		window.scrollTo(0, 0);
+	};
 
-  return (
-    <div className="bg-white font-sans antialiased">
-      {view === "list" && (
-        <main>
-          <BlogHeroSection />
-          <BlogListSection onPostClick={handlePostClick} />
-        </main>
-      )}
+	return (
+		<div className="bg-white font-sans antialiased">
+			{view === "list" && (
+				<main>
+					<BlogHeroSection />
+					<BlogListSection onPostClick={handlePostClick} />
+				</main>
+			)}
 
-      {view === "post" && (
-        <BlogPostPage post={selectedPost} onBackClick={handleBackClick} />
-      )}
-    </div>
-  );
+			{view === "post" && (
+				<BlogPostPage
+					post={selectedPost}
+					onBackClick={handleBackClick}
+				/>
+			)}
+		</div>
+	);
 }

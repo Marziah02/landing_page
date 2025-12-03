@@ -1,0 +1,918 @@
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import {
+  Download,
+  Mail,
+  Globe,
+  ArrowRight,
+  Menu,
+  X,
+  ExternalLink,
+  ChevronRight,
+  Newspaper,
+  Layers,
+  Image as ImageIcon,
+  MessageSquare,
+  BookOpen,
+  Mic,
+  Briefcase,
+  Puzzle,
+  Rocket,
+} from "lucide-react";
+import presshero from "@/assets/pressher.png";
+import storyMaster from "@/assets/StoryMaster_black.svg";
+import photo360 from "@/assets/Photo360_black.svg";
+import perfectcode from "@/assets/PerfectCode_black.svg";
+import meetingpilot from "@/assets/MeetingPilot_black.svg";
+import dialogsy from "@/assets/Dialogsy_icon_black.svg";
+import logo from "@/assets/10X_Logo_color.svg";
+
+const Press = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Handle scroll for navbar transparency
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // --- ANIMATION VARIANTS ---
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        delayChildren: 0.2,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+  // --------------------------
+
+  // --- DOWNLOAD FUNCTIONALITY ---
+  const handleDownload = (type) => {
+    let content = "";
+    let filename = "";
+    let mimeType = "text/plain";
+
+    switch (type) {
+      case "logo":
+        content = "/10X_Logo_color.svg";
+        filename = "10x-galaxy-logo.svg";
+        mimeType = "image/svg+xml";
+        break;
+      case "colors":
+        // Creates a JSON file with color codes
+        content = JSON.stringify(
+          {
+            primary: "#FFFFFF",
+            secondary: "#000000",
+            accent_gradient_start: "#22D2E0",
+            accent_gradient_end: "#85249F",
+            gray_light: "#F2F2F2",
+            gray_dark: "#F8F9FA",
+          },
+          null,
+          2
+        );
+        filename = "10x-brand-colors.json";
+        mimeType = "application/json";
+        break;
+      case "typography":
+        // Creates a text file for typography info
+        content = `10x Galaxy Brand Fonts\n\nHeadlines: Inter\nBody: Inter\n\nGoogle Fonts Links:\n- https://fonts.google.com/specimen/Inter`;
+        filename = "10x-typography.txt";
+        break;
+      case "kit":
+      default:
+        // Creates a dummy text file representing the full kit
+        content = `10x Galaxy Media Kit\n\nThis is a placeholder file for the full media kit.`;
+        filename = "10x-media-kit.txt";
+        break;
+    }
+
+    const blob = new Blob([content], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+  // ------------------------------
+
+  // Data from "10x Press.docx" and "Product Fact Sheet Card.docx"
+  const announcements = [
+    {
+      label: "Studio Update",
+      title: "10x Galaxy - AI Venture Studio Is Live",
+      body: "Launching our multi-product AI ecosystem.",
+      color: "text-gray-900",
+      bg: "bg-gray-100",
+      border: "border-gray-200",
+      more: "Learn more",
+    },
+    {
+      label: "Product Update",
+      title: "Dialogsy.ai is Growing Fast",
+      body: "Our smart AI chatbot platform is gaining traction.",
+      color: "text-gray-900",
+      bg: "bg-gray-100",
+      border: "border-gray-200",
+      more: "Learn more",
+    },
+    {
+      label: "Investment Update",
+      title: "Global Interest in 10x Galaxy Portfolio",
+      body: "Strong early signals across our AGI roadmap.",
+      color: "text-gray-900",
+      bg: "bg-gray-100",
+      border: "border-gray-200",
+      more: "Learn more",
+    },
+    {
+      label: "Coming Soon",
+      title: "New AI Products Arriving Soon",
+      body: "PerfectCode.ai, StoryMaster.ai, and more in pipeline.",
+      color: "text-gray-900",
+      bg: "bg-gray-100",
+      border: "border-gray-200",
+      more: "Explore products",
+    },
+  ];
+
+  const products = [
+    {
+      name: "PerfectCode.ai",
+      tagline: "AI Code & Product Builder",
+      launch: "2025",
+      features: ["AI code assistant", "App builder from prompts"],
+      useCases: "Developers, founders, agencies",
+      summary:
+        "PerfectCode.ai helps users write code and build full apps using natural language.",
+      icon: <Layers className="w-6 h-6" />,
+      img: perfectcode,
+    },
+    {
+      name: "Dialogsy.ai",
+      tagline: "AI Chatbot Builder",
+      launch: "2025",
+      features: [
+        "No-code chatbot builder",
+        "Omnichannel messaging",
+        "Auto-reply workflows",
+      ],
+      useCases: "Customer support, e-commerce, automation",
+      summary:
+        "Dialogsy.ai enables businesses to build and automate conversations across web, WhatsApp, FB, and social channels with AI.",
+      icon: <MessageSquare className="w-6 h-6" />,
+      img: dialogsy,
+    },
+    {
+      name: "StoryMaster.ai",
+      tagline: "AI Book Creator",
+      launch: "Coming 2026",
+      features: [
+        "AI story writing",
+        "Book outline & chapter generation",
+        "Multi-language support",
+      ],
+      useCases: "Authors, content creators, students",
+      summary:
+        "StoryMaster.ai helps users create full books, stories, and manuscripts using advanced creative intelligence models.",
+      icon: <BookOpen className="w-6 h-6" />,
+      img: storyMaster,
+    },
+    {
+      name: "Photo360.ai",
+      tagline: "AI Image Enhancement",
+      launch: "2025",
+      features: ["Background removal", "Upscaling", "Image enhancement"],
+      useCases: "Photography, e-commerce, media, design",
+      summary:
+        "Photo360.ai enhances, restores, and transforms images using high-quality custom AI models.",
+      icon: <ImageIcon className="w-6 h-6" />,
+      img: photo360,
+    },
+    {
+      name: "MonaLisaX.ai",
+      tagline: "AI Art Engine",
+      launch: "2025",
+      features: [
+        "AI photo-to-art",
+        "Artistic style transfers",
+        "High-resolution output",
+      ],
+      useCases: "Artists, creators, social media, design",
+      summary:
+        "MonaLisaX.ai turns any photo into stunning digital artwork using advanced generative models.",
+      icon: <ExternalLink className="w-6 h-6" />, // Placeholder icon
+    },
+    {
+      name: "MeetingPilot.ai",
+      tagline: "AI Meeting Intelligence",
+      launch: "Coming 2026",
+      features: ["Meeting notes", "Action items", "Summary generation"],
+      useCases: "Teams, founders, agencies, organizations",
+      summary:
+        "MeetingPilot.ai captures, summarizes, and organizes meeting conversations with AI-powered accuracy.",
+      icon: <Mic className="w-6 h-6" />,
+      img: meetingpilot,
+    },
+    {
+      name: "SalesBeeCRM.ai",
+      tagline: "AI CRM",
+      launch: "Coming 2026",
+      features: ["Lead tracking", "Smart follow-ups", "Pipeline automation"],
+      useCases: "Sales teams, founders, agencies",
+      summary:
+        "SalesBeeCRM.ai is an AI-driven CRM designed to automate tracking, engagement, and sales workflows.",
+      icon: <Briefcase className="w-6 h-6" />,
+    },
+    {
+      name: "ExtensionLab.ai",
+      tagline: "AI Browser Extensions",
+      launch: "Upcoming",
+      features: [
+        "Productivity extensions",
+        "On-page AI tools",
+        "Smart automation",
+      ],
+      useCases: "Daily productivity, browsing automation",
+      summary:
+        "ExtensionLab.ai offers AI-powered browser extensions that simplify workflows and boost productivity.",
+      icon: <Puzzle className="w-6 h-6" />,
+    },
+    {
+      name: "FunnelBee",
+      tagline: "AI GTM & Launch Engine",
+      launch: "Coming 2026",
+      features: [
+        "GTM planning",
+        "Funnel builder",
+        "Distribution engine",
+        "Launch automation",
+      ],
+      useCases: "Startups, marketers, creators",
+      summary:
+        "FunnelBee is an AI-powered GTM and funnel automation engine that helps teams launch, distribute, and scale products faster.",
+      icon: <Rocket className="w-6 h-6" />,
+    },
+  ];
+
+  const mediaLogos = [
+    "TechCrunch",
+    "Wired",
+    "VentureBeat",
+    "MIT Tech Review",
+    "Forbes",
+    "Bloomberg",
+  ];
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  return (
+    <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-gray-200">
+      {/* Inject Fonts */}
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        
+        .font-grotesk { font-family: 'Space Grotesk', sans-serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        .bg-grid-pattern {
+          background-size: 40px 40px;
+          background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                            linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+        }
+        
+        .clean-card {
+          background: #FFFFFF;
+          border: 1px solid #E5E7EB;
+          transition: all 0.3s ease;
+        }
+        
+        .clean-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+          border-color: #D1D5DB;
+        }
+      `,
+        }}
+      />
+
+      {/* Navigation */}
+      {/* <nav
+        className={`fixed w-full z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-white/90 backdrop-blur-md border-b border-gray-100 py-4"
+            : "bg-transparent py-6"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#22D2E0] to-[#85249F] flex items-center justify-center">
+              <span className="font-grotesk font-bold text-lg text-white">
+                10x
+              </span>
+            </div>
+            <span className="font-grotesk font-bold text-xl tracking-tight text-black">
+              Galaxy
+            </span>
+          </div>
+
+          <div className="hidden md:flex items-center gap-8 font-inter text-sm text-gray-500">
+            <a href="#" className="hover:text-black transition-colors">
+              Studio
+            </a>
+            <a href="#" className="hover:text-black transition-colors">
+              Portfolio
+            </a>
+            <a href="#" className="text-black font-medium">
+              Press
+            </a>
+            <a href="#" className="hover:text-black transition-colors">
+              Contact
+            </a>
+            <button
+              onClick={() => handleDownload("kit")}
+              className="px-4 py-2 rounded-full bg-black hover:bg-gray-800 text-white transition-all cursor-pointer"
+            >
+              Media Kit
+            </button>
+          </div>
+
+          <button
+            className="md:hidden text-black"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
+
+        
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 py-6 px-6 flex flex-col gap-4 shadow-lg">
+            <a href="#" className="text-gray-600 hover:text-black">
+              Studio
+            </a>
+            <a href="#" className="text-gray-600 hover:text-black">
+              Portfolio
+            </a>
+            <a href="#" className="text-black font-medium">
+              Press
+            </a>
+            <a href="#" className="text-gray-600 hover:text-black">
+              Contact
+            </a>
+          </div>
+        )}
+      </nav> */}
+
+      {/* Hero Section */}
+      <motion.section
+        className="relative bg-black text-white py-24 sm:py-32 lg:py-40 flex items-center justify-center overflow-hidden"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${presshero})`, // filter: "blur(6px) brightness(0.7)",
+            filter: "brightness(0.7)",
+            transform: "scale(1.05)",
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
+        {/* Overlay */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h1
+            className="text-5xl md:text-7xl font-bold tracking-tighter"
+            variants={itemVariants}
+          >
+            Press Hub
+          </motion.h1>
+          {/* <motion.p
+        className="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto"
+        variants={itemVariants}
+      >
+        Our thoughts on AI, product, and building 10x ventures.
+      </motion.p> */}
+        </div>
+      </motion.section>
+      <motion.section
+        className="relative py-20 overflow-hidden bg-white"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
+        <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none"></div>
+
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8  text-center z-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-50 border border-gray-200 mb-6">
+            <span className="w-2 h-2 rounded-full bg-black animate-pulse"></span>
+            <span className="text-xs font-inter text-gray-600 uppercase tracking-wider">
+              Official Press Hub
+            </span>
+          </div>
+
+          <h1
+            style={{
+              fontFamily: "Inter",
+              fontSize: "38px",
+              fontWeight: "600",
+              letterSpacing: "-1.68px",
+              lineHeight: "64px",
+              textAlign: "center",
+            }}
+            className="mb-4 leading-tight text-black"
+          >
+            Press & Media Headquarters
+          </h1>
+
+          <p
+            style={{
+              fontFamily: "Inter",
+              fontSize: "18px",
+              fontWeight: "400",
+              lineHeight: "38.4px",
+              textAlign: "justify",
+            }}
+            className=" text-gray-600 mx-auto mb-10 leading-relaxed text-justify"
+          >
+            Welcome to the official press and media headquarters of 10x Galaxy.
+            Here you’ll find our latest announcements, product releases, media
+            coverage, founder interviews, and brand assets. For press inquiries,
+            collaborations, or speaking opportunities, our communications team
+            is ready to assist.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button className="w-full sm:w-auto px-8 py-3 rounded-full bg-black text-white font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 cursor-pointer">
+              <Newspaper className="w-4 h-4" />
+              Latest News
+            </button>
+            <button
+              onClick={() => handleDownload("kit")}
+              className="w-full sm:w-auto px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-50 transition-colors border border-gray-200 flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <Download className="w-4 h-4" />
+              Download Media Kit
+            </button>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Section 1: Latest Announcements */}
+      <motion.section
+        className="py-20 bg-[#F8F9FA] border-y border-gray-100"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={containerVariants}
+      >
+        <div className=" relative container mx-auto px-4 sm:px-6 lg:px-8  z-10">
+          <h2
+            style={{
+              fontFamily: "Inter",
+              fontSize: "38px",
+              fontWeight: "600",
+              letterSpacing: "-1.68px",
+              lineHeight: "64px",
+              textAlign: "center",
+            }}
+            className="mb-12 leading-tight text-black"
+            // className="text-3xl font-bold mb-12 flex items-center gap-3 text-black"
+          >
+            Latest Announcements
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
+            {announcements.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-6  hover:shadow-lg transition-all duration-300 cursor-pointer group"
+              >
+                <div
+                  className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 bg-gray-100 text-gray-800 border border-gray-200`}
+                >
+                  {item.label}
+                </div>
+                <h3 className="font-inter text-xl font-bold mb-3 text-black group-hover:opacity-70 transition-opacity">
+                  {item.title}
+                </h3>
+                <p className="font-inter text-sm text-gray-500 mb-6 leading-relaxed">
+                  {item.body}
+                </p>
+                <div className="flex items-center gap-2 text-sm font-medium text-black group-hover:translate-x-1 transition-transform">
+                  {item.more} <ArrowRight className="w-4 h-4" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Section 2: What is 10x Galaxy */}
+      <motion.section
+        className="py-24  bg-white relative overflow-hidden"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={containerVariants}
+      >
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2
+              style={{
+                fontFamily: "Inter",
+                fontSize: "38px",
+                fontWeight: "600",
+                letterSpacing: "-1.68px",
+                lineHeight: "64px",
+                textAlign: "left",
+              }}
+              className="mb-6 text-black"
+            >
+              Building the Interstellar
+              <br />
+              Future of AI
+            </h2>
+            <div className="font-inter text-gray-600 space-y-6 text-lg leading-relaxed">
+              <p>
+                <strong className="text-black">10x Galaxy Ltd.</strong> is a
+                UK-based AI Venture Studio creating, launching, and scaling a
+                portfolio of AI and AGI-driven products. Our work spans creative
+                intelligence, automation, and cognitive systems designed to
+                accelerate human progress.
+              </p>
+              <p>
+                Our studio model advances product development from idea to
+                interstellar - enabling rapid validation, high-speed execution,
+                and scalable global launches.
+              </p>
+              <p>
+                Through platforms such as PerfectCode.ai, Dialogsy.ai, and a
+                growing suite of technologies, 10x Galaxy is building the next
+                generation of intelligent tools that empower entrepreneurs,
+                creators, and modern businesses worldwide.
+              </p>
+            </div>
+          </div>
+          <div className="relative">
+            {/* Abstract Visual Representation of a Studio */}
+            <div className="relative w-full aspect-square max-w-md mx-auto">
+              <div className="relative z-10 grid grid-cols-2 gap-4">
+                <div className="bg-white border border-gray-200 shadow-sm p-6  mt-12">
+                  <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mb-4 text-black">
+                    <Layers />
+                  </div>
+                  <div className="font-bold text-lg text-black">
+                    Venture Studio
+                  </div>
+                  <div className="text-sm text-gray-500 mt-2">
+                    Rapid Execution
+                  </div>
+                </div>
+                <div className="bg-white border border-gray-200 shadow-sm p-6 ">
+                  <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mb-4 text-black">
+                    <Globe />
+                  </div>
+                  <div className="font-bold text-lg text-black">
+                    Global Scale
+                  </div>
+                  <div className="text-sm text-gray-500 mt-2">
+                    Worldwide Reach
+                  </div>
+                </div>
+                <div className="bg-white border border-gray-200 shadow-sm p-6 ">
+                  <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mb-4 text-black">
+                    <Briefcase />
+                  </div>
+                  <div className=" font-bold text-lg text-black">Portfolio</div>
+                  <div className="text-sm text-gray-500 mt-2">
+                    Diverse AI Tools
+                  </div>
+                </div>
+                <div className="bg-white border border-gray-200 shadow-sm p-6 mt-[-3rem] rounded-t-2xl">
+                  <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mb-4 text-black">
+                    <Rocket />
+                  </div>
+                  <div className=" font-bold text-lg text-black">Launchpad</div>
+                  <div className="text-sm text-gray-500 mt-2">GTM Engine</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Section 3: Media Coverage */}
+      <motion.section
+        className="py-16 bg-[#F2F2F2]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={containerVariants}
+      >
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center">
+          <p className="font-inter text-sm text-gray-500 mb-8 uppercase tracking-widest">
+            Targeted Global Outreach
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-60">
+            {mediaLogos.map((logo, index) => (
+              <span
+                key={index}
+                className="font-inter text-2xl font-bold text-gray-400 hover:text-black transition-colors cursor-default"
+              >
+                {logo}
+              </span>
+            ))}
+          </div>
+          <p className="font-inter text-xs text-gray-400 mt-8">
+            Logos shown represent upcoming outreach targets for the 10x Galaxy
+            portfolio.
+          </p>
+        </div>
+      </motion.section>
+
+      {/* Section 5: Product Fact Sheets */}
+      <motion.section
+        className="py-20 bg-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={containerVariants}
+      >
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          <div className="mb-16">
+            <h2
+              style={{
+                fontFamily: "Inter",
+                fontSize: "38px",
+                fontWeight: "600",
+                letterSpacing: "-1.68px",
+                lineHeight: "64px",
+                textAlign: "center",
+              }}
+              className="mb-4 text-black"
+            >
+              Product Fact Sheets
+            </h2>
+            <p
+              style={{
+                fontFamily: "Inter",
+                fontSize: "18px",
+                fontWeight: "400",
+                lineHeight: "38.4px",
+                textAlign: "center",
+              }}
+              className="text-gray-500"
+            >
+              Detailed insights into our portfolio companies. Use these
+              summaries for press coverage and citations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {products.map((product, index) => (
+              <div key={index} className="clean-card  p-8 group">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="p-3 bg-gray-50 rounded-xl text-black border border-gray-100">
+                    {product.img ? (
+                      <>
+                        {" "}
+                        <img
+                          className="h-6 w-auto"
+                          src={product.img}
+                          alt="icon"
+                        />
+                      </>
+                    ) : (
+                      product.icon
+                    )}
+                    {/* {product.icon} */}
+                  </div>
+                  <span
+                    className={`text-xs font-medium px-2 py-1 rounded border ${
+                      product.launch.includes("Coming") ||
+                      product.launch.includes("Upcoming")
+                        ? "bg-gray-50 border-gray-200 text-gray-500"
+                        : "bg-black text-white border-black"
+                    }`}
+                  >
+                    Launch: {product.launch}
+                  </span>
+                </div>
+
+                <h3 className="font-sans text-2xl font-bold mb-1 text-black">
+                  {product.name}
+                </h3>
+                <p className="text-sm text-gray-500 mb-4 font-medium">
+                  {product.tagline}
+                </p>
+
+                <p className="text-gray-600 text-sm mb-6 leading-relaxed border-b border-gray-100 pb-6">
+                  {product.summary}
+                </p>
+
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-xs uppercase tracking-wider text-gray-400 mb-2 font-semibold">
+                      Key Features
+                    </h4>
+                    <ul className="text-sm text-gray-600 space-y-1">
+                      {product.features.map((feature, i) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-black"></span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-xs uppercase tracking-wider text-gray-400 mb-2 font-semibold">
+                      Use Cases
+                    </h4>
+                    <p className="text-sm text-gray-600">{product.useCases}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Section 4: Brand Assets */}
+      <motion.section
+        className="py-20 bg-[#F8F9FA]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={containerVariants}
+      >
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6">
+            <div>
+              <h2
+                style={{
+                  fontFamily: "Inter",
+                  fontSize: "38px",
+                  fontWeight: "600",
+                  letterSpacing: "-1.68px",
+                  lineHeight: "64px",
+                  textAlign: "left",
+                }}
+                className=" mb-2 text-black"
+              >
+                Brand Assets
+              </h2>
+              <p className="text-gray-500">
+                Download official logos, color palettes, and typography
+                guidelines.
+              </p>
+            </div>
+            <button
+              onClick={() => handleDownload("kit")}
+              className="px-6 py-3 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 self-start md:self-auto cursor-pointer"
+            >
+              <Download className="w-4 h-4" />
+              Download Full Media Kit
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3">
+            {/* Logo Asset */}
+            <div className="clean-card p-8 flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-gray-100 border border-gray-200 rounded-full flex items-center justify-center mb-2">
+                <img src={logo} alt="" className="w-10 h-10" />
+                {/* <span className="font-grotesk font-bold text-white">10x</span> */}
+              </div>
+              <h3 className="font-bold font-inter mb-2 text-black">
+                Logos & Icons
+              </h3>
+              <p className="text-sm text-gray-500 mb-6">
+                Light and Dark variations in SVG/PNG.
+              </p>
+              <button
+                onClick={() => handleDownload("logo")}
+                className="text-sm text-black hover:opacity-70 font-medium flex items-center gap-1 transition-opacity cursor-pointer"
+              >
+                Download <Download className="w-3 h-3" />
+              </button>
+            </div>
+
+            {/* Colors Asset */}
+            <div className="clean-card p-8 flex flex-col items-center text-center">
+              <div className="flex gap-2 mb-8 mt-2">
+                <div className="w-8 h-8 rounded-full bg-black border border-gray-200"></div>
+                <div className="w-8 h-8 rounded-full bg-white border border-gray-200"></div>
+                <div className="w-8 h-8 rounded-full bg-gray-400"></div>
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#22D2E0] to-[#85249F]"></div>
+              </div>
+              <h3 className="font-bold font-inter mb-2 text-black">
+                Brand Colors
+              </h3>
+              <p className="text-sm text-gray-500 mb-6">
+                Primary palette and monochrome.
+              </p>
+              <button
+                onClick={() => handleDownload("colors")}
+                className="text-sm text-black hover:opacity-70 font-medium flex items-center gap-1 transition-opacity cursor-pointer"
+              >
+                Download <Download className="w-3 h-3" />
+              </button>
+            </div>
+
+            {/* Typography Asset */}
+            <div className="clean-card p-8 flex flex-col items-center text-center">
+              <div className="mb-6 mt-1">
+                <div className="font-inter text-2xl font-bold text-black">
+                  Aa
+                </div>
+                <div className="font-inter text-sm text-gray-400">
+                  Inter & Sans
+                </div>
+              </div>
+              <h3 className="font-bold font-inter mb-2 text-black">
+                Typography
+              </h3>
+              <p className="text-sm text-gray-500 mb-6">
+                Font files and usage guidelines.
+              </p>
+              <button
+                onClick={() => handleDownload("typography")}
+                className="text-sm text-black hover:opacity-70 font-medium flex items-center gap-1 transition-opacity cursor-pointer"
+              >
+                Download <Download className="w-3 h-3" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Section 6: Contact */}
+      <motion.footer
+        className="py-20  bg-white border-b border-gray-100"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={containerVariants}
+      >
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center">
+          <div className="w-16 h-16 mx-auto bg-gray-50 rounded-2xl flex items-center justify-center mb-8 text-black border border-gray-100">
+            <Mail className="w-8 h-8" />
+          </div>
+          <h2 className="font-inter text-3xl font-bold mb-4 text-black">
+            Press & Media Contact
+          </h2>
+          <p className="text-gray-500 mb-8 max-w-lg mx-auto">
+            For press inquiries, collaborations, or speaking opportunities, our
+            communications team is ready to assist.
+          </p>
+
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-10 font-inter text-sm">
+            <div className="flex items-center gap-2 text-gray-600">
+              <Mail className="w-4 h-4 text-black" />
+              info@10xgalaxy.com
+            </div>
+            <div className="flex items-center gap-2 text-gray-600">
+              <Globe className="w-4 h-4 text-black" />
+              London, United Kingdom
+            </div>
+          </div>
+
+          <a
+            href="mailto:info@10xgalaxy.com"
+            className="px-8 py-4 bg-black rounded-full text-white font-bold hover:shadow-lg transition-all hover:-translate-y-1"
+          >
+            Send Media Request
+          </a>
+        </div>
+      </motion.footer>
+    </div>
+  );
+};
+
+export default Press;

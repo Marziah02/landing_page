@@ -17,6 +17,7 @@ import Blogs from "./pages/Blogs";
 
 import NotFound from "./pages/NotFound";
 import { P } from "node_modules/framer-motion/dist/types.d-BJcRxCew";
+import Press from "./pages/Press";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/products" element={<Products />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/blog" element={<Blogs />} />
+            <Route path="/press" element={<Press />} />
             <Route
               path="/terms-and-conditions"
               element={<TermsAndConditions />}

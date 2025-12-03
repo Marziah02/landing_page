@@ -910,7 +910,7 @@ const BlogPostPage = ({ post, onBackClick }) => (
                 className="text-white hover:text-gray-300 font-semibold flex items-center transition-colors"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Note
+                Back to all notes
               </button>
               <div className="flex space-x-4">
                 {/* Social Placeholders */}

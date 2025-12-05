@@ -432,7 +432,7 @@ const Header = () => {
                   >
                     {[
                       { name: "Galaxy Notes", url: "/blog" },
-                      { name: "Press", url: "/press" },
+                      { name: "Brand Media Hub", url: "/brand-media-hub" },
                     ].map((item) => (
                       <Link
                         key={item.name}

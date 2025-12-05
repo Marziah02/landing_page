@@ -133,10 +133,10 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to="/press"
+                    to="/brand-media-hub"
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    Press
+                    Brand Media Hub
                   </Link>
                 </li>
               </ul>

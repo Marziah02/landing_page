@@ -1142,7 +1142,7 @@ https://fonts.google.com/specimen/Inter
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
             {products.map((product, index) => (
               <div key={index} className="clean-card  p-8 group">
                 <div className="flex items-start justify-between mb-6">

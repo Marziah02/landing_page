@@ -21,6 +21,8 @@ import {
   Check,
   X as CloseIcon,
   Copy,
+  MapPin,
+  Phone,
 } from "lucide-react";
 import presshero from "@/assets/pressher.png";
 import storyMaster from "@/assets/StoryMaster_black.svg";
@@ -29,8 +31,16 @@ import perfectcode from "@/assets/PerfectCode_black.svg";
 import meetingpilot from "@/assets/MeetingPilot_black.svg";
 import dialogsy from "@/assets/Dialogsy_icon_black.svg";
 import logo from "@/assets/10X_Logo_color.svg";
+import contactpress from "@/assets/contactpress.jpeg";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedinIn,
+  FaXTwitter,
+  FaYoutube,
+} from "react-icons/fa6";
 
 // brand assets list-----------------
 
@@ -190,7 +200,29 @@ const LogoCard = ({ title, variant, imageUrl, imageDownloadUrl }) => (
   </div>
 );
 
+const LogoCardWord = ({ title, variant, imageUrl, imageDownloadUrl }) => (
+  <div className="flex flex-col border border-slate-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
+    <div className="mb-8 flex  items-center justify-center  bg-slate-50/50 border border-slate-100 border-dashed">
+      <LogoPreview variant={variant} imageUrl={imageUrl} />
+    </div>
+    <div className="flex items-center justify-center border-t border-slate-100">
+      {/* <h3 className="text-lg font-semibold text-slate-900">{title}</h3> */}
+      <h3 className="text-base font-semibold text-slate-900 flex items-center gap-2 pt-4">
+        {title}
+      </h3>
+    </div>
+  </div>
+);
+
 // brand assets list-----------------
+const links = [
+  { icon: <FaXTwitter />, url: "https://twitter.com" },
+  { icon: <FaLinkedinIn />, url: "https://linkedin.com" },
+  { icon: <FaYoutube />, url: "https://youtube.com" },
+  // { icon: <FaWhatsapp />, url: "https://wa.me/880" },
+  { icon: <FaFacebook />, url: "https://www.facebook.com/" },
+  { icon: <FaInstagram />, url: "https://instagram.com" },
+];
 
 const Press = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -653,6 +685,14 @@ https://fonts.google.com/specimen/Inter
     "Forbes",
     "Bloomberg",
   ];
+  // Create a quadrupled list for smoother infinite scrolling on large screens
+  const marqueeLogos = [
+    ...mediaLogos,
+    ...mediaLogos,
+    ...mediaLogos,
+    ...mediaLogos,
+  ];
+
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -959,7 +999,7 @@ https://fonts.google.com/specimen/Inter
             {announcements.map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-6  hover:shadow-lg transition-all duration-300 cursor-pointer group"
+                className="bg-white p-6  hover:shadow-lg transition-all duration-300 cursor-pointer group h-[410px] flex flex-col justify-center items-start"
               >
                 <div
                   className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 bg-gray-100 text-gray-800 border border-gray-200`}
@@ -989,8 +1029,8 @@ https://fonts.google.com/specimen/Inter
         viewport={{ once: true }}
         variants={containerVariants}
       >
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:items-start items-center">
+          <div className="">
             <h2
               style={{
                 fontFamily: "Inter",
@@ -1002,9 +1042,10 @@ https://fonts.google.com/specimen/Inter
               }}
               className="mb-6 text-black"
             >
-              Building the Interstellar
+              {/* Building the Interstellar
               <br />
-              Future of AI
+              Future of AI */}
+              What Is 10x Galaxy Ltd.?
             </h2>
             <div className="font-inter text-gray-600 space-y-6 text-lg leading-relaxed">
               <p>
@@ -1027,10 +1068,10 @@ https://fonts.google.com/specimen/Inter
               </p>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative ">
             {/* Abstract Visual Representation of a Studio */}
-            <div className="relative w-full aspect-square max-w-md mx-auto">
-              <div className="relative z-10 grid grid-cols-2 gap-4">
+            <div className="relative w-full aspect-square max-w-md mx-auto h-full">
+              <div className="relative z-10 grid grid-cols-2 gap-4 h-full">
                 <div className="bg-white border border-gray-200 shadow-sm p-6  mt-12">
                   <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mb-4 text-black">
                     <Layers />
@@ -1062,12 +1103,12 @@ https://fonts.google.com/specimen/Inter
                     Diverse AI Tools
                   </div>
                 </div>
-                <div className="bg-white border border-gray-200 shadow-sm p-6 mt-[-3rem] rounded-t-2xl">
+                <div className="bg-black border border-gray-200 shadow-sm p-6 mt-[-3rem] rounded-t-2xl">
                   <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mb-4 text-black">
                     <Rocket />
                   </div>
-                  <div className=" font-bold text-lg text-black">Launchpad</div>
-                  <div className="text-sm text-gray-500 mt-2">GTM Engine</div>
+                  <div className=" font-bold text-lg text-white">Launchpad</div>
+                  <div className="text-sm text-white mt-2">GTM Engine</div>
                 </div>
               </div>
             </div>
@@ -1087,7 +1128,7 @@ https://fonts.google.com/specimen/Inter
           <p className="font-inter text-sm text-gray-500 mb-8 uppercase tracking-widest">
             Targeted Global Outreach
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-60">
+          {/* <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-60">
             {mediaLogos.map((logo, index) => (
               <span
                 key={index}
@@ -1096,6 +1137,32 @@ https://fonts.google.com/specimen/Inter
                 {logo}
               </span>
             ))}
+          </div> */}
+
+          {/* Marquee Container */}
+          <div className="relative w-full overflow-hidden">
+            {/* Gradient Masks */}
+            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#F2F2F2] to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#F2F2F2] to-transparent z-10 pointer-events-none"></div>
+
+            <motion.div
+              className="flex items-center gap-16 w-max"
+              animate={{ x: "-25%" }} // Move by 1/4th since we quadrupled the list
+              transition={{
+                duration: 30,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+            >
+              {marqueeLogos.map((logo, index) => (
+                <span
+                  key={index}
+                  className="font-inter text-3xl font-bold text-black hover:text-gray-500 transition-colors cursor-default whitespace-nowrap"
+                >
+                  {logo}
+                </span>
+              ))}
+            </motion.div>
           </div>
           <p className="font-inter text-xs text-gray-400 mt-8">
             Logos shown represent upcoming outreach targets for the 10x Galaxy
@@ -1385,7 +1452,7 @@ https://fonts.google.com/specimen/Inter
 Use spacing equal to the height of the “X” on all sides."
                 />
 
-                <div className="relative flex items-center overflow-hidden">
+                <div className="relative flex items-center justify-center overflow-hidden">
                   {/* Grid Background */}
                   {/* <div
 										className="absolute inset-0 opacity-[0.03]"
@@ -1525,7 +1592,7 @@ Use these colors to maintain visual consistency across all touchpoints."
                 </div> */}
                 {/* NEW SECTION: COLOR PALETTE */}
                 <motion.section
-                  className=" bg-[#F8F9FA] border-y border-gray-100"
+                  className=" bg-[#F8F9FA] "
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
@@ -1654,6 +1721,34 @@ Modern, clean, and optimized for clarity across digital interfaces."
                   description="The 10x Galaxy wordmark reflects acceleration, intelligence, and exponential growth.
 Its angled “X” symbolizes forward motion and breakthrough innovation."
                 />
+                <div className="grid gap-1 md:grid-cols-2 lg:grid-cols-4">
+                  <LogoCardWord
+                    title="Gradient Core Version"
+                    variant="full"
+                    imageUrl="/brand/10xgalaxy_logo_primary/10xGalaxy_Logo_Primary_Gradient.jpg"
+                    imageDownloadUrl="/brand/10xgalaxy_logo_primary/10xGalaxy_Logo_Primary_Gradient.svg"
+                  />
+
+                  <LogoCardWord
+                    title="Monochrome Version"
+                    variant="icon"
+                    imageUrl="/brand/10xgalaxy_logo_primary/10xGalaxy_Logo_Primary_Black.jpg"
+                    imageDownloadUrl="/brand/10xgalaxy_logo_primary/10xGalaxy_Logo_Primary_Black.svg"
+                  />
+                  <LogoCardWord
+                    title="Dark Mode Version"
+                    variant="icon"
+                    imageUrl="/brand/10xgalaxy_logo_outline/10xGalaxy_Logo_Outline_Gradient.jpg"
+                    imageDownloadUrl="/brand/10xgalaxy_logo_outline/10xGalaxy_Logo_Outline_Gradient.svg"
+                  />
+
+                  <LogoCardWord
+                    title="Outline Version"
+                    variant="icon"
+                    imageUrl="/brand/10xgalaxy_logo_outline/10xGalaxy_Logo_Outline_Black.jpg"
+                    imageDownloadUrl="/brand/10xgalaxy_logo_outline/10xGalaxy_Logo_Outline_Black.svg"
+                  />
+                </div>
               </section>
             </main>
           </div>
@@ -1670,18 +1765,28 @@ Its angled “X” symbolizes forward motion and breakthrough innovation."
         variants={containerVariants}
       >
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center">
-          <div className="w-16 h-16 mx-auto bg-gray-50 rounded-2xl flex items-center justify-center mb-8 text-black border border-gray-100">
+          {/* <div className="w-16 h-16 mx-auto bg-gray-50 rounded-2xl flex items-center justify-center mb-8 text-black border border-gray-100">
             <Mail className="w-8 h-8" />
-          </div>
-          <h2 className="font-inter text-3xl font-bold mb-4 text-black">
+          </div> */}
+          <h2
+            style={{
+              fontFamily: "Inter",
+              fontSize: "38px",
+              fontWeight: "600",
+              letterSpacing: "-1.68px",
+              lineHeight: "64px",
+              textAlign: "center",
+            }}
+            className=" text-black"
+          >
             Press & Media Contact
           </h2>
-          <p className="text-gray-500 mb-8 max-w-lg mx-auto">
+          {/* <p className="text-gray-500 mb-8 max-w-lg mx-auto">
             For press inquiries, collaborations, or speaking opportunities, our
             communications team is ready to assist.
-          </p>
+          </p> */}
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-10 font-inter text-sm">
+          {/* <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-10 font-inter text-sm">
             <div className="flex items-center gap-2 text-gray-600">
               <Mail className="w-4 h-4 text-black" />
               info@10xgalaxy.com
@@ -1690,14 +1795,127 @@ Its angled “X” symbolizes forward motion and breakthrough innovation."
               <Globe className="w-4 h-4 text-black" />
               London, United Kingdom
             </div>
-          </div>
+          </div> */}
 
-          <a
+          {/* <a
             href="mailto:info@10xgalaxy.com"
             className="px-8 py-4 bg-black rounded-full text-white font-bold hover:shadow-lg transition-all hover:-translate-y-1"
           >
             Send Media Request
-          </a>
+          </a> */}
+
+          <motion.section
+            className="bg-white text-black font-sans mt-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={containerVariants}
+          >
+            <div className="">
+              {/* Re-ordered grid: form on left for lg+, info on right */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                {/* Left Column (Now Form on large screens) */}
+                <motion.div
+                  variants={itemVariants}
+                  className="bg-[#F2F2F2] p-8 md:p-12 rounded-xl lg:order-1 h-screen shadow-lg font-sans relative bg-cover bg-center inset-0" // Form on left
+                  style={{
+                    backgroundImage: `url(${contactpress})`, // Blurred office/desk image
+                    // filter: "blur(8px)",
+                    // transform: "scale(1.05)",
+                  }}
+                >
+                  {/* <img src={contactpress} alt="" className="object" /> */}
+                </motion.div>
+
+                {/* Right Column (Now Info on large screens) */}
+                <motion.div
+                  variants={itemVariants}
+                  className="lg:order-2 bg-[#F2F2F2] p-8 md:p-12 rounded-xl h-screen shadow-lg font-sans text-start"
+                >
+                  {" "}
+                  {/* Info on right */}
+                  <h2 className="font-sans text-3xl md:text-4xl font-bold tracking-tighter text-black">
+                    We'd Love to Hear from You
+                  </h2>
+                  <p className="font-sans mt-4 text-base text-gray-700 leading-relaxed">
+                    For press inquiries, collaborations, or speaking
+                    opportunities, our communications team is ready to assist.
+                  </p>
+                  <div className="mt-12 space-y-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#F2F2F2] rounded-lg flex items-center justify-center">
+                        <MapPin className="w-6 h-6 text-black" />
+                      </div>
+                      <div>
+                        <h3 className="font-sans text-xl font-semibold">
+                          Our Address
+                        </h3>
+                        <p className="font-sans text-gray-700">
+                          61 Bridge Street, Kington,
+                          <br />
+                          Herefordshire, HR5 3DJ,
+                          <br />
+                          United Kingdom.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#F2F2F2] rounded-lg flex items-center justify-center">
+                        <Mail className="w-6 h-6 text-black" />
+                      </div>
+                      <div>
+                        <h3 className="font-sans text-xl font-semibold">
+                          Email Us
+                        </h3>
+                        <a
+                          href="mailto:info@10xgalaxy.com"
+                          className="text-gray-700 hover:text-black hover:underline font-sans"
+                        >
+                          info@10xgalaxy.com
+                        </a>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#F2F2F2] rounded-lg flex items-center justify-center">
+                        <Phone className="w-6 h-6 text-black" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold font-sans">
+                          Call Us
+                        </h3>
+                        <a
+                          href="tel:+447535796307"
+                          className="text-gray-700 hover:text-black hover:underline font-sans"
+                        >
+                          +447535796307
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex justify-end items-end mt-[62px]">
+                    <div className="flex flex-col items-start gap-2 text-black">
+                      <p className="text-sm font-semibold font-sans">
+                        Find us on
+                      </p>
+                      <div className="flex gap-1">
+                        {links.map((item, i) => (
+                          <a
+                            key={i}
+                            href={item.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-neutral-900 hover:bg-neutral-800 w-10 h-10 flex items-center justify-center rounded-md transition-all border border-neutral-700 hover:border-neutral-500 text-2xl text-white"
+                          >
+                            {item.icon}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.section>
         </div>
       </motion.footer>
     </div>

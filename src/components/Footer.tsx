@@ -64,7 +64,7 @@ const Footer = () => {
                     href="https://monalisax.ai/"
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    MonaLisaX.Ai
+                    MonaLisaX.ai
                   </a>
                 </li>
                 <li>
@@ -125,7 +125,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li>
                   <Link
-                    to="/blog"
+                    to="/galaxy-notes"
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     Galaxy Notes

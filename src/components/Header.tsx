@@ -252,7 +252,7 @@ const Header = () => {
                         url: "https://perfectcode.ai/dashboard",
                       },
                       { name: "Dialogsy.ai", url: "https://dialogsy.ai/" },
-                      { name: "MonaLisaX.Ai", url: "https://monalisax.ai/" },
+                      { name: "MonaLisaX.ai", url: "https://monalisax.ai/" },
                       { name: "Photo360.ai", url: "https://photo360.ai/" },
                       {
                         name: "StoryMaster.ai",
@@ -365,10 +365,10 @@ const Header = () => {
                   >
                     {[
                       { name: "About", url: "/about" },
+                      { name: "Products", url: "/products" },
                       { name: "Careers", url: "/careers" },
                       { name: "Contact", url: "/contact" },
                       // { name: "Products", url: "/products" },
-                      { name: "Products", url: "/products" },
                     ].map((item) => (
                       <Link
                         key={item.name}
@@ -431,7 +431,7 @@ const Header = () => {
                     //   className="absolute left-0 top-full w-40 bg-white shadow-lg rounded-lg border border-gray-100 py-2 z-50 animate-fadeIn"
                   >
                     {[
-                      { name: "Galaxy Notes", url: "/blog" },
+                      { name: "Galaxy Notes", url: "/galaxy-notes" },
                       { name: "Brand Media Hub", url: "/brand-media-hub" },
                     ].map((item) => (
                       <Link

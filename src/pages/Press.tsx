@@ -23,6 +23,9 @@ import {
   Copy,
   MapPin,
   Phone,
+  Clock,
+  TrendingUp,
+  Sparkles,
 } from "lucide-react";
 import presshero from "@/assets/pressher.png";
 import storyMaster from "@/assets/StoryMaster_black.svg";
@@ -41,6 +44,7 @@ import {
   FaXTwitter,
   FaYoutube,
 } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 // brand assets list-----------------
 
@@ -202,7 +206,13 @@ const LogoCard = ({ title, variant, imageUrl, imageDownloadUrl }) => (
 
 const LogoCardWord = ({ title, variant, imageUrl, imageDownloadUrl }) => (
   <div className="flex flex-col border border-slate-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
-    <div className="mb-8 flex  items-center justify-center  bg-slate-50/50 border border-slate-100 border-dashed">
+    <div
+      className={`mb-8 flex  items-center justify-center  border border-slate-100 border-dashed ${
+        title === "Dark Mode Version"
+          ? "bg-black h-full p-8"
+          : "bg-slate-50/50 "
+      }`}
+    >
       <LogoPreview variant={variant} imageUrl={imageUrl} />
     </div>
     <div className="flex items-center justify-center border-t border-slate-100">
@@ -528,15 +538,19 @@ https://fonts.google.com/specimen/Inter
       bg: "bg-gray-100",
       border: "border-gray-200",
       more: "Learn more",
+      link: "/products",
+      icon: <Rocket className="w-7 h-7" />,
     },
     {
       label: "Product Update",
-      title: "Dialogsy.ai is Growing Fast",
+      title: "Dialogsy AI is Growing Fast",
       body: "Our smart AI chatbot platform is gaining traction.",
       color: "text-gray-900",
       bg: "bg-gray-100",
       border: "border-gray-200",
       more: "Learn more",
+      link: "https://dialogsy.ai/",
+      icon: <Sparkles className="w-7 h-7" />,
     },
     {
       label: "Investment Update",
@@ -546,6 +560,8 @@ https://fonts.google.com/specimen/Inter
       bg: "bg-gray-100",
       border: "border-gray-200",
       more: "Learn more",
+      link: "/products",
+      icon: <TrendingUp className="w-7 h-7" />,
     },
     {
       label: "Coming Soon",
@@ -555,6 +571,8 @@ https://fonts.google.com/specimen/Inter
       bg: "bg-gray-100",
       border: "border-gray-200",
       more: "Explore products",
+      link: "/products",
+      icon: <Clock className="w-7 h-7" />,
     },
   ];
 
@@ -956,10 +974,12 @@ https://fonts.google.com/specimen/Inter
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="w-full sm:w-auto px-8 py-3 rounded-full bg-black text-white font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 cursor-pointer">
-              <Newspaper className="w-4 h-4" />
-              Latest News
-            </button>
+            <Link to="/galaxy-notes">
+              <button className="w-full sm:w-auto px-8 py-3 rounded-full bg-black text-white font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                <Newspaper className="w-4 h-4" />
+                Latest News
+              </button>
+            </Link>
             <button
               onClick={() => handleDownload("kit")}
               className="w-full sm:w-auto px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-50 transition-colors border border-gray-200 flex items-center justify-center gap-2 cursor-pointer"
@@ -1001,6 +1021,9 @@ https://fonts.google.com/specimen/Inter
                 key={index}
                 className="bg-white p-6  hover:shadow-lg transition-all duration-300 cursor-pointer group h-[410px] flex flex-col justify-center items-start"
               >
+                <div className="p-3 bg-gray-50 rounded-xl text-black border border-gray-100 mb-5">
+                  {item.icon}
+                </div>
                 <div
                   className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 bg-gray-100 text-gray-800 border border-gray-200`}
                 >
@@ -1009,11 +1032,19 @@ https://fonts.google.com/specimen/Inter
                 <h3 className="font-inter text-xl font-bold mb-3 text-black group-hover:opacity-70 transition-opacity">
                   {item.title}
                 </h3>
-                <p className="font-inter text-sm text-gray-500 mb-6 leading-relaxed">
+                <p className="font-inter text-sm text-gray-500 mb-16 leading-relaxed">
                   {item.body}
                 </p>
                 <div className="flex items-center gap-2 text-sm font-medium text-black group-hover:translate-x-1 transition-transform">
-                  {item.more} <ArrowRight className="w-4 h-4" />
+                  <Link
+                    to={item.link}
+                    // target="_blank"
+                    // rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    {" "}
+                    {item.more} <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </div>
             ))}
@@ -1738,7 +1769,7 @@ Its angled “X” symbolizes forward motion and breakthrough innovation."
                   <LogoCardWord
                     title="Dark Mode Version"
                     variant="icon"
-                    imageUrl="/brand/10xgalaxy_logo_outline/10xGalaxy_Logo_Outline_Gradient.jpg"
+                    imageUrl="/brand/10xgalaxy_logo_outline/10xGalaxy_Logo_Outline_Gradient.svg"
                     imageDownloadUrl="/brand/10xgalaxy_logo_outline/10xGalaxy_Logo_Outline_Gradient.svg"
                   />
 
@@ -1813,7 +1844,7 @@ Its angled “X” symbolizes forward motion and breakthrough innovation."
           >
             <div className="">
               {/* Re-ordered grid: form on left for lg+, info on right */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 items-start">
                 {/* Left Column (Now Form on large screens) */}
                 <motion.div
                   variants={itemVariants}
@@ -1844,23 +1875,6 @@ Its angled “X” symbolizes forward motion and breakthrough innovation."
                   <div className="mt-12 space-y-6">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0 w-12 h-12 bg-[#F2F2F2] rounded-lg flex items-center justify-center">
-                        <MapPin className="w-6 h-6 text-black" />
-                      </div>
-                      <div>
-                        <h3 className="font-sans text-xl font-semibold">
-                          Our Address
-                        </h3>
-                        <p className="font-sans text-gray-700">
-                          61 Bridge Street, Kington,
-                          <br />
-                          Herefordshire, HR5 3DJ,
-                          <br />
-                          United Kingdom.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-[#F2F2F2] rounded-lg flex items-center justify-center">
                         <Mail className="w-6 h-6 text-black" />
                       </div>
                       <div>
@@ -1889,6 +1903,23 @@ Its angled “X” symbolizes forward motion and breakthrough innovation."
                         >
                           +447535796307
                         </a>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#F2F2F2] rounded-lg flex items-center justify-center">
+                        <MapPin className="w-6 h-6 text-black" />
+                      </div>
+                      <div>
+                        <h3 className="font-sans text-xl font-semibold">
+                          Our Address
+                        </h3>
+                        <p className="font-sans text-gray-700">
+                          61 Bridge Street, Kington,
+                          <br />
+                          Herefordshire, HR5 3DJ,
+                          <br />
+                          United Kingdom.
+                        </p>
                       </div>
                     </div>
                   </div>

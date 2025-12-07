@@ -7,6 +7,7 @@ import about1 from "@/assets/about1.png";
 import about2 from "@/assets/about2.png";
 import about3 from "@/assets/about3.png";
 import about4 from "@/assets/about4.png";
+import { Link } from "react-router-dom";
 
 // --- Icon Components (using SVG for single-file compatibility) ---
 
@@ -708,7 +709,7 @@ const CTASection = () => (
 			<motion.div
 				className="mt-10"
 				variants={itemVariants}>
-				<a
+				<Link
 					style={{
 						fontFamily: "Inter",
 						fontSize: "24px",
@@ -716,10 +717,10 @@ const CTASection = () => (
 						lineHeight: "38.4px",
 						textAlign: "center",
 					}}
-					href="#"
+					to="/careers"
 					className="bg-black text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors">
 					Click here
-				</a>
+				</Link>
 			</motion.div>
 		</div>
 	</motion.section>

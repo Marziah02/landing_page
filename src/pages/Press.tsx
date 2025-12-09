@@ -768,38 +768,38 @@ https://fonts.google.com/specimen/Inter
     {
       name: "Mint / Turquoise",
       shades: [
-        { name: "Mint", hex: "#CCEFF1", textColor: "text-gray-800" },
-        { name: "Turquoise", hex: "#0BC1C0", textColor: "text-black" }, // Main
-        { name: "Dark Teal", hex: "#10627B", textColor: "text-white" },
+        { name: "Pale Aqua", hex: "#B4FFFF", textColor: "text-gray-800" },
+        { name: "Bright Cyan", hex: "#22D2E0", textColor: "text-white" }, // Main
+        { name: "Deep Teal", hex: "#007B95", textColor: "text-white" },
       ],
-      bottom: ["#023E4D", "#10627B", "#0BC1C0", "#CCEFF1"], // Approximate gradients
+      bottom: ["#023E4D", "#007B95", "#22D2E0", "#B4FFFF"], // Approximate gradients
     },
     {
       name: "Peach / Orange",
       shades: [
-        { name: "Peach", hex: "#FFE1D6", textColor: "text-gray-800" },
-        { name: "Orange", hex: "#FFAF45", textColor: "text-white" }, // Main
-        { name: "Dark Orange", hex: "#FF7557", textColor: "text-white" },
+        { name: "Lavender Pink", hex: "#FFE5FF", textColor: "text-gray-800" },
+        { name: "Royal Purple", hex: "#85249F", textColor: "text-white" }, // Main
+        { name: "Deep Purple", hex: "#4A0062", textColor: "text-white" },
       ],
-      bottom: ["#5C1B1B", "#FF3B30", "#FFAF45", "#FFF59D"],
+      bottom: ["#301B41", "#4A0062", "#85249F", "#FFE5FF"],
     },
     {
       name: "Blue",
       shades: [
-        { name: "Light Blue", hex: "#C0DAFF", textColor: "text-gray-800" },
-        { name: "Blue", hex: "#0E6BEC", textColor: "text-white" }, // Main
-        { name: "Dark Blue", hex: "#0E1E93", textColor: "text-white" },
+        { name: "Light Gray", hex: "#EEEEEE", textColor: "text-gray-800" },
+        { name: "Slate Gray", hex: "#686D76", textColor: "text-white" }, // Main
+        { name: "Charcoal Gray", hex: "#373A40", textColor: "text-white" },
       ],
-      bottom: ["#000000", "#0E6BEC", "#00C2FF", "#C0DAFF"],
+      bottom: ["#2B2E33", "#373A40", "#686D76", "#EEEEEE"],
     },
     {
       name: "Purple",
       shades: [
-        { name: "Light Purple", hex: "#E8DDFF", textColor: "text-gray-800" },
-        { name: "Purple", hex: "#7856FF", textColor: "text-white" }, // Main
-        { name: "Dark Purple", hex: "#30006D", textColor: "text-white" },
+        { name: "Silver Gray", hex: "#C9C9C9", textColor: "text-gray-800" },
+        { name: "Jet Black", hex: "#292929", textColor: "text-white" }, // Main
+        { name: "Rich Black", hex: "#0A0A0A", textColor: "text-white" },
       ],
-      bottom: ["#30006D", "#7856FF", "#C471ED", "#FFFFFF"],
+      bottom: ["#000000", "#0A0A0A", "#292929", "#C9C9C9"],
     },
   ];
 

@@ -181,6 +181,17 @@ const LogoPreview = ({ variant = "full", className = "", imageUrl }) => {
   return <img src={imageUrl} alt="Brand Logo" />;
 };
 
+const LogoPreview2 = ({ variant, className = "", imageUrl }) => {
+  // Simple SVG representation of a brand logo similar to the style
+  return (
+    <img
+      src={imageUrl}
+      alt="Brand Logo"
+      className={` ${variant === "full" ? "w-20" : ""}`}
+    />
+  );
+};
+
 const LogoCard = ({ title, variant, imageUrl, imageDownloadUrl }) => (
   <div className="flex flex-col border border-slate-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
     <div className="mb-8 flex  items-center justify-center  bg-slate-50/50 border border-slate-100 border-dashed">
@@ -205,15 +216,13 @@ const LogoCard = ({ title, variant, imageUrl, imageDownloadUrl }) => (
 );
 
 const LogoCardWord = ({ title, variant, imageUrl, imageDownloadUrl }) => (
-  <div className="flex flex-col border border-slate-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
+  <div className="flex flex-col border border-slate-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md h-full">
     <div
       className={`mb-8 flex  items-center justify-center  border border-slate-100 border-dashed ${
-        title === "Dark Mode Version"
-          ? "bg-black h-full p-8"
-          : "bg-slate-50/50 "
+        title === "Dark Mode Version" ? "bg-black h-full " : "bg-slate-50/50 "
       }`}
     >
-      <LogoPreview variant={variant} imageUrl={imageUrl} />
+      <LogoPreview2 variant={variant} imageUrl={imageUrl} />
     </div>
     <div className="flex items-center justify-center border-t border-slate-100">
       {/* <h3 className="text-lg font-semibold text-slate-900">{title}</h3> */}
@@ -1755,7 +1764,7 @@ Its angled “X” symbolizes forward motion and breakthrough innovation."
                 <div className="grid gap-1 md:grid-cols-2 lg:grid-cols-4">
                   <LogoCardWord
                     title="Gradient Core Version"
-                    variant="full"
+                    variant="icon"
                     imageUrl="/brand/10xgalaxy_logo_primary/10xGalaxy_Logo_Primary_Gradient.jpg"
                     imageDownloadUrl="/brand/10xgalaxy_logo_primary/10xGalaxy_Logo_Primary_Gradient.svg"
                   />
@@ -1767,17 +1776,16 @@ Its angled “X” symbolizes forward motion and breakthrough innovation."
                     imageDownloadUrl="/brand/10xgalaxy_logo_primary/10xGalaxy_Logo_Primary_Black.svg"
                   />
                   <LogoCardWord
-                    title="Dark Mode Version"
-                    variant="icon"
-                    imageUrl="/brand/10xgalaxy_logo_outline/10xGalaxy_Logo_Outline_Gradient.svg"
-                    imageDownloadUrl="/brand/10xgalaxy_logo_outline/10xGalaxy_Logo_Outline_Gradient.svg"
-                  />
-
-                  <LogoCardWord
                     title="Outline Version"
                     variant="icon"
                     imageUrl="/brand/10xgalaxy_logo_outline/10xGalaxy_Logo_Outline_Black.jpg"
                     imageDownloadUrl="/brand/10xgalaxy_logo_outline/10xGalaxy_Logo_Outline_Black.svg"
+                  />
+                  <LogoCardWord
+                    title="Dark Mode Version"
+                    variant="full"
+                    imageUrl="/brand/10xgalaxy_logo_primary/10xGalaxy_Logo_Primary_White.svg"
+                    imageDownloadUrl="/brand/10xgalaxy_logo_outline/10xGalaxy_Logo_Outline_Gradient.svg"
                   />
                 </div>
               </section>

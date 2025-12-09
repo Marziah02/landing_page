@@ -18,6 +18,7 @@ import Blogs from "./pages/Blogs";
 import NotFound from "./pages/NotFound";
 import { P } from "node_modules/framer-motion/dist/types.d-BJcRxCew";
 import Press from "./pages/Press";
+import BlogDetails from "./pages/BlogDetails";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,11 @@ const App = () => (
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/galaxy-notes" element={<Blogs />} />
             <Route path="/brand-media-hub" element={<Press />} />
+
+            {/* 2. Dynamic Single Post Page */}
+            {/* The ":slug" part allows URLs like /galaxy-notes/my-cool-post */}
+            <Route path="/galaxy-notes/:slug" element={<BlogDetails />} />
+
             <Route
               path="/terms-and-conditions"
               element={<TermsAndConditions />}

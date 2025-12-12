@@ -2,7 +2,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// 1. Add 'Outlet' to imports
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
@@ -14,11 +15,12 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import About10x from "./pages/About10x";
 import Blogs from "./pages/Blogs";
-
 import NotFound from "./pages/NotFound";
-import { P } from "node_modules/framer-motion/dist/types.d-BJcRxCew";
 import Press from "./pages/Press";
 import BlogDetails from "./pages/BlogDetails";
+import ExtensionLabPage from "./pages/ExtensionLabPage";
+import MeetingPilotPage from "./pages/MeetingPilotPage";
+import StoryMasterPage from "./pages/StoryMasterPage";
 
 const queryClient = new QueryClient();
 
@@ -29,8 +31,20 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <Layout>
-          <Routes>
+        {/* Remove the outer <Layout> wrapper here */}
+
+        <Routes>
+          {/* --------------------------------------------------------- */}
+          {/* GROUP A: Pages WITH Header and Footer                     */}
+          {/* We pass <Outlet /> to Layout so it renders child routes   */}
+          {/* --------------------------------------------------------- */}
+          <Route
+            element={
+              <Layout>
+                <Outlet />
+              </Layout>
+            }
+          >
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About10x />} />
             <Route path="/careers" element={<Careers />} />
@@ -39,19 +53,31 @@ const App = () => (
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/galaxy-notes" element={<Blogs />} />
             <Route path="/brand-media-hub" element={<Press />} />
-
-            {/* 2. Dynamic Single Post Page */}
-            {/* The ":slug" part allows URLs like /galaxy-notes/my-cool-post */}
             <Route path="/galaxy-notes/:slug" element={<BlogDetails />} />
-
             <Route
               path="/terms-and-conditions"
               element={<TermsAndConditions />}
             />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            {/* 404 Page (usually keeps Header/Footer) */}
             <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
+          </Route>
+          {/* --------------------------------------------------------- */}
+          {/* GROUP B: Pages WITHOUT Header and Footer                  */}
+          {/* These sit outside the Layout wrapper                      */}
+          {/* --------------------------------------------------------- */}
+          <Route
+            path="/extension-lab-ai-comming-soon"
+            element={<ExtensionLabPage />}
+          />
+          <Route
+            path="/meeting-pilot-ai-coming-soon"
+            element={<MeetingPilotPage />}
+          />
+          <Route
+            path="/story-master-ai-coming-soon"
+            element={<StoryMasterPage />}
+          />
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

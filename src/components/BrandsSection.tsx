@@ -20,7 +20,7 @@ import { useEffect, useRef } from "react";
 const brands = [
   {
     id: 1,
-    name: "StoryMaster AI",
+    name: "StoryMaster AI™",
     description:
       "StoryMaster AI is an AI-driven platform designed to help users create, edit, and publish high-quality stories effortlessly.",
     logo: storyMaster,
@@ -57,7 +57,7 @@ const brands = [
     description:
       "MeetingPilot AI is an AI-powered meeting assistant that helps users schedule, manage, and optimize their meetings.",
     logo: meetingpilot,
-    link: "https://palegreen-badger-420606.hostingersite.com/coming-soon/",
+    link: "/meeting-pilot-ai-coming-soon",
   },
 
   {

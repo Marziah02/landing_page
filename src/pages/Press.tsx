@@ -613,7 +613,7 @@ https://fonts.google.com/specimen/Inter
       img: dialogsy,
     },
     {
-      name: "StoryMaster.ai",
+      name: "StoryMaster.ai®",
       tagline: "AI Book Creator",
       launch: "Coming 2026",
       features: [
@@ -1028,31 +1028,61 @@ https://fonts.google.com/specimen/Inter
             {announcements.map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-6  hover:shadow-lg transition-all duration-300 cursor-pointer group h-[410px] flex flex-col justify-center items-start"
+                className="
+                group 
+                relative 
+                bg-white 
+                p-6 
+                h-[410px] 
+                flex 
+                flex-col 
+                justify-between 
+                items-start 
+                border 
+                border-gray-200 
+                hover:border-gray-300 
+                hover:shadow-xl 
+                transition-all 
+                duration-300 
+                cursor-pointer
+              "
               >
-                <div className="p-3 bg-gray-50 rounded-xl text-black border border-gray-100 mb-5">
-                  {item.icon}
+                {/* Top Section: Header & Content */}
+                <div className="w-full">
+                  {/* Header Row: Icon & Label aligned cleanly */}
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="p-3 bg-gray-50 rounded-xl text-black border border-gray-100 group-hover:scale-105 transition-transform duration-300">
+                      {item.icon}
+                    </div>
+                    {/* Label with Sliding Gradient Wave Animation */}
+                    <div className="relative overflow-hidden px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-600 border border-gray-200 uppercase tracking-wide group cursor-default">
+                      <span className="relative z-10">{item.label}</span>
+                      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-[#22D2E0] to-[#85249F] " />
+                    </div>
+                  </div>
+
+                  {/* Content Block */}
+                  <div>
+                    <h3 className="font-inter text-2xl font-bold mb-3 text-gray-900 group-hover:text-gray-700 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="font-inter text-sm text-gray-500 leading-relaxed line-clamp-4">
+                      {item.body}
+                    </p>
+                  </div>
                 </div>
-                <div
-                  className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 bg-gray-100 text-gray-800 border border-gray-200`}
-                >
-                  {item.label}
-                </div>
-                <h3 className="font-inter text-xl font-bold mb-3 text-black group-hover:opacity-70 transition-opacity">
-                  {item.title}
-                </h3>
-                <p className="font-inter text-sm text-gray-500 mb-16 leading-relaxed">
-                  {item.body}
-                </p>
-                <div className="flex items-center gap-2 text-sm font-medium text-black group-hover:translate-x-1 transition-transform">
+
+                {/* Bottom Section: Action 
+                  Using 'mt-auto' or justify-between ensures this always stays at the bottom
+                  regardless of text length. 
+              */}
+                <div className="w-full pt-6 mt-4 border-t border-gray-100">
                   <Link
                     to={item.link}
-                    // target="_blank"
-                    // rel="noopener noreferrer"
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-2 text-sm font-semibold text-black group-hover:gap-3 transition-all duration-300"
                   >
-                    {" "}
-                    {item.more} <ArrowRight className="w-4 h-4" />
+                    {item.more}
+                    <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
                   </Link>
                 </div>
               </div>

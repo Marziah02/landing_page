@@ -256,15 +256,15 @@ const Header = () => {
                       { name: "Photo360.ai", url: "https://photo360.ai/" },
                       {
                         name: "StoryMaster.ai",
-                        url: "https://palegreen-badger-420606.hostingersite.com/coming-soon/",
+                        url: "/story-master-ai-coming-soon",
                       },
                       {
                         name: "MeetingPilot.ai",
-                        url: "https://palegreen-badger-420606.hostingersite.com/coming-soon/",
+                        url: "/meeting-pilot-ai-coming-soon",
                       },
                       {
                         name: "ExtensionLab.ai",
-                        url: "https://palegreen-badger-420606.hostingersite.com/coming-soon/",
+                        url: "/extension-lab-ai-comming-soon",
                       },
                     ].map((item) => (
                       <Link

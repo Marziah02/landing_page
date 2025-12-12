@@ -32,7 +32,7 @@ const brands = [
     description:
       "StoryMaster AI is an AI-driven platform designed to help users create, edit, and publish high-quality stories effortlessly.",
     logo: storyMaster,
-    link: "https://palegreen-badger-420606.hostingersite.com/coming-soon/",
+    link: "/story-master-ai-coming-soon",
   },
   {
     id: 2,

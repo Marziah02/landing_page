@@ -271,7 +271,7 @@ const Header = () => {
 											<Link
 												key={item.name}
 												to={item.url}
-												// target="_blank"
+												target="_blank"
 												rel="noopener noreferrer"
 												className={`
           block px-4 py-2 text-sm 

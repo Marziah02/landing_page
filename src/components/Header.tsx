@@ -268,10 +268,10 @@ const Header = () => {
 												url: "/extension-lab-ai-comming-soon",
 											},
 										].map((item) => (
-											<a
+											<Link
 												key={item.name}
-												href={item.url}
-												target="_blank"
+												to={item.url}
+												// target="_blank"
 												rel="noopener noreferrer"
 												className={`
           block px-4 py-2 text-sm 
@@ -284,7 +284,7 @@ const Header = () => {
 						}
         `}>
 												{item.name}
-											</a>
+											</Link>
 										))}
 									</div>
 								)}

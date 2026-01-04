@@ -121,9 +121,9 @@ const BrandsSection = () => {
   };
 
   return (
-    <section className="max-w-[1600px] mx-auto bg-background">
+    <section className=" mx-auto bg-background">
       <motion.div
-        className="w-full h-[130px] 
+        className="w-full h-[130px] max-w-[1600px]
              
              [border-image:linear-gradient(to_right,#22D2E0,#85249F)_1] 
              border-b border-transparent"

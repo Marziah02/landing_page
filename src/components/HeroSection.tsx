@@ -68,7 +68,7 @@ const HeroSection = () => {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen max-w-[1600px] mx-auto bg-black flex justify-start items-center overflow-hidden"
+      className="relative min-h-screen  mx-auto bg-black flex justify-start items-center overflow-hidden"
     >
       {/* Optional: subtle blurred fill behind to avoid empty sides */}
       {/* <div className="absolute inset-0 -z-10">
@@ -85,7 +85,7 @@ const HeroSection = () => {
       {/* Overlay */}
       {/* <motion.div className="relative mb-1 md:h-[408px] 2xl:h-[495px]  md:p-0"> */}
       {/* bg-gradient-to-r from-[#22D2E0] to-[#85249F] bg-clip-text text-transparent */}
-      <motion.div className="relative mb-1 md:h-screen  md:p-0 ">
+      <motion.div className="relative mb-1 md:h-screen  md:p-0 max-w-[1600px]">
         <motion.h1
           className="container mx-auto md:my-12 text-white uppercase"
           initial={{ opacity: 0, y: 20 }}

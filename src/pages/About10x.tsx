@@ -338,7 +338,8 @@ const TargetSection = () => (
 		whileInView="visible"
 		viewport={{ once: true, amount: 0.3 }}
 		variants={containerVariants}>
-		<section className=" py-12 max-w-[1600px] mx-auto bg-background">
+		{/* max-w-[1600px] */}
+		<section className=" py-12  mx-auto bg-background">
 			<div className="container mx-auto">
 				<motion.h2
 					style={{
@@ -398,7 +399,8 @@ const MissionSection = () => (
 		whileInView="visible"
 		viewport={{ once: true, amount: 0.3 }}
 		variants={containerVariants}>
-		<div className="container max-w-[1600px] mx-auto bg-white grid gap-16 md:gap-0 pb-12">
+		{/* max-w-[1600px] */}
+		<div className="container  mx-auto bg-white grid gap-16 md:gap-0 pb-12">
 			<div className="grid md:grid-cols-2 gap-1 md:pt-[100px]">
 				<motion.div
 					className=""
@@ -448,7 +450,8 @@ const VisionSection = () => (
 		whileInView="visible"
 		viewport={{ once: true, amount: 0.3 }}
 		variants={containerVariants}>
-		<div className="container max-w-[1600px] mx-auto bg-white grid gap-16 md:gap-0 pb-12">
+		{/* max-w-[1600px] */}
+		<div className="container  mx-auto bg-white grid gap-16 md:gap-0 pb-12">
 			<div className="grid md:grid-cols-2 gap-1 md:pt-[100px]">
 				<motion.div
 					className=""
@@ -526,7 +529,8 @@ const ValuesSection = () => (
 		whileInView="visible"
 		viewport={{ once: true, amount: 0.3 }}
 		variants={containerVariants}>
-		<div className="container max-w-[1600px] mx-auto ">
+		{/* max-w-[1600px] */}
+		<div className="container  mx-auto ">
 			<div className="grid md:grid-cols-2 gap-1 pb-12 md:pt-[100px]">
 				<motion.div
 					className=""

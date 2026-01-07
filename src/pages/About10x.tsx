@@ -594,7 +594,7 @@ const ValuesSection = () => (
         {values.map((item, index) => (
           <motion.div
             key={index}
-            className="bg-white p-8 max-h-[304px]"
+            className="bg-white p-8 md:max-h-[304px]"
             variants={itemVariants}
           >
             <div className="mb-4">{item.icon}</div>

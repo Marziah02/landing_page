@@ -283,10 +283,10 @@ const BrandsSection = () => {
           {brands.map((brand, index) => (
             <motion.div key={brand.id} variants={item}>
               <div
-                className={`px-12 py-6 hover:shadow-lg transition-shadow h-[277px] ${
+                className={`px-12 py-6 md:hover:shadow-lg transition-shadow  ${
                   brand.name === "More"
-                    ? "bg-[#F2F2F2]  flex items-center justify-center group relative hover:cursor-pointer overflow-hidden isolate transition-all duration-500"
-                    : "bg-[#F2F2F2] "
+                    ? "bg-[#F2F2F2] h-[277px] flex items-center justify-center group relative hover:cursor-pointer overflow-hidden isolate transition-all duration-500"
+                    : "bg-[#F2F2F2] md:h-[277px]"
                 } rounded-none flex flex-col`}
               >
                 <div className="hidden md:block z-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-blue-500/30 opacity-0 group-hover:opacity-40 transition-all duration-1000 animate-spin [animation-duration:8000ms]"></div>

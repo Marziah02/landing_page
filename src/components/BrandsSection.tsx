@@ -278,7 +278,7 @@ const BrandsSection = () => {
 				</div>
 			</motion.div>
 			<div className="container mx-auto">
-				<div className="grid md:grid-cols-2 gap-1 pb-12 md:pt-[100px]">
+				<div className="grid md:grid-cols-2 gap-1 pb-12 md:pt-[100px] pt-10">
 					<motion.div
 						className=""
 						initial={{ opacity: 0, x: -30 }}

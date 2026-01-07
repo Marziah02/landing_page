@@ -400,8 +400,8 @@ const MissionSection = () => (
 		viewport={{ once: true, amount: 0.3 }}
 		variants={containerVariants}>
 		{/* max-w-[1600px] */}
-		<div className="container  mx-auto bg-white grid gap-16 md:gap-0 pb-12">
-			<div className="grid md:grid-cols-2 gap-1 md:pt-[100px]">
+		<div className="  mx-auto bg-white grid gap-16 md:gap-0 pb-12">
+			<div className="grid md:grid-cols-2 gap-1 md:pt-[100px] container">
 				<motion.div
 					className=""
 					initial={{ opacity: 0, x: -30 }}
@@ -451,8 +451,8 @@ const VisionSection = () => (
 		viewport={{ once: true, amount: 0.3 }}
 		variants={containerVariants}>
 		{/* max-w-[1600px] */}
-		<div className="container  mx-auto bg-white grid gap-16 md:gap-0 pb-12">
-			<div className="grid md:grid-cols-2 gap-1 md:pt-[100px]">
+		<div className="  mx-auto bg-white grid gap-16 md:gap-0 pb-12">
+			<div className="grid md:grid-cols-2 gap-1 md:pt-[100px] container">
 				<motion.div
 					className=""
 					initial={{ opacity: 0, x: -30 }}

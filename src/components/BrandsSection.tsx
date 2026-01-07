@@ -13,6 +13,10 @@ import photo360 from "@/assets/Photo360_black.svg";
 import perfectcode from "@/assets/PerfectCode_black.svg";
 import meetingpilot from "@/assets/MeetingPilot_black.svg";
 import dialogsy from "@/assets/Dialogsy_icon_black.svg";
+import aiagIproducts from "@/assets/aiagIproducts.svg";
+import buildersinorbit from "@/assets/buildersinorbit.svg";
+import globalusers from "@/assets/globalusers.svg";
+import growthmindset from "@/assets/growthmindset.svg";
 import sky from "@/assets/sky.png";
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
@@ -123,7 +127,7 @@ const BrandsSection = () => {
   return (
     <section className=" mx-auto bg-background">
       <motion.div
-        className="w-full h-[130px] 
+        className="w-full md:h-[130px] h-[150px]
              
              [border-image:linear-gradient(to_right,#22D2E0,#85249F)_1] 
              border-b border-transparent"
@@ -140,7 +144,7 @@ const BrandsSection = () => {
 							className="w-7 h-7 mb-1"
 							color="#22D2E0"
 						/> */}
-            <svg className="w-7 h-7 mb-1">
+            {/* <svg className="w-7 h-7 mb-1">
               <defs>
                 <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#22D2E0" />
@@ -148,7 +152,9 @@ const BrandsSection = () => {
                 </linearGradient>
               </defs>
               <TrendingUp stroke="url(#grad)" />
-            </svg>
+            </svg> */}
+
+            <img className="w-7 h-7 mb-1" src={globalusers} alt="" />
 
             <div className="text-2xl sm:text-3xl font-bold mb-2">
               <AnimatedCounter value={100} suffix="K+" />
@@ -161,7 +167,7 @@ const BrandsSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <svg className="w-7 h-7 mb-1">
+            {/* <svg className="w-7 h-7 mb-1">
               <defs>
                 <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#22D2E0" />
@@ -169,7 +175,9 @@ const BrandsSection = () => {
                 </linearGradient>
               </defs>
               <Package stroke="url(#grad)" />
-            </svg>
+            </svg> */}
+            <img className="w-7 h-7 mb-1" src={aiagIproducts} alt="" />
+
             {/* <Package className="w-7 h-7 mb-1 bg-gradient-to-r from-[#22D2E0] to-[#85249F] text-transparent bg-clip-text" /> */}
             <div className="text-2xl sm:text-3xl font-bold mb-2">
               <AnimatedCounter value={20} suffix="+" />
@@ -184,7 +192,7 @@ const BrandsSection = () => {
             transition={{ duration: 0.6, delay: 0.7 }}
           >
             {/* <Shell className="w-7 h-7 mb-1 bg-gradient-to-r from-[#22D2E0] to-[#85249F] text-transparent bg-clip-text" /> */}
-            <svg className="w-7 h-7 mb-1">
+            {/* <svg className="w-7 h-7 mb-1">
               <defs>
                 <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#22D2E0" />
@@ -193,7 +201,9 @@ const BrandsSection = () => {
               </defs>
 
               <Shell stroke="url(#grad)" />
-            </svg>
+            </svg> */}
+            <img className="w-7 h-7 mb-1" src={growthmindset} alt="" />
+
             <div className="text-2xl sm:text-3xl font-bold mb-2">
               <AnimatedCounter value={10} suffix="x" />
             </div>
@@ -205,7 +215,7 @@ const BrandsSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <svg className="w-7 h-7 mb-1 ">
+            {/* <svg className="w-7 h-7 mb-1 ">
               <defs>
                 <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#22D2E0" />
@@ -213,7 +223,9 @@ const BrandsSection = () => {
                 </linearGradient>
               </defs>
               <Earth stroke="url(#grad)" />
-            </svg>
+            </svg> */}
+            <img className="w-7 h-7 mb-1" src={buildersinorbit} alt="" />
+
             {/* <DollarSign className="w-7 h-7 mb-1 bg-gradient-to-r from-[#22D2E0] to-[#85249F] text-transparent bg-clip-text" /> */}
             <div className="text-2xl sm:text-3xl font-bold mb-2 text-white ">
               {/* $ */}

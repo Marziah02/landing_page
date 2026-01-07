@@ -1140,7 +1140,7 @@ https://fonts.google.com/specimen/Inter
               </p>
             </div>
           </div>
-          <div className="relative mb-12 md:mb-0">
+          <div className="relative mb-16 md:mb-0">
             {/* Abstract Visual Representation of a Studio */}
             <div className="relative w-full aspect-square max-w-md mx-auto h-full">
               <div className="relative z-10 grid grid-cols-2 gap-4 h-full">

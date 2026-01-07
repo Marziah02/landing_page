@@ -166,7 +166,7 @@ const Products = () => {
           style={{
             backgroundImage: `url(${herosection})`,
             // filter: "blur(2px)",
-            transform: "scale(1.05)", // Slightly scale to hide blur edges
+            // transform: "scale(1.05)", // Slightly scale to hide blur edges
           }}
         ></div>
         <div className="absolute inset-0 bg-black opacity-60"></div>{" "}
@@ -193,7 +193,7 @@ const Products = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="md:mb-16"
         >
           <div className="grid md:grid-cols-2 gap-1 pb-12">
             <motion.div
@@ -248,7 +248,7 @@ const Products = () => {
           {/* {currentProducts.map((product, index) => ( */}
           {brands.map((product, index) => (
             <motion.div key={product.id} variants={item}>
-              <Card className="p-8 hover:shadow-lg transition-shadow bg-card border-border rounded-none h-[280px] flex flex-col">
+              <Card className="p-8 hover:shadow-lg transition-shadow bg-card border-border rounded-none md:h-[280px] flex flex-col">
                 <div className="flex items-center justify-between mb-6">
                   <div className="text-xs text-muted-foreground">
                     {String(startIndex + index + 1).padStart(2, "0")}

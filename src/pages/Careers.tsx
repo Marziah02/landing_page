@@ -261,7 +261,7 @@ const BenefitsSection = () => (
   >
     <div className="max-w-[1600px] mx-auto bg-background">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-2 gap-1 pb-12 md:pt-[100px]">
+        <div className="grid md:grid-cols-2 gap-1 pb-12 pt-10 md:pt-[100px]">
           <motion.div
             className=""
             initial={{ opacity: 0, x: -30 }}
@@ -342,7 +342,7 @@ const ValuesSection = () => (
   >
     <div className="max-w-[1600px] mx-auto bg-background">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-2 gap-1 pb-12 md:pt-[100px]">
+        <div className="grid md:grid-cols-2 gap-1 pb-12 md:pt-[100px] pt-10">
           <motion.div
             className=""
             initial={{ opacity: 0, x: -30 }}
@@ -456,7 +456,7 @@ const OpeningsSection = () => (
     {/*  <div className="max-w-[1600px] mx-auto bg-background">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-1 pb-12 md:pt-[100px]"> */}
-    <div className="max-w-[1600px] mx-auto bg-background container pb-12 md:pt-[100px]">
+    <div className="max-w-[1600px] mx-auto bg-background container pb-12 md:pt-[100px] pt-10">
       <motion.div className="text-center" variants={itemVariants}>
         <h2
           style={{

@@ -21,6 +21,8 @@ import BlogDetails from "./pages/BlogDetails";
 import ExtensionLabPage from "./pages/ExtensionLabPage";
 import MeetingPilotPage from "./pages/MeetingPilotPage";
 import StoryMasterPage from "./pages/StoryMasterPage";
+import FunnelBee from "./pages/FunnelBee";
+import SalesBee from "./pages/SalesBee";
 
 const queryClient = new QueryClient();
 
@@ -66,7 +68,7 @@ const App = () => (
           {/* These sit outside the Layout wrapper                      */}
           {/* --------------------------------------------------------- */}
           <Route
-            path="/extension-lab-ai-comming-soon"
+            path="/extension-lab-ai-coming-soon"
             element={<ExtensionLabPage />}
           />
           <Route
@@ -77,6 +79,8 @@ const App = () => (
             path="/story-master-ai-coming-soon"
             element={<StoryMasterPage />}
           />
+          <Route path="/funnel-bee-coming-soon" element={<FunnelBee />} />
+          <Route path="/sales-bee-crm-coming-soon" element={<SalesBee />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

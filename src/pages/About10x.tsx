@@ -7,6 +7,10 @@ import about1 from "@/assets/about1.png";
 import about2 from "@/assets/about2.png";
 import about3 from "@/assets/about3.png";
 import about4 from "@/assets/about4.png";
+import think10x from "@/assets/think10x.svg";
+import aiwithpurpose from "@/assets/aiwithpurpose.svg";
+import movefast from "@/assets/movefast.svg";
+import collaborate from "@/assets/collaborate.svg";
 import { Link } from "react-router-dom";
 
 // --- Icon Components (using SVG for single-file compatibility) ---
@@ -516,25 +520,29 @@ const values = [
     title: "Think 10x, Not 10%",
     description:
       "We don’t aim for small gains—we build for exponential growth in productivity, revenue, and impact.",
-    icon: <TrendingUp className="w-8 h-8 text-black" />,
+    // icon: <TrendingUp className="w-8 h-8 text-black" />,
+    icon: <img src={think10x} alt="" className="w-8 h-8" />,
   },
   {
     title: "AI with Purpose",
     description:
       "Every product we build solves real problems with intelligent, ethical, and scalable solutions.",
-    icon: <CheckCircle className="w-8 h-8 text-black" />,
+    // icon: <CheckCircle className="w-8 h-8 text-black" />,
+    icon: <img src={aiwithpurpose} alt="" className="w-8 h-8" />,
   },
   {
     title: "Move Fast, Build Smart",
     description:
       "We believe in rapid iteration, smart automation, and staying lean while shipping high-impact products.",
-    icon: <Briefcase className="w-8 h-8 text-black" />,
+    // icon: <Briefcase className="w-8 h-8 text-black" />,
+    icon: <img src={movefast} alt="" className="w-8 h-8" />,
   },
   {
     title: "Collaborate with Integrity",
     description:
       "We grow by building trust—across teams, users, and partners. Transparency and respect power our progress.",
-    icon: <Users className="w-8 h-8 text-black" />,
+    // icon: <Users className="w-8 h-8 text-black" />,
+    icon: <img src={collaborate} alt="" className="w-8 h-8" />,
   },
 ];
 

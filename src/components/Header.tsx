@@ -64,7 +64,7 @@ const Header = () => {
       { name: "Photo360.ai", url: "https://photo360.ai/" },
       { name: "StoryMaster.ai", url: "/story-master-ai-coming-soon" },
       { name: "MeetingPilot.ai", url: "/meeting-pilot-ai-coming-soon" },
-      { name: "ExtensionLab.ai", url: "/extension-lab-ai-comming-soon" },
+      { name: "ExtensionLab.ai", url: "/extension-lab-ai-coming-soon" },
     ],
     company: [
       { name: "About", url: "/about" },
@@ -303,7 +303,7 @@ const Header = () => {
                       },
                       {
                         name: "ExtensionLab.ai",
-                        url: "/extension-lab-ai-comming-soon",
+                        url: "/extension-lab-ai-coming-soon",
                       },
                     ].map((item) => (
                       <Link

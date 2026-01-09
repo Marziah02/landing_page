@@ -35,6 +35,10 @@ import meetingpilot from "@/assets/MeetingPilot_black.svg";
 import dialogsy from "@/assets/Dialogsy_icon_black.svg";
 import logo from "@/assets/10X_Logo_color.svg";
 import contactpress from "@/assets/contactpress.jpeg";
+import newaiproduct from "@/assets/newaiproduct.svg";
+import dialogsygrowing from "@/assets/dialogsygrowing.svg";
+import globalinterest from "@/assets/globalinterest.svg";
+import logoblack from "@/assets/10xlogoblack.svg";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
 import {
@@ -550,7 +554,14 @@ https://fonts.google.com/specimen/Inter
       border: "border-gray-200",
       more: "Learn more",
       link: "/products",
-      icon: <Rocket className="w-7 h-7" />,
+      // icon: <Rocket className="w-7 h-7" />,
+      icon: (
+        <img
+          src="/brand/10xgalaxy_logo_primary/10xGalaxy_Logo_Primary_Black.svg"
+          alt=""
+          className="w-7 h-7"
+        />
+      ),
     },
     {
       label: "Product Update",
@@ -561,7 +572,8 @@ https://fonts.google.com/specimen/Inter
       border: "border-gray-200",
       more: "Learn more",
       link: "https://dialogsy.ai/",
-      icon: <Sparkles className="w-7 h-7" />,
+      // icon: <Sparkles className="w-7 h-7" />,
+      icon: <img src={dialogsygrowing} alt="" className="w-7 h-7" />,
     },
     {
       label: "Investment Update",
@@ -572,7 +584,8 @@ https://fonts.google.com/specimen/Inter
       border: "border-gray-200",
       more: "Learn more",
       link: "/products",
-      icon: <TrendingUp className="w-7 h-7" />,
+      // icon: <TrendingUp className="w-7 h-7" />,
+      icon: <img src={globalinterest} alt="" className="w-7 h-7" />,
     },
     {
       label: "Coming Soon",
@@ -583,7 +596,8 @@ https://fonts.google.com/specimen/Inter
       border: "border-gray-200",
       more: "Explore products",
       link: "/products",
-      icon: <Clock className="w-7 h-7" />,
+      // icon: <Clock className="w-7 h-7" />,
+      icon: <img src={newaiproduct} alt="" className="w-7 h-7" />,
     },
   ];
 

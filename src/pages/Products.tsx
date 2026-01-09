@@ -74,7 +74,7 @@ const brands = [
       "MonaLisaX AI turns any photo into stunning digital artwork using advanced generative models.",
     logo: monalisa,
     // icon: <ExternalLink className="w-10 h-10" />,
-    link: "https://palegreen-badger-420606.hostingersite.com/coming-soon/",
+    link: "https://monalisax.ai/",
   },
   {
     id: 7,
@@ -82,7 +82,7 @@ const brands = [
     description:
       "SalesBeeCRM AI is an AI-driven CRM designed to automate tracking, engagement, and sales workflows.",
     icon: <Briefcase className="w-10 h-10" />,
-    link: "https://palegreen-badger-420606.hostingersite.com/coming-soon/",
+    link: "/sales-bee-crm-coming-soon",
   },
   {
     id: 8,
@@ -90,7 +90,7 @@ const brands = [
     description:
       "ExtensionLab AI offers AI-powered browser extensions that simplify workflows and boost productivity.",
     icon: <Puzzle className="w-10 h-10" />,
-    link: "/extension-lab-ai-comming-soon",
+    link: "/extension-lab-ai-coming-soon",
   },
   {
     id: 9,
@@ -98,7 +98,7 @@ const brands = [
     description:
       "FunnelBee is an AI-powered GTM and funnel automation engine that helps teams launch, distribute, and scale products faster.",
     icon: <Rocket className="w-10 h-10" />,
-    link: "https://palegreen-badger-420606.hostingersite.com/coming-soon/",
+    link: "/funnel-bee-coming-soon",
   },
 ];
 

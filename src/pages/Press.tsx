@@ -38,6 +38,8 @@ import contactpress from "@/assets/contactpress.jpeg";
 import newaiproduct from "@/assets/newaiproduct.svg";
 import dialogsygrowing from "@/assets/dialogsygrowing.svg";
 import globalinterest from "@/assets/globalinterest.svg";
+import monalisa from "@/assets/monalisa.png";
+
 import logoblack from "@/assets/10xlogoblack.svg";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
@@ -667,6 +669,7 @@ https://fonts.google.com/specimen/Inter
       summary:
         "MonaLisaX.ai turns any photo into stunning digital artwork using advanced generative models.",
       icon: <ExternalLink className="w-6 h-6" />, // Placeholder icon
+      img: monalisa,
     },
     {
       name: "MeetingPilot.ai",

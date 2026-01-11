@@ -223,30 +223,262 @@ const HeroSection = () => (
   </section>
 );
 
+const WhyGalaxy = () => (
+  <motion.section
+    className=" text-black bg-[#EDEDED]  pb-1"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.3 }}
+    variants={containerVariants}
+  >
+    <div className=" mx-auto bg-background bg-white">
+      <div className="container mx-auto max-w-[1600px]">
+        <div className="grid md:grid-cols-2 gap-1 pb-12 pt-10 md:pt-[100px]">
+          <motion.div
+            className=""
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2
+              className=""
+              style={{
+                fontFamily: "Inter",
+                fontSize: "56px",
+                fontWeight: "400",
+                lineHeight: "72px",
+                textAlign: "left",
+              }}
+            >
+              Why 10x Galaxy
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p
+              style={{
+                fontFamily: "Inter",
+                fontSize: "24px",
+                fontWeight: "400",
+                lineHeight: "38.4px",
+                textAlign: "left",
+              }}
+            >
+              At 10x Galaxy, we build AI products that matter - not experiments,
+              not demos, but real platforms used by real people. We operate
+              across a growing universe of AI and AGI products. Everyone here
+              works close to the product, close to decisions, and close to
+              impact.
+            </p>
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  </motion.section>
+);
+
+const HowWeWork = () => {
+  const works = [
+    {
+      title: "Real Product Ownership",
+      description:
+        "Everyone owns what they build - from idea to users to results.",
+      // icon: <Package className="w-6 h-6 mb-4 text-gray-700" />
+    },
+    {
+      title: "Built in the Real World",
+      description: "We test with real users, not slide decks or assumptions.",
+      // icon: <Globe className="w-6 h-6 mb-4 text-gray-700" />
+    },
+    {
+      title: "Speed With Purpose",
+      description: "We move fast, but always toward something that matters.",
+      // icon: <Zap className="w-6 h-6 mb-4 text-gray-700" />
+    },
+    {
+      title: "High-Trust, High-Standards",
+      description: "Freedom comes with responsibility. We expect both.",
+      // icon: <ShieldCheck className="w-6 h-6 mb-4 text-gray-700" />
+    },
+    {
+      title: "Ship, Learn, Repeat",
+      description:
+        "Nothing improves until it is shipped. We release, learn, and iterate.",
+      // icon: <RefreshCcw className="w-6 h-6 mb-4 text-gray-700" />
+    },
+    {
+      title: "Designed for Scale",
+      description:
+        "Everything we build is meant to grow - products, systems, and people.",
+      // icon: <TrendingUp className="w-6 h-6 mb-4 text-gray-700" />
+    },
+  ];
+
+  return (
+    <section className=" bg-white text-black ">
+      <div className="max-w-[1600px] w-full mx-auto container">
+        <div className="pt-10 md:pt-[100px] pb-12">
+          {" "}
+          <motion.h2
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            style={{
+              fontFamily: "Inter",
+              fontSize: "56px",
+              fontWeight: "400",
+              lineHeight: "72px",
+              textAlign: "center",
+            }}
+            className="tracking-tighter"
+          >
+            How We Work
+          </motion.h2>
+        </div>
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {works.map((item, index) => (
+            <motion.div
+              key={index}
+              className="p-10 shadow-sm bg-[#F2F2F2] flex flex-col group hover:bg-gray-100 transition-colors duration-300"
+              variants={itemVariants}
+            >
+              {/* <div className="opacity-80 group-hover:opacity-100 transition-opacity">
+                {item.icon}
+              </div> */}
+              <h3 className="font-sans text-xl font-semibold mb-4 text-gray-900">
+                {item.title}
+              </h3>
+              <p className="font-sans text-gray-600 leading-relaxed text-sm md:text-base">
+                {item.description}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const Growth = () => {
+  const growthItems = [
+    {
+      title: "Learning by Building",
+      description: "Work on real AI products used by real users.",
+      // icon: <Code2 className="w-6 h-6 mb-4 text-gray-700" />,
+    },
+    {
+      title: "Product Ownership",
+      description: "Own features, systems, and outcomes.",
+      // icon: <Trophy className="w-6 h-6 mb-4 text-gray-700" />,
+    },
+    {
+      title: "Cross-Product Exposure",
+      description: "Contribute across multiple AI platforms.",
+      // icon: <Boxes className="w-6 h-6 mb-4 text-gray-700" />,
+    },
+    {
+      title: "Founder-Level Thinking",
+      description: "Understand how product, growth, and business connect.",
+      // icon: <LineChart className="w-6 h-6 mb-4 text-gray-700" />,
+    },
+    {
+      title: "Fast Career Acceleration",
+      description: "Your impact defines how fast you grow.",
+      // icon: <ArrowUpRight className="w-6 h-6 mb-4 text-gray-700" />,
+    },
+    {
+      title: "Long-Term Opportunity",
+      description: "Leadership and equity paths grow as the ecosystem grows.",
+      // icon: <Gem className="w-6 h-6 mb-4 text-gray-700" />,
+    },
+  ];
+
+  return (
+    <section className=" bg-white text-black ">
+      <div className="max-w-[1600px] w-full mx-auto container">
+        <div className="pt-10 md:pt-[100px] pb-12">
+          {" "}
+          <motion.h2
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            style={{
+              fontFamily: "Inter",
+              fontSize: "56px",
+              fontWeight: "400",
+              lineHeight: "72px",
+              textAlign: "center",
+            }}
+            className="tracking-tighter"
+          >
+            Growth at 10x Galaxy
+          </motion.h2>
+        </div>
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {growthItems.map((item, index) => (
+            <motion.div
+              key={index}
+              className="p-10 shadow-sm bg-[#F2F2F2] flex flex-col group hover:bg-gray-100 transition-colors duration-300"
+              variants={itemVariants}
+            >
+              {/* <div className="opacity-80 group-hover:opacity-100 transition-opacity">
+                {item.icon}
+              </div> */}
+              <h3 className="font-sans text-xl font-semibold mb-4 text-gray-900">
+                {item.title}
+              </h3>
+              <p className="font-sans text-gray-600 leading-relaxed text-sm md:text-base">
+                {item.description}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 // --- 3. Benefits Section ---
 const benefits = [
   {
-    title: "Excellent Culture & Growth Environment",
+    title: "High-Performance Culture",
     icon: <Users className="w-8 h-8 text-black" />,
   },
   {
-    title: "Flexible Work Options / Hybrid Environment",
+    title: "Flexible Work & Global Team",
     icon: <Briefcase className="w-8 h-8 text-black" />,
   },
   {
-    title: "Meals, Coffee & Snacks",
+    title: "Equity & Long-Term Upside",
     icon: <CheckCircle className="w-8 h-8 text-black" />,
   },
   {
-    title: "Festival Bonuses / Annual Retreats",
+    title: "Founder-Level Exposure",
     icon: <HeartHandshake className="w-8 h-8 text-black" />,
   },
   {
-    title: "Health & Wellness Programs",
+    title: "Learning & Skill Acceleration",
     icon: <Zap className="w-8 h-8 text-black" />,
   },
   {
-    title: "Learning & Upskilling Allowances",
+    title: "Career Momentum",
     icon: <BookOpen className="w-8 h-8 text-black" />,
   },
 ];
@@ -483,8 +715,43 @@ const OpeningsSection = () => (
           We’re looking for talented people to join our mission.
         </p>
       </motion.div>
-      <motion.div
+      {/* <motion.div
         className="mt-16 max-w-4xl mx-auto border border-[#F2F2F2] rounded-lg overflow-hidden"
+        variants={itemVariants}
+      >
+        <ul className="divide-y divide-[#F2F2F2]">
+          {jobOpenings.map((job, index) => (
+            <motion.li
+              key={index}
+              className="p-6 hover:bg-[#F2F2F2]/50 transition-colors"
+              variants={itemVariants}
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <h3 className="font-sans text-xl font-semibold">
+                    {job.title}
+                  </h3>
+                  <p className="font-sans mt-1 text-gray-700">
+                    {job.department} &middot; {job.type}
+                  </p>
+                </div>
+                <div className="mt-4 sm:mt-0 sm:ml-4">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`mailto:hello@10xgalaxy.com?subject=Job Application - ${job.title}&body=Hi, I’d like to apply for the ${job.title} position. Please find my resume attached.`}
+                    className="font-sans bg-black text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+                  >
+                    Apply
+                  </a>
+                </div>
+              </div>
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div> */}
+      <motion.div
+        className="mt-16 mx-auto  overflow-hidden"
         variants={itemVariants}
       >
         <ul className="divide-y divide-[#F2F2F2]">
@@ -525,24 +792,24 @@ const OpeningsSection = () => (
 // --- 6. FAQs Section ---
 const faqsList = [
   {
-    question: "How to apply?",
+    question: "How do I apply?",
     answer:
-      'Find the role you’re interested in under "Current Openings" and click the "Apply" button. You will be redirected to our application portal to submit your resume and cover letter.',
+      "Find a role that fits you under Current Openings and click Apply. You’ll be guided to submit your CV and a short introduction. If you have questions or prefer to apply directly, you can also email us at careers@10xgalaxy.com",
   },
   {
-    question: "What are the steps involved?",
+    question: "What does the hiring process look like?",
     answer:
-      "Our typical process includes an initial application review, a brief phone screen with HR, one or two technical/role-specific interviews, and a final chat with the team lead. We keep you informed at every step.",
+      "We start with a review of your application. If it’s a strong match, you’ll have a short conversation with our team, followed by one or two role-specific discussions. The final step is a conversation with a team lead so both sides can decide if it’s the right fit.",
   },
   {
-    question: "How long does the hiring process take?",
+    question: "How long does the process take?",
     answer:
-      "The timeline can vary depending on the role and applicant volume, but we strive to move quickly. On average, the process takes about 2-4 weeks from application to offer.",
+      "It depends on the role, but we move quickly. Most candidates hear back within two to four weeks from the time they apply.",
   },
   {
     question: "What should I prepare for the interview?",
     answer:
-      "Be prepared to discuss your past experiences in detail, showcase your portfolio or past work (if applicable), and ask thoughtful questions about the role, the team, and 10x Galaxy.",
+      "Come ready to talk about what you’ve built, how you think, and how you approach problems. If you have a portfolio or past work, bring it. We’re just as interested in how you work as what you’ve done.",
   },
 ];
 
@@ -646,8 +913,11 @@ export default function Careers() {
     <div className="bg-white font-inter">
       <main>
         <HeroSection />
-        <BenefitsSection />
+        <WhyGalaxy />
+        <HowWeWork />
+        <Growth />
         <ValuesSection />
+        <BenefitsSection />
         <OpeningsSection />
         <FaqSection />
       </main>

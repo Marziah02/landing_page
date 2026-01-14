@@ -755,8 +755,8 @@ const OpeningsSection = () => (
 									</a>
 								</div>
 							</div> */}
-							<div className="w-full mx-auto h-full border border-gray-200 rounded-xl flex items-center">
-								<div className="flex items-center  bg-white  rounded-l-xl shadow-sm overflow-hidden h-full">
+							<div className="w-full mx-auto h-full border border-gray-200 rounded-xl ">
+								<div className="flex items-center  bg-white  rounded-xl shadow-sm overflow-hidden h-full pl-6 pr-0.5">
 									{/* Left section */}
 									<div className="flex-1 h-full">
 										<h2 className="text-xl font-semibold text-gray-900 mb-2">
@@ -788,10 +788,9 @@ const OpeningsSection = () => (
 									</div>
 
 									{/* Divider */}
-									{/* <div className="h-16 w-px bg-gray-200" /> */}
+									<div className="h-16 w-px bg-gray-200" />
 									{/* Right section */}
-									{/* <div className="w-40 h-full p-6 flex justify-center bg-gradient-to-br from-[#22D2E0] to-[#85249F] text-white">
-										
+									<div className="w-40 h-full p-6 flex justify-center bg-gradient-to-br hover:bg-gradient-to-bl from-[#22D2E0] to-[#85249F] text-white rounded-r-lg">
 										<a
 											target="_blank"
 											rel="noopener noreferrer"
@@ -799,20 +798,8 @@ const OpeningsSection = () => (
 											href={`mailto:hello@10xgalaxy.com?subject=Job Application - ${job.title}&body=Hi, I’d like to apply for the ${job.title} position. Please find my resume attached.`}>
 											Apply
 										</a>
-									</div> */}
+									</div>
 								</div>
-							</div>
-							<div className="w-40 h-full p-6 flex justify-center bg-gradient-to-br from-[#22D2E0] to-[#85249F] text-white rounded-r-xl border border-gray-200">
-								{/* <button className="px-6 py-2 rounded-lg bg-blue-50 text-blue-600 font-medium hover:bg-blue-100 transition">
-											Apply
-										</button> */}
-								<a
-									target="_blank"
-									rel="noopener noreferrer"
-									className="px-6 py-2 text-white font-medium  transition h-full"
-									href={`mailto:hello@10xgalaxy.com?subject=Job Application - ${job.title}&body=Hi, I’d like to apply for the ${job.title} position. Please find my resume attached.`}>
-									Apply
-								</a>
 							</div>
 						</motion.li>
 					))}

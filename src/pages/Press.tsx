@@ -556,14 +556,14 @@ https://fonts.google.com/specimen/Inter
       border: "border-gray-200",
       more: "Learn more",
       link: "/products",
-      // icon: <Rocket className="w-7 h-7" />,
-      icon: (
-        <img
-          src="/brand/10xgalaxy_logo_primary/10xGalaxy_Logo_Primary_Black.svg"
-          alt=""
-          className="w-7 h-7"
-        />
-      ),
+      icon: <Rocket className="w- h-7" />,
+      // icon: (
+      //   <img
+      //     src="/brand/10xgalaxy_logo_primary/10xGalaxy_Logo_Primary_Black.svg"
+      //     alt=""
+      //     className="w-7 h-7"
+      //   />
+      // ),
     },
     {
       label: "Product Update",

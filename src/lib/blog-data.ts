@@ -55,7 +55,9 @@ export const mockPosts = [
         <li>Internet</li>
         <li>Consistency</li>
       </ul>
-      <p class="mb-4">This is why AI will create the first truly global wave of new millionaires.</p>
+     <p class="mb-4 text-gray-700 font-medium">This is why AI will create the first truly global wave of new millionaires.</p>
+
+      <img src="/blog/blog1.jpg" alt="Global Wealth" class="w-full h-[400px] object-cover rounded-3xl mb-12 shadow-2xl" />
 
       <h3 class="text-2xl font-bold mt-8 mb-4">4. Tiny AI-Powered Ideas Can Earn Big Money</h3>
       <p class="mb-4">Small, automated AI-driven systems now generate massive revenue:</p>
@@ -141,7 +143,9 @@ export const mockPosts = [
         <li>Instant decision-making</li>
         <li>Rapid iteration</li>
       </ul>
-      <p class="mb-4">With AI taking over manual tasks, small teams focus on <strong>quality, experimentation, and innovation</strong>.</p>
+      <p class="mb-4 text-gray-700">With AI taking over manual tasks, small teams focus on <strong>quality, experimentation, and innovation</strong>.</p>
+
+      <img src="/blog/blog2.png" alt="Agile Speed" class="w-full h-[400px] object-cover rounded-3xl mb-12 shadow-2xl" />
 
       <h3 class="text-2xl font-bold mt-8 mb-4">3. AI Gives Small Teams Superhuman Capability</h3>
       <p class="mb-4">One small AI-powered team can perform the work of an entire company:</p>
@@ -224,6 +228,9 @@ export const mockPosts = [
       <h3 class="text-2xl font-bold mt-8 mb-4">6. Small Businesses Benefit the Most</h3>
       <p class="mb-4">AI agents help e-commerce stores, freelancers, coaches, real estate agents, SaaS founders, agencies, and local businesses. They gain more time, more sales, and less workload. Usually within days.</p>
 
+       <img src="/blog/blog3.png" alt="Small Business Automation" class="w-full h-[400px] object-cover rounded-3xl mb-12 shadow-2xl" />
+
+
       <h3 class="text-2xl font-bold mt-8 mb-4">7. The Future: Every Business Has an AI Team</h3>
       <p class="mb-4">Soon, businesses will not have just one AI agent — they will have many:</p>
       <ul class="list-disc pl-6 mb-6 space-y-2">
@@ -282,6 +289,7 @@ export const mockPosts = [
         <li>Automation systems</li>
       </ul>
       <p class="mb-4">Tools like <strong>PerfectCode.ai (V2)</strong> represent a new generation of co-builders — AI that builds alongside you.</p>
+ <img src="/blog/blog4.jpg" alt="AI Product Building" class="w-full h-[400px] object-cover rounded-3xl mb-12 shadow-2xl" />
 
       <h3 class="text-2xl font-bold mt-8 mb-4">4. A New Type of Founder Is Emerging</h3>
       <p class="mb-4">Previously, founders needed coding skills, funding, technical co-founders, and large teams. Not anymore.</p>
